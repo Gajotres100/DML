@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSaveRn = new System.Windows.Forms.Button();
             this.TxtKolicinaRobe = new System.Windows.Forms.TextBox();
             this.txtRobuIzdao = new System.Windows.Forms.TextBox();
             this.txtRegOznakaKamiona = new System.Windows.Forms.TextBox();
@@ -53,9 +54,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnSaveRn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -70,6 +75,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnSaveRn);
             this.tabPage1.Controls.Add(this.TxtKolicinaRobe);
             this.tabPage1.Controls.Add(this.txtRobuIzdao);
@@ -100,6 +106,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Unos radnog naloga";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveRn
+            // 
+            this.btnSaveRn.Location = new System.Drawing.Point(174, 384);
+            this.btnSaveRn.Name = "btnSaveRn";
+            this.btnSaveRn.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveRn.TabIndex = 24;
+            this.btnSaveRn.Text = "Spremin radni nalog";
+            this.btnSaveRn.UseVisualStyleBackColor = true;
+            this.btnSaveRn.Click += new System.EventHandler(this.btnSaveRn_Click);
             // 
             // TxtKolicinaRobe
             // 
@@ -279,22 +295,35 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 397);
+            this.tabPage2.Size = new System.Drawing.Size(768, 418);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pregled radnih naloga";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnSaveRn
+            // dataGridView1
             // 
-            this.btnSaveRn.Location = new System.Drawing.Point(174, 384);
-            this.btnSaveRn.Name = "btnSaveRn";
-            this.btnSaveRn.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveRn.TabIndex = 24;
-            this.btnSaveRn.Text = "Spremin radni nalog";
-            this.btnSaveRn.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(228, 384);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(8, 8);
+            this.dataGridView1.TabIndex = 25;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 53);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(755, 359);
+            this.dataGridView2.TabIndex = 0;
             // 
             // RadniNalozi
             // 
@@ -307,6 +336,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,6 +371,8 @@
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSaveRn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 

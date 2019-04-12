@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.Orm", "Repository\DML.O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.Repository", "DML.Repository\DML.Repository.csproj", "{DB64912B-0929-47CD-BC96-A2B5849D6467}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.VM", "DML.VM\DML.VM.csproj", "{91A9ADF8-9B6B-4996-8B86-99B3B0548101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.DTO", "DML.VM\DML.DTO.csproj", "{91A9ADF8-9B6B-4996-8B86-99B3B0548101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

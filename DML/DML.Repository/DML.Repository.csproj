@@ -52,6 +52,10 @@
     <Compile Include="RadniNalozi\RnRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DML.VM\DML.DTO.csproj">
+      <Project>{91A9ADF8-9B6B-4996-8B86-99B3B0548101}</Project>
+      <Name>DML.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository\DML.Orm.csproj">
       <Project>{494FA8DA-A497-43F5-9E4B-BC3AB0A06BBC}</Project>
       <Name>DML.Orm</Name>

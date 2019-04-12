@@ -44,5 +44,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadniNalozi\RnServices.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DML.Repository\DML.Repository.csproj">
+      <Project>{DB64912B-0929-47CD-BC96-A2B5849D6467}</Project>
+      <Name>DML.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DML.VM\DML.DTO.csproj">
+      <Project>{91A9ADF8-9B6B-4996-8B86-99B3B0548101}</Project>
+      <Name>DML.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

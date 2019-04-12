@@ -10,3 +10,15 @@ C:\Users\ngaic\Source\Repos\DML\Repository\obj\Debug\DML.Orm.csproj.CoreCompileI
 C:\Users\ngaic\Source\Repos\DML\Repository\obj\Debug\DML.Orm.csproj.CopyComplete
 C:\Users\ngaic\Source\Repos\DML\Repository\obj\Debug\Repository.dll
 C:\Users\ngaic\Source\Repos\DML\Repository\obj\Debug\Repository.pdb
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\Repository.dll.config
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\Repository.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\Repository.pdb
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.xml
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csprojAssemblyReference.cache
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csproj.CoreCompileInputs.cache
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csproj.CopyComplete
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\Repository.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\Repository.pdb
