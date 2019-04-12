@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.Orm", "Repository\DML.O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.Repository", "DML.Repository\DML.Repository.csproj", "{DB64912B-0929-47CD-BC96-A2B5849D6467}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DML.VM", "DML.VM\DML.VM.csproj", "{91A9ADF8-9B6B-4996-8B86-99B3B0548101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DB64912B-0929-47CD-BC96-A2B5849D6467}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB64912B-0929-47CD-BC96-A2B5849D6467}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB64912B-0929-47CD-BC96-A2B5849D6467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A9ADF8-9B6B-4996-8B86-99B3B0548101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A9ADF8-9B6B-4996-8B86-99B3B0548101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A9ADF8-9B6B-4996-8B86-99B3B0548101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A9ADF8-9B6B-4996-8B86-99B3B0548101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
