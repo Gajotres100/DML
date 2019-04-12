@@ -2,9 +2,9 @@ C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\bin\Debug\DML.RadniNalog.exe.conf
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\bin\Debug\DML.RadniNalog.exe
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\bin\Debug\DML.RadniNalog.pdb
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.csprojAssemblyReference.cache
-C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.Form1.resources
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.Properties.Resources.resources
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.csproj.GenerateResource.cache
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.exe
 C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.pdb
+C:\Users\ngaic\Source\Repos\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.RadniNalozi.resources
