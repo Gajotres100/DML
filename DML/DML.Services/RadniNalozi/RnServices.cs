@@ -15,9 +15,15 @@ namespace DML.Services.RadniNalozi
         {
             rnRepository = new RnRepository();
         }
-        public void Save(SaveRnDto data)
+
+        public void Save(RnDto data)
         {
-            rnRepository.Save(data);
+            rnRepository.SaveRn(data);
+        }
+
+        public List<RnDto> GetRnDtos()
+        {
+            return rnRepository.GetAllRn();
         }
     }
 }

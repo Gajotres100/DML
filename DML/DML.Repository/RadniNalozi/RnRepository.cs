@@ -10,7 +10,7 @@ namespace DML.Repository.RadniNalozi
 {
     public class RnRepository
     {
-        public void Save(SaveRnDto data)
+        public void SaveRn(RnDto data)
         {
             using (var context = new DMLEntities())
             {
@@ -31,6 +31,27 @@ namespace DML.Repository.RadniNalozi
 
                 context.RadniNalog.Add(rn);
                 context.SaveChanges();
+            }
+        }
+
+        public List<RnDto> GetAllRn()
+        {
+            using (var context = new DMLEntities())
+            {
+                return context.RadniNalog.Select(x => new RnDto
+                {
+                    Datum = x.Datum,
+                    Izvrstitelj = x.Izvrstitelj,
+                    Kolicina = x.Kolicina,
+                    Narucitelj = x.Narucitelj,
+                    Primatelj = x.Primatelj,
+                    Radiliste = x.Radiliste,
+                    RegOznaka = x.RegOznaka,
+                    Vozac = x.Vozac,
+                    VrstaRobe = x.VrstaRobe,
+                    VrstaStroja = x.VrstaStroja,
+                    VrstaUsluge = x.VrstaUsluge
+                }).ToList();
             }
         }
     }

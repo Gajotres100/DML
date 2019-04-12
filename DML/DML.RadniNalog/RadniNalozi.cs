@@ -26,7 +26,7 @@ namespace DML.RadniNalog
         {
             int.TryParse(TxtKolicinaRobe.Text, out int kolicinaRobe);
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
-            var data = new SaveRnDto
+            var data = new RnDto
             {
                Datum = datum,
                Kolicina = kolicinaRobe,
@@ -42,6 +42,12 @@ namespace DML.RadniNalog
             };
 
             rnServices.Save(data);
+        }
+
+        private void RadniNalozi_Load(object sender, EventArgs e)
+        {
+            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            
         }
     }
 }

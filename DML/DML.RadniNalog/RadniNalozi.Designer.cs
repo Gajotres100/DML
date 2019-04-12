@@ -54,13 +54,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ddgRadniNalozi = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddgRadniNalozi)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,7 +73,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnSaveRn);
             this.tabPage1.Controls.Add(this.TxtKolicinaRobe);
             this.tabPage1.Controls.Add(this.txtRobuIzdao);
@@ -295,7 +292,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.ddgRadniNalozi);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -304,26 +301,17 @@
             this.tabPage2.Text = "Pregled radnih naloga";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // ddgRadniNalozi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(228, 384);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(8, 8);
-            this.dataGridView1.TabIndex = 25;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 53);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(755, 359);
-            this.dataGridView2.TabIndex = 0;
+            this.ddgRadniNalozi.AllowUserToAddRows = false;
+            this.ddgRadniNalozi.AllowUserToDeleteRows = false;
+            this.ddgRadniNalozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ddgRadniNalozi.Location = new System.Drawing.Point(7, 53);
+            this.ddgRadniNalozi.Name = "ddgRadniNalozi";
+            this.ddgRadniNalozi.ReadOnly = true;
+            this.ddgRadniNalozi.RowTemplate.Height = 24;
+            this.ddgRadniNalozi.Size = new System.Drawing.Size(755, 359);
+            this.ddgRadniNalozi.TabIndex = 0;
             // 
             // RadniNalozi
             // 
@@ -333,12 +321,12 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "RadniNalozi";
             this.Text = "Radni nalozi";
+            this.Load += new System.EventHandler(this.RadniNalozi_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddgRadniNalozi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,8 +359,7 @@
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSaveRn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView ddgRadniNalozi;
     }
 }
 
