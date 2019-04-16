@@ -26,7 +26,8 @@ namespace DML.Repository.RadniNalozi
                     Vozac = data.Vozac,
                     VrstaRobe = data.VrstaRobe,
                     VrstaStroja = data.VrstaStroja,
-                    VrstaUsluge = data.VrstaUsluge
+                    VrstaUsluge = data.VrstaUsluge,
+                    RN = data.RN
                 };
 
                 context.RadniNalog.Add(rn);
@@ -50,7 +51,8 @@ namespace DML.Repository.RadniNalozi
                     Vozac = x.Vozac,
                     VrstaRobe = x.VrstaRobe,
                     VrstaStroja = x.VrstaStroja,
-                    VrstaUsluge = x.VrstaUsluge
+                    VrstaUsluge = x.VrstaUsluge,
+                    RN = x.RN
                 }).ToList();
             }
         }

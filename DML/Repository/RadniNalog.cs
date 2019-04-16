@@ -14,7 +14,7 @@ namespace Repository
     
     public partial class RadniNalog
     {
-        public int Id { get; set; }
+        public int bu { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
         public string VrstaRobe { get; set; }
         public Nullable<int> Kolicina { get; set; }
@@ -26,5 +26,6 @@ namespace Repository
         public string VrstaStroja { get; set; }
         public string Narucitelj { get; set; }
         public string Primatelj { get; set; }
+        public string RN { get; set; }
     }
 }

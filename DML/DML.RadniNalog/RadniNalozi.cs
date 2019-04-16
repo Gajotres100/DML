@@ -38,7 +38,8 @@ namespace DML.RadniNalog
                VrstaRobe = txtVrstaRobe.Text,
                VrstaStroja = txtVrstaStroja.Text,
                VrstaUsluge = txtVrstaUsluge.Text,
-               Izvrstitelj = txtRobuIzdao.Text
+               Izvrstitelj = txtRobuIzdao.Text,
+               RN = txtRadniNalog.Text
             };
 
             rnServices.Save(data);

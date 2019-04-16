@@ -20,5 +20,6 @@ namespace DML.VM
         public string VrstaStroja { get; set; }
         public string Narucitelj { get; set; }
         public string Primatelj { get; set; }
+        public string RN { get; set; }
     }
 }

@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="RadniNalog">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="bu" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Datum" Type="datetime" />
           <Property Name="VrstaRobe" Type="nvarchar(max)" />
           <Property Name="Kolicina" Type="int" />
@@ -21,20 +21,23 @@
           <Property Name="VrstaStroja" Type="nvarchar(max)" />
           <Property Name="Narucitelj" Type="nvarchar(max)" />
           <Property Name="Primatelj" Type="nvarchar(max)" />
+          <Property Name="RN" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="DMLModelStoreContainer">
           <EntitySet Name="RadniNalog" EntityType="Self.RadniNalog" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RadniNalog" EntityType="DMLModel.RadniNalog" />
+        </EntityContainer>
         <EntityType Name="RadniNalog">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="bu" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Datum" Type="DateTime" Precision="3" />
           <Property Name="VrstaRobe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Kolicina" Type="Int32" />
@@ -46,10 +49,8 @@
           <Property Name="VrstaStroja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Narucitelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Primatelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RadniNalog" EntityType="Self.RadniNalog" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -59,18 +60,19 @@
           <EntitySetMapping Name="RadniNalog">
             <EntityTypeMapping TypeName="DMLModel.RadniNalog">
               <MappingFragment StoreEntitySet="RadniNalog">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Datum" ColumnName="Datum" />
-                <ScalarProperty Name="VrstaRobe" ColumnName="VrstaRobe" />
-                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-                <ScalarProperty Name="Izvrstitelj" ColumnName="Izvrstitelj" />
-                <ScalarProperty Name="RegOznaka" ColumnName="RegOznaka" />
-                <ScalarProperty Name="VrstaUsluge" ColumnName="VrstaUsluge" />
-                <ScalarProperty Name="Radiliste" ColumnName="Radiliste" />
-                <ScalarProperty Name="Vozac" ColumnName="Vozac" />
-                <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
-                <ScalarProperty Name="Narucitelj" ColumnName="Narucitelj" />
+                <ScalarProperty Name="RN" ColumnName="RN" />
                 <ScalarProperty Name="Primatelj" ColumnName="Primatelj" />
+                <ScalarProperty Name="Narucitelj" ColumnName="Narucitelj" />
+                <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
+                <ScalarProperty Name="Vozac" ColumnName="Vozac" />
+                <ScalarProperty Name="Radiliste" ColumnName="Radiliste" />
+                <ScalarProperty Name="VrstaUsluge" ColumnName="VrstaUsluge" />
+                <ScalarProperty Name="RegOznaka" ColumnName="RegOznaka" />
+                <ScalarProperty Name="Izvrstitelj" ColumnName="Izvrstitelj" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="VrstaRobe" ColumnName="VrstaRobe" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="bu" ColumnName="bu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
