@@ -14,7 +14,7 @@ namespace Repository
     
     public partial class RadniNalog
     {
-        public int bu { get; set; }
+        public int Id { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
         public string VrstaRobe { get; set; }
         public Nullable<int> Kolicina { get; set; }

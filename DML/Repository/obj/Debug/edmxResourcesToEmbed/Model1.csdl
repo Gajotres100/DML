@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RadniNalog" EntityType="DMLModel.RadniNalog" />
+  </EntityContainer>
   <EntityType Name="RadniNalog">
     <Key>
       <PropertyRef Name="Id" />
@@ -16,8 +19,6 @@
     <Property Name="VrstaStroja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Narucitelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Primatelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="RadniNalog" EntityType="Self.RadniNalog" />
-  </EntityContainer>
 </Schema>

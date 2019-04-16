@@ -16,6 +16,7 @@
     <Property Name="VrstaStroja" Type="nvarchar(max)" />
     <Property Name="Narucitelj" Type="nvarchar(max)" />
     <Property Name="Primatelj" Type="nvarchar(max)" />
+    <Property Name="RN" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="DMLModelStoreContainer">
     <EntitySet Name="RadniNalog" EntityType="Self.RadniNalog" Schema="dbo" store:Type="Tables" />

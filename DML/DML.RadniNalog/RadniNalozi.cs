@@ -43,12 +43,18 @@ namespace DML.RadniNalog
             };
 
             rnServices.Save(data);
+            tabControl1.SelectedIndex = 1;
         }
 
         private void RadniNalozi_Load(object sender, EventArgs e)
         {
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
             
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
         }
     }
 }

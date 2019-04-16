@@ -7,9 +7,9 @@
     <Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="RadniNalog">
           <Key>
-            <PropertyRef Name="bu" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="bu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Datum" Type="datetime" />
           <Property Name="VrstaRobe" Type="nvarchar(max)" />
           <Property Name="Kolicina" Type="int" />
@@ -35,9 +35,9 @@
         </EntityContainer>
         <EntityType Name="RadniNalog">
           <Key>
-            <PropertyRef Name="bu" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="bu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Datum" Type="DateTime" Precision="3" />
           <Property Name="VrstaRobe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Kolicina" Type="Int32" />
@@ -72,7 +72,7 @@
                 <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
                 <ScalarProperty Name="VrstaRobe" ColumnName="VrstaRobe" />
                 <ScalarProperty Name="Datum" ColumnName="Datum" />
-                <ScalarProperty Name="bu" ColumnName="bu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

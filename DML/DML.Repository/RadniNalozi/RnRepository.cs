@@ -41,6 +41,7 @@ namespace DML.Repository.RadniNalozi
             {
                 return context.RadniNalog.Select(x => new RnDto
                 {
+                    Id = x.Id,
                     Datum = x.Datum,
                     Izvrstitelj = x.Izvrstitelj,
                     Kolicina = x.Kolicina,

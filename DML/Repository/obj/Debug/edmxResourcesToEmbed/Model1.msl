@@ -4,18 +4,19 @@
     <EntitySetMapping Name="RadniNalog">
       <EntityTypeMapping TypeName="DMLModel.RadniNalog">
         <MappingFragment StoreEntitySet="RadniNalog">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Datum" ColumnName="Datum" />
-          <ScalarProperty Name="VrstaRobe" ColumnName="VrstaRobe" />
-          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-          <ScalarProperty Name="Izvrstitelj" ColumnName="Izvrstitelj" />
-          <ScalarProperty Name="RegOznaka" ColumnName="RegOznaka" />
-          <ScalarProperty Name="VrstaUsluge" ColumnName="VrstaUsluge" />
-          <ScalarProperty Name="Radiliste" ColumnName="Radiliste" />
-          <ScalarProperty Name="Vozac" ColumnName="Vozac" />
-          <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
-          <ScalarProperty Name="Narucitelj" ColumnName="Narucitelj" />
+          <ScalarProperty Name="RN" ColumnName="RN" />
           <ScalarProperty Name="Primatelj" ColumnName="Primatelj" />
+          <ScalarProperty Name="Narucitelj" ColumnName="Narucitelj" />
+          <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
+          <ScalarProperty Name="Vozac" ColumnName="Vozac" />
+          <ScalarProperty Name="Radiliste" ColumnName="Radiliste" />
+          <ScalarProperty Name="VrstaUsluge" ColumnName="VrstaUsluge" />
+          <ScalarProperty Name="RegOznaka" ColumnName="RegOznaka" />
+          <ScalarProperty Name="Izvrstitelj" ColumnName="Izvrstitelj" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="VrstaRobe" ColumnName="VrstaRobe" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
