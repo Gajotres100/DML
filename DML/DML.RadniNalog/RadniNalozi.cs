@@ -81,6 +81,47 @@ namespace DML.RadniNalog
             cbVrstaUsluge.DisplayMember = "Name";
             cbVrstaUsluge.ValueMember = "Id";
 
+            loadData.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "" });
+            loadData.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "" });
+            loadData.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "" });
+            loadData.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "" });
+            loadData.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "" });
+            loadData.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "" });
+            loadData.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "" });
+            loadData.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "" });
+
+            cbNaruciteljSearch.DataSource = loadData.NarutiteljDtos;
+            cbNaruciteljSearch.DisplayMember = "Name";
+            cbNaruciteljSearch.ValueMember = "Id";
+
+            cbPrimateljSearch.DataSource = loadData.PrimateljDtos;
+            cbPrimateljSearch.DisplayMember = "Name";
+            cbPrimateljSearch.ValueMember = "Id";
+
+            cbGradisliteSearch.DataSource = loadData.RadilisteDtos;
+            cbGradisliteSearch.DisplayMember = "Name";
+            cbGradisliteSearch.ValueMember = "Id";
+
+            cbRegKamionaSearch.DataSource = loadData.RegOznakaDtos;
+            cbRegKamionaSearch.DisplayMember = "Name";
+            cbRegKamionaSearch.ValueMember = "Id";
+
+            cbRobuIzdaoSearch.DataSource = loadData.RobuIzdaoDtos;
+            cbRobuIzdaoSearch.DisplayMember = "Name";
+            cbRobuIzdaoSearch.ValueMember = "Id";
+
+            cbVozacSearch.DataSource = loadData.VozacDtos;
+            cbVozacSearch.DisplayMember = "Name";
+            cbVozacSearch.ValueMember = "Id";
+
+            cbVrstaRobeSearch.DataSource = loadData.VrstaRobeDtos;
+            cbVrstaRobeSearch.DisplayMember = "Name";
+            cbVrstaRobeSearch.ValueMember = "Id";
+
+            cbVrstaUslugeSearch.DataSource = loadData.VrstaUslugeDtos;
+            cbVrstaUslugeSearch.DisplayMember = "Name";
+            cbVrstaUslugeSearch.ValueMember = "Id";
+
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
         }
 
@@ -93,7 +134,7 @@ namespace DML.RadniNalog
         {
             DateTime.TryParse(dtpStart.Text, out DateTime startDate);
             DateTime.TryParse(dtpEnd.Text, out DateTime endDate);
-            int.TryParse(txtRegFilter.Text, out int regId);
+            int.TryParse(cbRegKamionaSearch.SelectedValue.ToString(), out int regId);
 
             ddgRadniNalozi.DataSource = rnServices.GetRnForTimePeriodAndReg(startDate, endDate, regId);
         }
