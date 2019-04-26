@@ -34,15 +34,34 @@ namespace DML.Repository.RadniNalozi
             }
         }
 
-        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId)
+        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, 
+            int regId, 
+            int vrstaRobeId, 
+            int robuIzdaoId, 
+            int vrstaUslugeId, 
+            int radilisteId,
+            int vozacId,
+            int naruciteljId,
+            int primateljId)
         {
             using (var context = new DMLEntities())
             {
-                return context.RadniNalog.Where(x => x.Datum > start && x.Datum < end && x.RegOznakaId == regId).Select(x => new RnDto
+                var rn = context.RadniNalog.Where(x => x.Datum > start && x.Datum < end).ToList();
+
+                if (regId > 0) rn = rn.Where(x => x.RegOznakaId == regId).ToList();
+                if (vrstaRobeId > 0) rn = rn.Where(x => x.VrstaRobeId == vrstaRobeId).ToList();
+                if (robuIzdaoId > 0) rn = rn.Where(x => x.RobuIzdaoId == robuIzdaoId).ToList();
+                if (vrstaUslugeId > 0) rn = rn.Where(x => x.VrstaUslugeId == vrstaUslugeId).ToList();
+                if (radilisteId > 0) rn = rn.Where(x => x.RadilisteId == radilisteId).ToList();
+                if (vozacId > 0) rn = rn.Where(x => x.VozacId == vozacId).ToList();
+                if (naruciteljId > 0) rn = rn.Where(x => x.NaruciteljId == naruciteljId).ToList();
+                if (primateljId > 0) rn = rn.Where(x => x.PrimateljId == primateljId).ToList();
+
+                return rn.Select(x => new RnDto
                 {
                     Id = x.Id,
                     Datum = x.Datum
-                }).ToList();
+                }).ToList(); ;
             }
         }
 

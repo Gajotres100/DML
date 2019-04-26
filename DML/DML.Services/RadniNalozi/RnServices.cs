@@ -22,7 +22,14 @@ namespace DML.Services.RadniNalozi
         }
 
         public List<RnDto> GetRnDtos() => rnRepository.GetAllRn();
-        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId);
+        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId,
+            int vrstaRobeId,
+            int robuIzdaoId,
+            int vrstaUslugeId,
+            int radilisteId,
+            int vozacId,
+            int naruciteljId,
+            int primateljId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId,vrstaRobeId,robuIzdaoId,vrstaUslugeId,radilisteId, vozacId,naruciteljId,primateljId);
         public FormLoadDto GetLoadData() => rnRepository.GetLoadData();
     }
 }

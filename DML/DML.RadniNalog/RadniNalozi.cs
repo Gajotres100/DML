@@ -81,14 +81,14 @@ namespace DML.RadniNalog
             cbVrstaUsluge.DisplayMember = "Name";
             cbVrstaUsluge.ValueMember = "Id";
 
-            loadData.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "" });
-            loadData.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "" });
-            loadData.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "" });
-            loadData.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "" });
-            loadData.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "" });
-            loadData.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "" });
-            loadData.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "" });
-            loadData.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "" });
+            loadData.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "----Odaberi----" });
+            loadData.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "----Odaberi----" });
 
             cbNaruciteljSearch.DataSource = loadData.NarutiteljDtos;
             cbNaruciteljSearch.DisplayMember = "Name";
@@ -135,8 +135,16 @@ namespace DML.RadniNalog
             DateTime.TryParse(dtpStart.Text, out DateTime startDate);
             DateTime.TryParse(dtpEnd.Text, out DateTime endDate);
             int.TryParse(cbRegKamionaSearch.SelectedValue.ToString(), out int regId);
+            int.TryParse(cbVrstaRobeSearch.SelectedValue.ToString(), out int vrstaRobeId);
+            int.TryParse(cbRobuIzdaoSearch.SelectedValue.ToString(), out int robuIzdaoId);
+            int.TryParse(cbVrstaUslugeSearch.SelectedValue.ToString(), out int vrstaUslugeId);
+            int.TryParse(cbGradisliteSearch.SelectedValue.ToString(), out int radilisteId);
+            int.TryParse(cbVozacSearch.SelectedValue.ToString(), out int vozacId);
+            int.TryParse(cbNaruciteljSearch.SelectedValue.ToString(), out int naruciteljId);
+            int.TryParse(cbPrimateljSearch.SelectedValue.ToString(), out int primateljId);
 
-            ddgRadniNalozi.DataSource = rnServices.GetRnForTimePeriodAndReg(startDate, endDate, regId);
+            ddgRadniNalozi.DataSource = rnServices.GetRnForTimePeriodAndReg(startDate, endDate, 
+                regId, vrstaRobeId, robuIzdaoId, vrstaUslugeId, radilisteId, vozacId, naruciteljId, primateljId);
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
