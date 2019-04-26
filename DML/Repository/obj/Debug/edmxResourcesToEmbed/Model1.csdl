@@ -1,24 +1,232 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Narucitelj" EntityType="DMLModel.Narucitelj" />
+    <EntitySet Name="Primatelj" EntityType="DMLModel.Primatelj" />
+    <EntitySet Name="Radiliste" EntityType="DMLModel.Radiliste" />
     <EntitySet Name="RadniNalog" EntityType="DMLModel.RadniNalog" />
+    <EntitySet Name="RegOznaka" EntityType="DMLModel.RegOznaka" />
+    <EntitySet Name="RobuIzdao" EntityType="DMLModel.RobuIzdao" />
+    <EntitySet Name="Vozac" EntityType="DMLModel.Vozac" />
+    <EntitySet Name="VrstaRobe" EntityType="DMLModel.VrstaRobe" />
+    <EntitySet Name="VrstaUsluge" EntityType="DMLModel.VrstaUsluge" />
+    <AssociationSet Name="FK_RadniNalog_Narucitelj" Association="DMLModel.FK_RadniNalog_Narucitelj">
+      <End Role="Narucitelj" EntitySet="Narucitelj" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_Primatelj" Association="DMLModel.FK_RadniNalog_Primatelj">
+      <End Role="Primatelj" EntitySet="Primatelj" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_Radiliste" Association="DMLModel.FK_RadniNalog_Radiliste">
+      <End Role="Radiliste" EntitySet="Radiliste" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_RegOznaka" Association="DMLModel.FK_RadniNalog_RegOznaka">
+      <End Role="RegOznaka" EntitySet="RegOznaka" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_RobuIzdao" Association="DMLModel.FK_RadniNalog_RobuIzdao">
+      <End Role="RobuIzdao" EntitySet="RobuIzdao" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_Vozac" Association="DMLModel.FK_RadniNalog_Vozac">
+      <End Role="Vozac" EntitySet="Vozac" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_VrstaRobe" Association="DMLModel.FK_RadniNalog_VrstaRobe">
+      <End Role="VrstaRobe" EntitySet="VrstaRobe" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_VrstaUsluge" Association="DMLModel.FK_RadniNalog_VrstaUsluge">
+      <End Role="VrstaUsluge" EntitySet="VrstaUsluge" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Narucitelj">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_Narucitelj" FromRole="Narucitelj" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="Primatelj">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_Primatelj" FromRole="Primatelj" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="Radiliste">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_Radiliste" FromRole="Radiliste" ToRole="RadniNalog" />
+  </EntityType>
   <EntityType Name="RadniNalog">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Datum" Type="DateTime" Precision="3" />
-    <Property Name="VrstaRobe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Kolicina" Type="Int32" />
-    <Property Name="Izvrstitelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RegOznaka" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="VrstaUsluge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Radiliste" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Vozac" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VrstaRobeId" Type="Int32" Nullable="false" />
+    <Property Name="Kolicina" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RobuIzdaoId" Type="Int32" Nullable="false" />
+    <Property Name="RegOznakaId" Type="Int32" Nullable="false" />
+    <Property Name="VrstaUslugeId" Type="Int32" Nullable="false" />
+    <Property Name="RadilisteId" Type="Int32" Nullable="false" />
+    <Property Name="VozacId" Type="Int32" Nullable="false" />
     <Property Name="VrstaStroja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Narucitelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Primatelj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NaruciteljId" Type="Int32" Nullable="false" />
+    <Property Name="PrimateljId" Type="Int32" Nullable="false" />
     <Property Name="RN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Narucitelj" Relationship="DMLModel.FK_RadniNalog_Narucitelj" FromRole="RadniNalog" ToRole="Narucitelj" />
+    <NavigationProperty Name="Primatelj" Relationship="DMLModel.FK_RadniNalog_Primatelj" FromRole="RadniNalog" ToRole="Primatelj" />
+    <NavigationProperty Name="Radiliste" Relationship="DMLModel.FK_RadniNalog_Radiliste" FromRole="RadniNalog" ToRole="Radiliste" />
+    <NavigationProperty Name="RegOznaka" Relationship="DMLModel.FK_RadniNalog_RegOznaka" FromRole="RadniNalog" ToRole="RegOznaka" />
+    <NavigationProperty Name="RobuIzdao" Relationship="DMLModel.FK_RadniNalog_RobuIzdao" FromRole="RadniNalog" ToRole="RobuIzdao" />
+    <NavigationProperty Name="Vozac" Relationship="DMLModel.FK_RadniNalog_Vozac" FromRole="RadniNalog" ToRole="Vozac" />
+    <NavigationProperty Name="VrstaRobe" Relationship="DMLModel.FK_RadniNalog_VrstaRobe" FromRole="RadniNalog" ToRole="VrstaRobe" />
+    <NavigationProperty Name="VrstaUsluge" Relationship="DMLModel.FK_RadniNalog_VrstaUsluge" FromRole="RadniNalog" ToRole="VrstaUsluge" />
   </EntityType>
+  <EntityType Name="RegOznaka">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_RegOznaka" FromRole="RegOznaka" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="RobuIzdao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_RobuIzdao" FromRole="RobuIzdao" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="Vozac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_Vozac" FromRole="Vozac" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="VrstaRobe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_VrstaRobe" FromRole="VrstaRobe" ToRole="RadniNalog" />
+  </EntityType>
+  <EntityType Name="VrstaUsluge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RadniNalog" Relationship="DMLModel.FK_RadniNalog_VrstaUsluge" FromRole="VrstaUsluge" ToRole="RadniNalog" />
+  </EntityType>
+  <Association Name="FK_RadniNalog_Narucitelj">
+    <End Type="DMLModel.Narucitelj" Role="Narucitelj" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Narucitelj">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="NaruciteljId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_Primatelj">
+    <End Type="DMLModel.Primatelj" Role="Primatelj" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Primatelj">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="PrimateljId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_Radiliste">
+    <End Type="DMLModel.Radiliste" Role="Radiliste" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Radiliste">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="RadilisteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_RegOznaka">
+    <End Type="DMLModel.RegOznaka" Role="RegOznaka" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegOznaka">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="RegOznakaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_RobuIzdao">
+    <End Type="DMLModel.RobuIzdao" Role="RobuIzdao" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RobuIzdao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="RobuIzdaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_Vozac">
+    <End Type="DMLModel.Vozac" Role="Vozac" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vozac">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="VozacId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_VrstaRobe">
+    <End Type="DMLModel.VrstaRobe" Role="VrstaRobe" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VrstaRobe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="VrstaRobeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RadniNalog_VrstaUsluge">
+    <End Type="DMLModel.VrstaUsluge" Role="VrstaUsluge" Multiplicity="1" />
+    <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VrstaUsluge">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="VrstaUslugeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

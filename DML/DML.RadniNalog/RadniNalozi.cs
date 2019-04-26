@@ -28,18 +28,7 @@ namespace DML.RadniNalog
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
             var data = new RnDto
             {
-               Datum = datum,
-               Kolicina = kolicinaRobe,
-               Narucitelj = txtNarucitelj.Text,
-               Primatelj = txtPrimateljRobe.Text,
-               Radiliste = txtRadilište.Text,
-               RegOznaka = txtRegOznakaKamiona.Text,
-               Vozac = txtVozac.Text,
-               VrstaRobe = txtVrstaRobe.Text,
-               VrstaStroja = txtVrstaStroja.Text,
-               VrstaUsluge = txtVrstaUsluge.Text,
-               Izvrstitelj = txtRobuIzdao.Text,
-               RN = txtRadniNalog.Text
+               Datum = datum
             };
 
             rnServices.Save(data);
@@ -55,6 +44,15 @@ namespace DML.RadniNalog
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime.TryParse(dtpStart.Text, out DateTime startDate);
+            DateTime.TryParse(dtpEnd.Text, out DateTime endDate);
+            int.TryParse(txtRegFilter.Text, out int regId);
+
+            ddgRadniNalozi.DataSource = rnServices.GetRnForTimePeriodAndReg(startDate, endDate, regId);
         }
     }
 }

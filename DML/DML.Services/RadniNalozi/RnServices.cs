@@ -25,5 +25,10 @@ namespace DML.Services.RadniNalozi
         {
             return rnRepository.GetAllRn();
         }
+
+        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId)
+        {
+            return rnRepository.GetRnForTimePeriodAndReg(start, end, regId);
+        }
     }
 }

@@ -16,22 +16,23 @@ namespace DML.Repository.RadniNalozi
             {
                 var rn = new RadniNalog
                 {
-                    Datum = data.Datum,
-                    Izvrstitelj = data.Izvrstitelj,
-                    Kolicina = data.Kolicina,
-                    Narucitelj = data.Narucitelj,
-                    Primatelj = data.Primatelj,
-                    Radiliste = data.Radiliste,
-                    RegOznaka = data.RegOznaka,
-                    Vozac = data.Vozac,
-                    VrstaRobe = data.VrstaRobe,
-                    VrstaStroja = data.VrstaStroja,
-                    VrstaUsluge = data.VrstaUsluge,
-                    RN = data.RN
+                    
                 };
 
                 context.RadniNalog.Add(rn);
                 context.SaveChanges();
+            }
+        }
+
+        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId)
+        {
+            using (var context = new DMLEntities())
+            {
+                return context.RadniNalog.Where(x => x.Datum > start && x.Datum < end && x.RegOznakaId == regId).Select(x => new RnDto
+                {
+                    Id = x.Id,
+                    Datum = x.Datum
+                }).ToList();
             }
         }
 
@@ -42,18 +43,7 @@ namespace DML.Repository.RadniNalozi
                 return context.RadniNalog.Select(x => new RnDto
                 {
                     Id = x.Id,
-                    Datum = x.Datum,
-                    Izvrstitelj = x.Izvrstitelj,
-                    Kolicina = x.Kolicina,
-                    Narucitelj = x.Narucitelj,
-                    Primatelj = x.Primatelj,
-                    Radiliste = x.Radiliste,
-                    RegOznaka = x.RegOznaka,
-                    Vozac = x.Vozac,
-                    VrstaRobe = x.VrstaRobe,
-                    VrstaStroja = x.VrstaStroja,
-                    VrstaUsluge = x.VrstaUsluge,
-                    RN = x.RN
+                    Datum = x.Datum
                 }).ToList();
             }
         }

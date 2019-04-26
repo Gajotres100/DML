@@ -16,16 +16,25 @@ namespace Repository
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
-        public string VrstaRobe { get; set; }
-        public Nullable<int> Kolicina { get; set; }
-        public string Izvrstitelj { get; set; }
-        public string RegOznaka { get; set; }
-        public string VrstaUsluge { get; set; }
-        public string Radiliste { get; set; }
-        public string Vozac { get; set; }
+        public int VrstaRobeId { get; set; }
+        public string Kolicina { get; set; }
+        public int RobuIzdaoId { get; set; }
+        public int RegOznakaId { get; set; }
+        public int VrstaUslugeId { get; set; }
+        public int RadilisteId { get; set; }
+        public int VozacId { get; set; }
         public string VrstaStroja { get; set; }
-        public string Narucitelj { get; set; }
-        public string Primatelj { get; set; }
+        public int NaruciteljId { get; set; }
+        public int PrimateljId { get; set; }
         public string RN { get; set; }
+    
+        public virtual Narucitelj Narucitelj { get; set; }
+        public virtual Primatelj Primatelj { get; set; }
+        public virtual Radiliste Radiliste { get; set; }
+        public virtual RegOznaka RegOznaka { get; set; }
+        public virtual RobuIzdao RobuIzdao { get; set; }
+        public virtual Vozac Vozac { get; set; }
+        public virtual VrstaRobe VrstaRobe { get; set; }
+        public virtual VrstaUsluge VrstaUsluge { get; set; }
     }
 }
