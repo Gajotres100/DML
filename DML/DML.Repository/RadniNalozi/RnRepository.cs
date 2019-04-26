@@ -16,7 +16,17 @@ namespace DML.Repository.RadniNalozi
             {
                 var rn = new RadniNalog
                 {
-                    
+                    Datum = data.Datum,
+                    NaruciteljId = data.NaruciteljId,
+                    PrimateljId = data.PrimateljId,
+                    RegOznakaId = data.RegOznakaId,
+                    RN = data.RN,
+                    RadilisteId = data.RadilisteId,
+                    RobuIzdaoId = data.RobuIzdaoId,
+                    VozacId = data.VozacId,
+                    VrstaRobeId = data.VrstaRobeId,
+                    VrstaStroja = data.VrstaStroja,
+                    VrstaUslugeId = data.VrstaUslugeId
                 };
 
                 context.RadniNalog.Add(rn);

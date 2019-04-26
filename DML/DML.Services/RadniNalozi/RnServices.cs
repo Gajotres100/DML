@@ -21,14 +21,8 @@ namespace DML.Services.RadniNalozi
             rnRepository.SaveRn(data);
         }
 
-        public List<RnDto> GetRnDtos()
-        {
-            return rnRepository.GetAllRn();
-        }
-
-        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId)
-        {
-            return rnRepository.GetRnForTimePeriodAndReg(start, end, regId);
-        }
+        public List<RnDto> GetRnDtos() => rnRepository.GetAllRn();
+        public List<RnDto> GetRnForTimePeriodAndReg(DateTime start, DateTime end, int regId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId);
+        public FormLoadDto GetLoadData() => rnRepository.GetLoadData();
     }
 }

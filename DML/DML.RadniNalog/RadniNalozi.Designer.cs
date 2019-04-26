@@ -34,16 +34,7 @@
             this.txtRadniNalog = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnSaveRn = new System.Windows.Forms.Button();
-            this.TxtKolicinaRobe = new System.Windows.Forms.TextBox();
-            this.txtRobuIzdao = new System.Windows.Forms.TextBox();
-            this.txtRegOznakaKamiona = new System.Windows.Forms.TextBox();
-            this.txtVrstaUsluge = new System.Windows.Forms.TextBox();
-            this.txtRadilište = new System.Windows.Forms.TextBox();
-            this.txtVozac = new System.Windows.Forms.TextBox();
             this.txtVrstaStroja = new System.Windows.Forms.TextBox();
-            this.txtNarucitelj = new System.Windows.Forms.TextBox();
-            this.txtPrimateljRobe = new System.Windows.Forms.TextBox();
-            this.txtVrstaRobe = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,11 +52,34 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtRegFilter = new System.Windows.Forms.TextBox();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.ddgRadniNalozi = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TxtKolicinaRobe = new System.Windows.Forms.TextBox();
+            this.cbVrstaRobe = new System.Windows.Forms.ComboBox();
+            this.cbRobuIzdao = new System.Windows.Forms.ComboBox();
+            this.cbRegOznakaKamiona = new System.Windows.Forms.ComboBox();
+            this.cbVrstaUsluge = new System.Windows.Forms.ComboBox();
+            this.cbRadiliste = new System.Windows.Forms.ComboBox();
+            this.cbVozac = new System.Windows.Forms.ComboBox();
+            this.cbNarucitelj = new System.Windows.Forms.ComboBox();
+            this.cbPrimatelj = new System.Windows.Forms.ComboBox();
+            this.cbRegKamionaSearch = new System.Windows.Forms.ComboBox();
+            this.cbRobuIzdaoSearch = new System.Windows.Forms.ComboBox();
+            this.cbVrstaUslugeSearch = new System.Windows.Forms.ComboBox();
+            this.cbGradisliteSearch = new System.Windows.Forms.ComboBox();
+            this.cbVozacSearch = new System.Windows.Forms.ComboBox();
+            this.cbVrstaRobeSearch = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbNaruciteljSearch = new System.Windows.Forms.ComboBox();
+            this.cbPrimateljSearch = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,19 +100,19 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbPrimatelj);
+            this.tabPage1.Controls.Add(this.cbNarucitelj);
+            this.tabPage1.Controls.Add(this.cbVozac);
+            this.tabPage1.Controls.Add(this.cbRadiliste);
+            this.tabPage1.Controls.Add(this.cbVrstaUsluge);
+            this.tabPage1.Controls.Add(this.cbRegOznakaKamiona);
+            this.tabPage1.Controls.Add(this.cbRobuIzdao);
+            this.tabPage1.Controls.Add(this.cbVrstaRobe);
             this.tabPage1.Controls.Add(this.txtRadniNalog);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.btnSaveRn);
             this.tabPage1.Controls.Add(this.TxtKolicinaRobe);
-            this.tabPage1.Controls.Add(this.txtRobuIzdao);
-            this.tabPage1.Controls.Add(this.txtRegOznakaKamiona);
-            this.tabPage1.Controls.Add(this.txtVrstaUsluge);
-            this.tabPage1.Controls.Add(this.txtRadilište);
-            this.tabPage1.Controls.Add(this.txtVozac);
             this.tabPage1.Controls.Add(this.txtVrstaStroja);
-            this.tabPage1.Controls.Add(this.txtNarucitelj);
-            this.tabPage1.Controls.Add(this.txtPrimateljRobe);
-            this.tabPage1.Controls.Add(this.txtVrstaRobe);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
@@ -149,85 +163,13 @@
             this.btnSaveRn.UseVisualStyleBackColor = true;
             this.btnSaveRn.Click += new System.EventHandler(this.btnSaveRn_Click);
             // 
-            // TxtKolicinaRobe
-            // 
-            this.TxtKolicinaRobe.Location = new System.Drawing.Point(130, 67);
-            this.TxtKolicinaRobe.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKolicinaRobe.Name = "TxtKolicinaRobe";
-            this.TxtKolicinaRobe.Size = new System.Drawing.Size(151, 20);
-            this.TxtKolicinaRobe.TabIndex = 23;
-            // 
-            // txtRobuIzdao
-            // 
-            this.txtRobuIzdao.Location = new System.Drawing.Point(130, 96);
-            this.txtRobuIzdao.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRobuIzdao.Name = "txtRobuIzdao";
-            this.txtRobuIzdao.Size = new System.Drawing.Size(151, 20);
-            this.txtRobuIzdao.TabIndex = 22;
-            // 
-            // txtRegOznakaKamiona
-            // 
-            this.txtRegOznakaKamiona.Location = new System.Drawing.Point(130, 126);
-            this.txtRegOznakaKamiona.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRegOznakaKamiona.Name = "txtRegOznakaKamiona";
-            this.txtRegOznakaKamiona.Size = new System.Drawing.Size(151, 20);
-            this.txtRegOznakaKamiona.TabIndex = 21;
-            // 
-            // txtVrstaUsluge
-            // 
-            this.txtVrstaUsluge.Location = new System.Drawing.Point(130, 153);
-            this.txtVrstaUsluge.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVrstaUsluge.Name = "txtVrstaUsluge";
-            this.txtVrstaUsluge.Size = new System.Drawing.Size(151, 20);
-            this.txtVrstaUsluge.TabIndex = 20;
-            // 
-            // txtRadilište
-            // 
-            this.txtRadilište.Location = new System.Drawing.Point(130, 179);
-            this.txtRadilište.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRadilište.Name = "txtRadilište";
-            this.txtRadilište.Size = new System.Drawing.Size(151, 20);
-            this.txtRadilište.TabIndex = 19;
-            // 
-            // txtVozac
-            // 
-            this.txtVozac.Location = new System.Drawing.Point(130, 205);
-            this.txtVozac.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVozac.Name = "txtVozac";
-            this.txtVozac.Size = new System.Drawing.Size(151, 20);
-            this.txtVozac.TabIndex = 18;
-            // 
             // txtVrstaStroja
             // 
-            this.txtVrstaStroja.Location = new System.Drawing.Point(130, 231);
+            this.txtVrstaStroja.Location = new System.Drawing.Point(130, 233);
             this.txtVrstaStroja.Margin = new System.Windows.Forms.Padding(2);
             this.txtVrstaStroja.Name = "txtVrstaStroja";
             this.txtVrstaStroja.Size = new System.Drawing.Size(151, 20);
             this.txtVrstaStroja.TabIndex = 17;
-            // 
-            // txtNarucitelj
-            // 
-            this.txtNarucitelj.Location = new System.Drawing.Point(130, 256);
-            this.txtNarucitelj.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNarucitelj.Name = "txtNarucitelj";
-            this.txtNarucitelj.Size = new System.Drawing.Size(151, 20);
-            this.txtNarucitelj.TabIndex = 16;
-            // 
-            // txtPrimateljRobe
-            // 
-            this.txtPrimateljRobe.Location = new System.Drawing.Point(130, 281);
-            this.txtPrimateljRobe.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrimateljRobe.Name = "txtPrimateljRobe";
-            this.txtPrimateljRobe.Size = new System.Drawing.Size(151, 20);
-            this.txtPrimateljRobe.TabIndex = 15;
-            // 
-            // txtVrstaRobe
-            // 
-            this.txtVrstaRobe.Location = new System.Drawing.Point(130, 41);
-            this.txtVrstaRobe.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVrstaRobe.Name = "txtVrstaRobe";
-            this.txtVrstaRobe.Size = new System.Drawing.Size(151, 20);
-            this.txtVrstaRobe.TabIndex = 12;
             // 
             // label11
             // 
@@ -349,11 +291,25 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.cbPrimateljSearch);
+            this.tabPage2.Controls.Add(this.cbNaruciteljSearch);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.cbVrstaRobeSearch);
+            this.tabPage2.Controls.Add(this.cbVozacSearch);
+            this.tabPage2.Controls.Add(this.cbGradisliteSearch);
+            this.tabPage2.Controls.Add(this.cbVrstaUslugeSearch);
+            this.tabPage2.Controls.Add(this.cbRobuIzdaoSearch);
+            this.tabPage2.Controls.Add(this.cbRegKamionaSearch);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.txtRegFilter);
             this.tabPage2.Controls.Add(this.dtpEnd);
             this.tabPage2.Controls.Add(this.dtpStart);
             this.tabPage2.Controls.Add(this.ddgRadniNalozi);
@@ -365,10 +321,11 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Filter po registraciji";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(125, 84);
+            this.button1.Location = new System.Drawing.Point(99, 133);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 26;
@@ -381,9 +338,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 57);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(114, 13);
+            this.label15.Size = new System.Drawing.Size(79, 13);
             this.label15.TabIndex = 25;
-            this.label15.Text = "Reg. oznaka kamiona:";
+            this.label15.Text = "Reg.  kamiona:";
             // 
             // label14
             // 
@@ -403,17 +360,9 @@
             this.label13.TabIndex = 23;
             this.label13.Text = "Od:";
             // 
-            // txtRegFilter
-            // 
-            this.txtRegFilter.Location = new System.Drawing.Point(125, 57);
-            this.txtRegFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRegFilter.Name = "txtRegFilter";
-            this.txtRegFilter.Size = new System.Drawing.Size(200, 20);
-            this.txtRegFilter.TabIndex = 22;
-            // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(125, 31);
+            this.dtpEnd.Location = new System.Drawing.Point(99, 28);
             this.dtpEnd.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 20);
@@ -421,7 +370,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(125, 5);
+            this.dtpStart.Location = new System.Drawing.Point(99, 5);
             this.dtpStart.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 20);
@@ -432,18 +381,218 @@
             this.ddgRadniNalozi.AllowUserToAddRows = false;
             this.ddgRadniNalozi.AllowUserToDeleteRows = false;
             this.ddgRadniNalozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ddgRadniNalozi.Location = new System.Drawing.Point(5, 112);
+            this.ddgRadniNalozi.Location = new System.Drawing.Point(3, 161);
             this.ddgRadniNalozi.Margin = new System.Windows.Forms.Padding(2);
             this.ddgRadniNalozi.Name = "ddgRadniNalozi";
             this.ddgRadniNalozi.ReadOnly = true;
             this.ddgRadniNalozi.RowTemplate.Height = 24;
-            this.ddgRadniNalozi.Size = new System.Drawing.Size(566, 223);
+            this.ddgRadniNalozi.Size = new System.Drawing.Size(566, 169);
             this.ddgRadniNalozi.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // TxtKolicinaRobe
+            // 
+            this.TxtKolicinaRobe.Location = new System.Drawing.Point(130, 67);
+            this.TxtKolicinaRobe.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtKolicinaRobe.Name = "TxtKolicinaRobe";
+            this.TxtKolicinaRobe.Size = new System.Drawing.Size(151, 20);
+            this.TxtKolicinaRobe.TabIndex = 23;
+            // 
+            // cbVrstaRobe
+            // 
+            this.cbVrstaRobe.FormattingEnabled = true;
+            this.cbVrstaRobe.Location = new System.Drawing.Point(130, 41);
+            this.cbVrstaRobe.Name = "cbVrstaRobe";
+            this.cbVrstaRobe.Size = new System.Drawing.Size(151, 21);
+            this.cbVrstaRobe.TabIndex = 27;
+            // 
+            // cbRobuIzdao
+            // 
+            this.cbRobuIzdao.FormattingEnabled = true;
+            this.cbRobuIzdao.Location = new System.Drawing.Point(130, 93);
+            this.cbRobuIzdao.Name = "cbRobuIzdao";
+            this.cbRobuIzdao.Size = new System.Drawing.Size(151, 21);
+            this.cbRobuIzdao.TabIndex = 28;
+            // 
+            // cbRegOznakaKamiona
+            // 
+            this.cbRegOznakaKamiona.FormattingEnabled = true;
+            this.cbRegOznakaKamiona.Location = new System.Drawing.Point(130, 122);
+            this.cbRegOznakaKamiona.Name = "cbRegOznakaKamiona";
+            this.cbRegOznakaKamiona.Size = new System.Drawing.Size(151, 21);
+            this.cbRegOznakaKamiona.TabIndex = 29;
+            // 
+            // cbVrstaUsluge
+            // 
+            this.cbVrstaUsluge.FormattingEnabled = true;
+            this.cbVrstaUsluge.Location = new System.Drawing.Point(130, 149);
+            this.cbVrstaUsluge.Name = "cbVrstaUsluge";
+            this.cbVrstaUsluge.Size = new System.Drawing.Size(151, 21);
+            this.cbVrstaUsluge.TabIndex = 30;
+            // 
+            // cbRadiliste
+            // 
+            this.cbRadiliste.FormattingEnabled = true;
+            this.cbRadiliste.Location = new System.Drawing.Point(130, 179);
+            this.cbRadiliste.Name = "cbRadiliste";
+            this.cbRadiliste.Size = new System.Drawing.Size(151, 21);
+            this.cbRadiliste.TabIndex = 31;
+            // 
+            // cbVozac
+            // 
+            this.cbVozac.FormattingEnabled = true;
+            this.cbVozac.Location = new System.Drawing.Point(130, 206);
+            this.cbVozac.Name = "cbVozac";
+            this.cbVozac.Size = new System.Drawing.Size(151, 21);
+            this.cbVozac.TabIndex = 32;
+            // 
+            // cbNarucitelj
+            // 
+            this.cbNarucitelj.FormattingEnabled = true;
+            this.cbNarucitelj.Location = new System.Drawing.Point(130, 259);
+            this.cbNarucitelj.Name = "cbNarucitelj";
+            this.cbNarucitelj.Size = new System.Drawing.Size(151, 21);
+            this.cbNarucitelj.TabIndex = 33;
+            // 
+            // cbPrimatelj
+            // 
+            this.cbPrimatelj.FormattingEnabled = true;
+            this.cbPrimatelj.Location = new System.Drawing.Point(130, 286);
+            this.cbPrimatelj.Name = "cbPrimatelj";
+            this.cbPrimatelj.Size = new System.Drawing.Size(151, 21);
+            this.cbPrimatelj.TabIndex = 34;
+            // 
+            // cbRegKamionaSearch
+            // 
+            this.cbRegKamionaSearch.FormattingEnabled = true;
+            this.cbRegKamionaSearch.Location = new System.Drawing.Point(99, 54);
+            this.cbRegKamionaSearch.Name = "cbRegKamionaSearch";
+            this.cbRegKamionaSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbRegKamionaSearch.TabIndex = 27;
+            // 
+            // cbRobuIzdaoSearch
+            // 
+            this.cbRobuIzdaoSearch.FormattingEnabled = true;
+            this.cbRobuIzdaoSearch.Location = new System.Drawing.Point(369, 5);
+            this.cbRobuIzdaoSearch.Name = "cbRobuIzdaoSearch";
+            this.cbRobuIzdaoSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbRobuIzdaoSearch.TabIndex = 28;
+            // 
+            // cbVrstaUslugeSearch
+            // 
+            this.cbVrstaUslugeSearch.FormattingEnabled = true;
+            this.cbVrstaUslugeSearch.Location = new System.Drawing.Point(369, 31);
+            this.cbVrstaUslugeSearch.Name = "cbVrstaUslugeSearch";
+            this.cbVrstaUslugeSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVrstaUslugeSearch.TabIndex = 29;
+            // 
+            // cbGradisliteSearch
+            // 
+            this.cbGradisliteSearch.FormattingEnabled = true;
+            this.cbGradisliteSearch.Location = new System.Drawing.Point(369, 58);
+            this.cbGradisliteSearch.Name = "cbGradisliteSearch";
+            this.cbGradisliteSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbGradisliteSearch.TabIndex = 30;
+            // 
+            // cbVozacSearch
+            // 
+            this.cbVozacSearch.FormattingEnabled = true;
+            this.cbVozacSearch.Location = new System.Drawing.Point(369, 84);
+            this.cbVozacSearch.Name = "cbVozacSearch";
+            this.cbVozacSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVozacSearch.TabIndex = 31;
+            // 
+            // cbVrstaRobeSearch
+            // 
+            this.cbVrstaRobeSearch.FormattingEnabled = true;
+            this.cbVrstaRobeSearch.Location = new System.Drawing.Point(99, 81);
+            this.cbVrstaRobeSearch.Name = "cbVrstaRobeSearch";
+            this.cbVrstaRobeSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVrstaRobeSearch.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 84);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Vrsta robe:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(305, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 13);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Robu izdao:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(305, 31);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Vrsta uslu.:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(305, 58);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 13);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "Gradilište:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(305, 87);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(40, 13);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "Vozać:";
+            // 
+            // cbNaruciteljSearch
+            // 
+            this.cbNaruciteljSearch.FormattingEnabled = true;
+            this.cbNaruciteljSearch.Location = new System.Drawing.Point(99, 108);
+            this.cbNaruciteljSearch.Name = "cbNaruciteljSearch";
+            this.cbNaruciteljSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbNaruciteljSearch.TabIndex = 38;
+            this.cbNaruciteljSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cbPrimateljSearch
+            // 
+            this.cbPrimateljSearch.FormattingEnabled = true;
+            this.cbPrimateljSearch.Location = new System.Drawing.Point(369, 111);
+            this.cbPrimateljSearch.Name = "cbPrimateljSearch";
+            this.cbPrimateljSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbPrimateljSearch.TabIndex = 39;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 111);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(54, 13);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "Naručitelj:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(305, 114);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(49, 13);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "Primatelj:";
             // 
             // RadniNalozi
             // 
@@ -474,16 +623,7 @@
         private System.Windows.Forms.TextBox txtRadniNalog;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSaveRn;
-        private System.Windows.Forms.TextBox TxtKolicinaRobe;
-        private System.Windows.Forms.TextBox txtRobuIzdao;
-        private System.Windows.Forms.TextBox txtRegOznakaKamiona;
-        private System.Windows.Forms.TextBox txtVrstaUsluge;
-        private System.Windows.Forms.TextBox txtRadilište;
-        private System.Windows.Forms.TextBox txtVozac;
         private System.Windows.Forms.TextBox txtVrstaStroja;
-        private System.Windows.Forms.TextBox txtNarucitelj;
-        private System.Windows.Forms.TextBox txtPrimateljRobe;
-        private System.Windows.Forms.TextBox txtVrstaRobe;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -501,9 +641,32 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtRegFilter;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.ComboBox cbPrimatelj;
+        private System.Windows.Forms.ComboBox cbNarucitelj;
+        private System.Windows.Forms.ComboBox cbVozac;
+        private System.Windows.Forms.ComboBox cbRadiliste;
+        private System.Windows.Forms.ComboBox cbVrstaUsluge;
+        private System.Windows.Forms.ComboBox cbRegOznakaKamiona;
+        private System.Windows.Forms.ComboBox cbRobuIzdao;
+        private System.Windows.Forms.ComboBox cbVrstaRobe;
+        private System.Windows.Forms.TextBox TxtKolicinaRobe;
+        private System.Windows.Forms.ComboBox cbVrstaRobeSearch;
+        private System.Windows.Forms.ComboBox cbVozacSearch;
+        private System.Windows.Forms.ComboBox cbGradisliteSearch;
+        private System.Windows.Forms.ComboBox cbVrstaUslugeSearch;
+        private System.Windows.Forms.ComboBox cbRobuIzdaoSearch;
+        private System.Windows.Forms.ComboBox cbRegKamionaSearch;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cbPrimateljSearch;
+        private System.Windows.Forms.ComboBox cbNaruciteljSearch;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }
 
