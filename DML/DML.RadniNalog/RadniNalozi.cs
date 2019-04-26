@@ -37,8 +37,9 @@ namespace DML.RadniNalog
 
         private void RadniNalozi_Load(object sender, EventArgs e)
         {
-            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
-            
+
+
+            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();            
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)

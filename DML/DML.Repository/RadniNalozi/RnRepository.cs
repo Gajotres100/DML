@@ -47,5 +47,63 @@ namespace DML.Repository.RadniNalozi
                 }).ToList();
             }
         }
+
+        public FormLoadDto GetLoadData()
+        {
+            using (var context = new DMLEntities())
+            {
+                return  new FormLoadDto
+                {
+
+                    NarutiteljDtos = context.Narucitelj.Select(x => new NarutiteljDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    PrimateljDtos = context.Primatelj.Select(x => new PrimateljDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    RadilisteDtos = context.Radiliste.Select(x => new RadilisteDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    RegOznakaDtos = context.RegOznaka.Select(x => new RegOznakaDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    RobuIzdaoDtos = context.RobuIzdao.Select(x => new RobuIzdaoDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    VozacDtos = context.Vozac.Select(x => new VozacDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    VrstaRobeDtos = context.VrstaRobe.Select(x => new VrstaRobeDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    VrstaUslugeDtos = context.VrstaUsluge.Select(x => new VrstaUslugeDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList()
+                };
+            }
+        }
     }
 }
