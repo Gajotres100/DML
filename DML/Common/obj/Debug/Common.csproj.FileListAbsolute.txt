@@ -1,0 +1,6 @@
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\bin\Debug\Common.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\bin\Debug\Common.pdb
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\obj\Debug\Common.dll
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Common\obj\Debug\Common.pdb

@@ -102,6 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{a1cb1b2b-dbbb-4dd2-97e0-5901a9dd99c3}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DML.Services\DML.Services.csproj">
       <Project>{0515598B-3C97-4907-B9AD-1B919DF1A649}</Project>
       <Name>DML.Services</Name>

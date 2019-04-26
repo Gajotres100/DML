@@ -31,9 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbPrimatelj = new System.Windows.Forms.ComboBox();
+            this.cbNarucitelj = new System.Windows.Forms.ComboBox();
+            this.cbVozac = new System.Windows.Forms.ComboBox();
+            this.cbRadiliste = new System.Windows.Forms.ComboBox();
+            this.cbVrstaUsluge = new System.Windows.Forms.ComboBox();
+            this.cbRegOznakaKamiona = new System.Windows.Forms.ComboBox();
+            this.cbRobuIzdao = new System.Windows.Forms.ComboBox();
+            this.cbVrstaRobe = new System.Windows.Forms.ComboBox();
             this.txtRadniNalog = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnSaveRn = new System.Windows.Forms.Button();
+            this.TxtKolicinaRobe = new System.Windows.Forms.TextBox();
             this.txtVrstaStroja = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,6 +57,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbPrimateljSearch = new System.Windows.Forms.ComboBox();
+            this.cbNaruciteljSearch = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbVrstaRobeSearch = new System.Windows.Forms.ComboBox();
+            this.cbVozacSearch = new System.Windows.Forms.ComboBox();
+            this.cbGradisliteSearch = new System.Windows.Forms.ComboBox();
+            this.cbVrstaUslugeSearch = new System.Windows.Forms.ComboBox();
+            this.cbRobuIzdaoSearch = new System.Windows.Forms.ComboBox();
+            this.cbRegKamionaSearch = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -55,41 +79,27 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.ddgRadniNalozi = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtSettingsName = new System.Windows.Forms.TextBox();
+            this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.TxtKolicinaRobe = new System.Windows.Forms.TextBox();
-            this.cbVrstaRobe = new System.Windows.Forms.ComboBox();
-            this.cbRobuIzdao = new System.Windows.Forms.ComboBox();
-            this.cbRegOznakaKamiona = new System.Windows.Forms.ComboBox();
-            this.cbVrstaUsluge = new System.Windows.Forms.ComboBox();
-            this.cbRadiliste = new System.Windows.Forms.ComboBox();
-            this.cbVozac = new System.Windows.Forms.ComboBox();
-            this.cbNarucitelj = new System.Windows.Forms.ComboBox();
-            this.cbPrimatelj = new System.Windows.Forms.ComboBox();
-            this.cbRegKamionaSearch = new System.Windows.Forms.ComboBox();
-            this.cbRobuIzdaoSearch = new System.Windows.Forms.ComboBox();
-            this.cbVrstaUslugeSearch = new System.Windows.Forms.ComboBox();
-            this.cbGradisliteSearch = new System.Windows.Forms.ComboBox();
-            this.cbVozacSearch = new System.Windows.Forms.ComboBox();
-            this.cbVrstaRobeSearch = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cbNaruciteljSearch = new System.Windows.Forms.ComboBox();
-            this.cbPrimateljSearch = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.dtgSettings = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddgRadniNalozi)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(9, 10);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
@@ -134,6 +144,70 @@
             this.tabPage1.Text = "Unos radnog naloga";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbPrimatelj
+            // 
+            this.cbPrimatelj.FormattingEnabled = true;
+            this.cbPrimatelj.Location = new System.Drawing.Point(130, 286);
+            this.cbPrimatelj.Name = "cbPrimatelj";
+            this.cbPrimatelj.Size = new System.Drawing.Size(151, 21);
+            this.cbPrimatelj.TabIndex = 34;
+            // 
+            // cbNarucitelj
+            // 
+            this.cbNarucitelj.FormattingEnabled = true;
+            this.cbNarucitelj.Location = new System.Drawing.Point(130, 259);
+            this.cbNarucitelj.Name = "cbNarucitelj";
+            this.cbNarucitelj.Size = new System.Drawing.Size(151, 21);
+            this.cbNarucitelj.TabIndex = 33;
+            // 
+            // cbVozac
+            // 
+            this.cbVozac.FormattingEnabled = true;
+            this.cbVozac.Location = new System.Drawing.Point(130, 206);
+            this.cbVozac.Name = "cbVozac";
+            this.cbVozac.Size = new System.Drawing.Size(151, 21);
+            this.cbVozac.TabIndex = 32;
+            // 
+            // cbRadiliste
+            // 
+            this.cbRadiliste.FormattingEnabled = true;
+            this.cbRadiliste.Location = new System.Drawing.Point(130, 179);
+            this.cbRadiliste.Name = "cbRadiliste";
+            this.cbRadiliste.Size = new System.Drawing.Size(151, 21);
+            this.cbRadiliste.TabIndex = 31;
+            // 
+            // cbVrstaUsluge
+            // 
+            this.cbVrstaUsluge.FormattingEnabled = true;
+            this.cbVrstaUsluge.Location = new System.Drawing.Point(130, 149);
+            this.cbVrstaUsluge.Name = "cbVrstaUsluge";
+            this.cbVrstaUsluge.Size = new System.Drawing.Size(151, 21);
+            this.cbVrstaUsluge.TabIndex = 30;
+            // 
+            // cbRegOznakaKamiona
+            // 
+            this.cbRegOznakaKamiona.FormattingEnabled = true;
+            this.cbRegOznakaKamiona.Location = new System.Drawing.Point(130, 122);
+            this.cbRegOznakaKamiona.Name = "cbRegOznakaKamiona";
+            this.cbRegOznakaKamiona.Size = new System.Drawing.Size(151, 21);
+            this.cbRegOznakaKamiona.TabIndex = 29;
+            // 
+            // cbRobuIzdao
+            // 
+            this.cbRobuIzdao.FormattingEnabled = true;
+            this.cbRobuIzdao.Location = new System.Drawing.Point(130, 93);
+            this.cbRobuIzdao.Name = "cbRobuIzdao";
+            this.cbRobuIzdao.Size = new System.Drawing.Size(151, 21);
+            this.cbRobuIzdao.TabIndex = 28;
+            // 
+            // cbVrstaRobe
+            // 
+            this.cbVrstaRobe.FormattingEnabled = true;
+            this.cbVrstaRobe.Location = new System.Drawing.Point(130, 41);
+            this.cbVrstaRobe.Name = "cbVrstaRobe";
+            this.cbVrstaRobe.Size = new System.Drawing.Size(151, 21);
+            this.cbVrstaRobe.TabIndex = 27;
+            // 
             // txtRadniNalog
             // 
             this.txtRadniNalog.Location = new System.Drawing.Point(419, 17);
@@ -162,6 +236,14 @@
             this.btnSaveRn.Text = "Spremin radni nalog";
             this.btnSaveRn.UseVisualStyleBackColor = true;
             this.btnSaveRn.Click += new System.EventHandler(this.btnSaveRn_Click);
+            // 
+            // TxtKolicinaRobe
+            // 
+            this.TxtKolicinaRobe.Location = new System.Drawing.Point(130, 67);
+            this.TxtKolicinaRobe.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtKolicinaRobe.Name = "TxtKolicinaRobe";
+            this.TxtKolicinaRobe.Size = new System.Drawing.Size(151, 20);
+            this.TxtKolicinaRobe.TabIndex = 23;
             // 
             // txtVrstaStroja
             // 
@@ -323,6 +405,134 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(305, 114);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(49, 13);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "Primatelj:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 111);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(54, 13);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "Naručitelj:";
+            // 
+            // cbPrimateljSearch
+            // 
+            this.cbPrimateljSearch.FormattingEnabled = true;
+            this.cbPrimateljSearch.Location = new System.Drawing.Point(369, 111);
+            this.cbPrimateljSearch.Name = "cbPrimateljSearch";
+            this.cbPrimateljSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbPrimateljSearch.TabIndex = 39;
+            // 
+            // cbNaruciteljSearch
+            // 
+            this.cbNaruciteljSearch.FormattingEnabled = true;
+            this.cbNaruciteljSearch.Location = new System.Drawing.Point(99, 108);
+            this.cbNaruciteljSearch.Name = "cbNaruciteljSearch";
+            this.cbNaruciteljSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbNaruciteljSearch.TabIndex = 38;
+            this.cbNaruciteljSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(305, 87);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(40, 13);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "Vozać:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(305, 58);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 13);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "Gradilište:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(305, 31);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Vrsta uslu.:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(305, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 13);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Robu izdao:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 84);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Vrsta robe:";
+            // 
+            // cbVrstaRobeSearch
+            // 
+            this.cbVrstaRobeSearch.FormattingEnabled = true;
+            this.cbVrstaRobeSearch.Location = new System.Drawing.Point(99, 81);
+            this.cbVrstaRobeSearch.Name = "cbVrstaRobeSearch";
+            this.cbVrstaRobeSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVrstaRobeSearch.TabIndex = 32;
+            // 
+            // cbVozacSearch
+            // 
+            this.cbVozacSearch.FormattingEnabled = true;
+            this.cbVozacSearch.Location = new System.Drawing.Point(369, 84);
+            this.cbVozacSearch.Name = "cbVozacSearch";
+            this.cbVozacSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVozacSearch.TabIndex = 31;
+            // 
+            // cbGradisliteSearch
+            // 
+            this.cbGradisliteSearch.FormattingEnabled = true;
+            this.cbGradisliteSearch.Location = new System.Drawing.Point(369, 58);
+            this.cbGradisliteSearch.Name = "cbGradisliteSearch";
+            this.cbGradisliteSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbGradisliteSearch.TabIndex = 30;
+            // 
+            // cbVrstaUslugeSearch
+            // 
+            this.cbVrstaUslugeSearch.FormattingEnabled = true;
+            this.cbVrstaUslugeSearch.Location = new System.Drawing.Point(369, 31);
+            this.cbVrstaUslugeSearch.Name = "cbVrstaUslugeSearch";
+            this.cbVrstaUslugeSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbVrstaUslugeSearch.TabIndex = 29;
+            // 
+            // cbRobuIzdaoSearch
+            // 
+            this.cbRobuIzdaoSearch.FormattingEnabled = true;
+            this.cbRobuIzdaoSearch.Location = new System.Drawing.Point(369, 5);
+            this.cbRobuIzdaoSearch.Name = "cbRobuIzdaoSearch";
+            this.cbRobuIzdaoSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbRobuIzdaoSearch.TabIndex = 28;
+            // 
+            // cbRegKamionaSearch
+            // 
+            this.cbRegKamionaSearch.FormattingEnabled = true;
+            this.cbRegKamionaSearch.Location = new System.Drawing.Point(99, 54);
+            this.cbRegKamionaSearch.Name = "cbRegKamionaSearch";
+            this.cbRegKamionaSearch.Size = new System.Drawing.Size(200, 21);
+            this.cbRegKamionaSearch.TabIndex = 27;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(99, 133);
@@ -389,210 +599,81 @@
             this.ddgRadniNalozi.Size = new System.Drawing.Size(566, 169);
             this.ddgRadniNalozi.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dtgSettings);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.txtSettingsName);
+            this.tabPage3.Controls.Add(this.cbVrstaPostavke);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(574, 337);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Postavke";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(470, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Spremi";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(261, 20);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(24, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Ime";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 19);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(78, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Vrsta postavke";
+            // 
+            // txtSettingsName
+            // 
+            this.txtSettingsName.Location = new System.Drawing.Point(291, 16);
+            this.txtSettingsName.Name = "txtSettingsName";
+            this.txtSettingsName.Size = new System.Drawing.Size(154, 20);
+            this.txtSettingsName.TabIndex = 1;
+            // 
+            // cbVrstaPostavke
+            // 
+            this.cbVrstaPostavke.FormattingEnabled = true;
+            this.cbVrstaPostavke.Location = new System.Drawing.Point(91, 16);
+            this.cbVrstaPostavke.Name = "cbVrstaPostavke";
+            this.cbVrstaPostavke.Size = new System.Drawing.Size(154, 21);
+            this.cbVrstaPostavke.TabIndex = 0;
+            this.cbVrstaPostavke.SelectedIndexChanged += new System.EventHandler(this.cbVrstaPostavke_SelectedIndexChanged);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // TxtKolicinaRobe
+            // dtgSettings
             // 
-            this.TxtKolicinaRobe.Location = new System.Drawing.Point(130, 67);
-            this.TxtKolicinaRobe.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKolicinaRobe.Name = "TxtKolicinaRobe";
-            this.TxtKolicinaRobe.Size = new System.Drawing.Size(151, 20);
-            this.TxtKolicinaRobe.TabIndex = 23;
-            // 
-            // cbVrstaRobe
-            // 
-            this.cbVrstaRobe.FormattingEnabled = true;
-            this.cbVrstaRobe.Location = new System.Drawing.Point(130, 41);
-            this.cbVrstaRobe.Name = "cbVrstaRobe";
-            this.cbVrstaRobe.Size = new System.Drawing.Size(151, 21);
-            this.cbVrstaRobe.TabIndex = 27;
-            // 
-            // cbRobuIzdao
-            // 
-            this.cbRobuIzdao.FormattingEnabled = true;
-            this.cbRobuIzdao.Location = new System.Drawing.Point(130, 93);
-            this.cbRobuIzdao.Name = "cbRobuIzdao";
-            this.cbRobuIzdao.Size = new System.Drawing.Size(151, 21);
-            this.cbRobuIzdao.TabIndex = 28;
-            // 
-            // cbRegOznakaKamiona
-            // 
-            this.cbRegOznakaKamiona.FormattingEnabled = true;
-            this.cbRegOznakaKamiona.Location = new System.Drawing.Point(130, 122);
-            this.cbRegOznakaKamiona.Name = "cbRegOznakaKamiona";
-            this.cbRegOznakaKamiona.Size = new System.Drawing.Size(151, 21);
-            this.cbRegOznakaKamiona.TabIndex = 29;
-            // 
-            // cbVrstaUsluge
-            // 
-            this.cbVrstaUsluge.FormattingEnabled = true;
-            this.cbVrstaUsluge.Location = new System.Drawing.Point(130, 149);
-            this.cbVrstaUsluge.Name = "cbVrstaUsluge";
-            this.cbVrstaUsluge.Size = new System.Drawing.Size(151, 21);
-            this.cbVrstaUsluge.TabIndex = 30;
-            // 
-            // cbRadiliste
-            // 
-            this.cbRadiliste.FormattingEnabled = true;
-            this.cbRadiliste.Location = new System.Drawing.Point(130, 179);
-            this.cbRadiliste.Name = "cbRadiliste";
-            this.cbRadiliste.Size = new System.Drawing.Size(151, 21);
-            this.cbRadiliste.TabIndex = 31;
-            // 
-            // cbVozac
-            // 
-            this.cbVozac.FormattingEnabled = true;
-            this.cbVozac.Location = new System.Drawing.Point(130, 206);
-            this.cbVozac.Name = "cbVozac";
-            this.cbVozac.Size = new System.Drawing.Size(151, 21);
-            this.cbVozac.TabIndex = 32;
-            // 
-            // cbNarucitelj
-            // 
-            this.cbNarucitelj.FormattingEnabled = true;
-            this.cbNarucitelj.Location = new System.Drawing.Point(130, 259);
-            this.cbNarucitelj.Name = "cbNarucitelj";
-            this.cbNarucitelj.Size = new System.Drawing.Size(151, 21);
-            this.cbNarucitelj.TabIndex = 33;
-            // 
-            // cbPrimatelj
-            // 
-            this.cbPrimatelj.FormattingEnabled = true;
-            this.cbPrimatelj.Location = new System.Drawing.Point(130, 286);
-            this.cbPrimatelj.Name = "cbPrimatelj";
-            this.cbPrimatelj.Size = new System.Drawing.Size(151, 21);
-            this.cbPrimatelj.TabIndex = 34;
-            // 
-            // cbRegKamionaSearch
-            // 
-            this.cbRegKamionaSearch.FormattingEnabled = true;
-            this.cbRegKamionaSearch.Location = new System.Drawing.Point(99, 54);
-            this.cbRegKamionaSearch.Name = "cbRegKamionaSearch";
-            this.cbRegKamionaSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbRegKamionaSearch.TabIndex = 27;
-            // 
-            // cbRobuIzdaoSearch
-            // 
-            this.cbRobuIzdaoSearch.FormattingEnabled = true;
-            this.cbRobuIzdaoSearch.Location = new System.Drawing.Point(369, 5);
-            this.cbRobuIzdaoSearch.Name = "cbRobuIzdaoSearch";
-            this.cbRobuIzdaoSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbRobuIzdaoSearch.TabIndex = 28;
-            // 
-            // cbVrstaUslugeSearch
-            // 
-            this.cbVrstaUslugeSearch.FormattingEnabled = true;
-            this.cbVrstaUslugeSearch.Location = new System.Drawing.Point(369, 31);
-            this.cbVrstaUslugeSearch.Name = "cbVrstaUslugeSearch";
-            this.cbVrstaUslugeSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbVrstaUslugeSearch.TabIndex = 29;
-            // 
-            // cbGradisliteSearch
-            // 
-            this.cbGradisliteSearch.FormattingEnabled = true;
-            this.cbGradisliteSearch.Location = new System.Drawing.Point(369, 58);
-            this.cbGradisliteSearch.Name = "cbGradisliteSearch";
-            this.cbGradisliteSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbGradisliteSearch.TabIndex = 30;
-            // 
-            // cbVozacSearch
-            // 
-            this.cbVozacSearch.FormattingEnabled = true;
-            this.cbVozacSearch.Location = new System.Drawing.Point(369, 84);
-            this.cbVozacSearch.Name = "cbVozacSearch";
-            this.cbVozacSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbVozacSearch.TabIndex = 31;
-            // 
-            // cbVrstaRobeSearch
-            // 
-            this.cbVrstaRobeSearch.FormattingEnabled = true;
-            this.cbVrstaRobeSearch.Location = new System.Drawing.Point(99, 81);
-            this.cbVrstaRobeSearch.Name = "cbVrstaRobeSearch";
-            this.cbVrstaRobeSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbVrstaRobeSearch.TabIndex = 32;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 84);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 13);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "Vrsta robe:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(305, 5);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 13);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Robu izdao:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(305, 31);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 13);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "Vrsta uslu.:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(305, 58);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 13);
-            this.label19.TabIndex = 36;
-            this.label19.Text = "Gradilište:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(305, 87);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(40, 13);
-            this.label20.TabIndex = 37;
-            this.label20.Text = "Vozać:";
-            // 
-            // cbNaruciteljSearch
-            // 
-            this.cbNaruciteljSearch.FormattingEnabled = true;
-            this.cbNaruciteljSearch.Location = new System.Drawing.Point(99, 108);
-            this.cbNaruciteljSearch.Name = "cbNaruciteljSearch";
-            this.cbNaruciteljSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbNaruciteljSearch.TabIndex = 38;
-            this.cbNaruciteljSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // cbPrimateljSearch
-            // 
-            this.cbPrimateljSearch.FormattingEnabled = true;
-            this.cbPrimateljSearch.Location = new System.Drawing.Point(369, 111);
-            this.cbPrimateljSearch.Name = "cbPrimateljSearch";
-            this.cbPrimateljSearch.Size = new System.Drawing.Size(200, 21);
-            this.cbPrimateljSearch.TabIndex = 39;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 111);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(54, 13);
-            this.label21.TabIndex = 40;
-            this.label21.Text = "Naručitelj:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(305, 114);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 13);
-            this.label22.TabIndex = 41;
-            this.label22.Text = "Primatelj:";
+            this.dtgSettings.AllowUserToAddRows = false;
+            this.dtgSettings.AllowUserToDeleteRows = false;
+            this.dtgSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgSettings.Location = new System.Drawing.Point(3, 65);
+            this.dtgSettings.Name = "dtgSettings";
+            this.dtgSettings.ReadOnly = true;
+            this.dtgSettings.Size = new System.Drawing.Size(565, 266);
+            this.dtgSettings.TabIndex = 5;
             // 
             // RadniNalozi
             // 
@@ -610,6 +691,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddgRadniNalozi)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgSettings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -667,6 +751,13 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtSettingsName;
+        private System.Windows.Forms.ComboBox cbVrstaPostavke;
+        private System.Windows.Forms.DataGridView dtgSettings;
     }
 }
 

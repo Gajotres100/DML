@@ -1,4 +1,5 @@
-﻿using DML.Services.RadniNalozi;
+﻿using Common.Enums;
+using DML.Services.RadniNalozi;
 using DML.VM;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace DML.RadniNalog
         {
             int.TryParse(TxtKolicinaRobe.Text, out int kolicinaRobe);
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
+
             var data = new RnDto
             {
                 Datum = datum,
@@ -46,12 +48,21 @@ namespace DML.RadniNalog
         }
 
         private void RadniNalozi_Load(object sender, EventArgs e)
+        {   
+            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            //ovo prebaciti na otvaranje trećeg taba
+            cbVrstaPostavke.DataSource = Enum.GetValues(typeof(CodeBook));
+            GetLoadData();
+        }
+
+        private void GetLoadData()
         {
             var loadData = rnServices.GetLoadData();
 
             cbNarucitelj.DataSource = loadData.NarutiteljDtos;
             cbNarucitelj.DisplayMember = "Name";
             cbNarucitelj.ValueMember = "Id";
+            cbNarucitelj.SelectedIndex = 0;
 
             cbPrimatelj.DataSource = loadData.PrimateljDtos;
             cbPrimatelj.DisplayMember = "Name";
@@ -81,53 +92,56 @@ namespace DML.RadniNalog
             cbVrstaUsluge.DisplayMember = "Name";
             cbVrstaUsluge.ValueMember = "Id";
 
-            loadData.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "----Odaberi----" });
-            loadData.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "----Odaberi----" });
 
-            cbNaruciteljSearch.DataSource = loadData.NarutiteljDtos;
+
+
+            var loadDataSeckond = rnServices.GetLoadData();
+            loadDataSeckond.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "----Odaberi----" });
+
+            cbNaruciteljSearch.DataSource = loadDataSeckond.NarutiteljDtos;
             cbNaruciteljSearch.DisplayMember = "Name";
             cbNaruciteljSearch.ValueMember = "Id";
 
-            cbPrimateljSearch.DataSource = loadData.PrimateljDtos;
+            cbPrimateljSearch.DataSource = loadDataSeckond.PrimateljDtos;
             cbPrimateljSearch.DisplayMember = "Name";
             cbPrimateljSearch.ValueMember = "Id";
 
-            cbGradisliteSearch.DataSource = loadData.RadilisteDtos;
+            cbGradisliteSearch.DataSource = loadDataSeckond.RadilisteDtos;
             cbGradisliteSearch.DisplayMember = "Name";
             cbGradisliteSearch.ValueMember = "Id";
 
-            cbRegKamionaSearch.DataSource = loadData.RegOznakaDtos;
+            cbRegKamionaSearch.DataSource = loadDataSeckond.RegOznakaDtos;
             cbRegKamionaSearch.DisplayMember = "Name";
             cbRegKamionaSearch.ValueMember = "Id";
 
-            cbRobuIzdaoSearch.DataSource = loadData.RobuIzdaoDtos;
+            cbRobuIzdaoSearch.DataSource = loadDataSeckond.RobuIzdaoDtos;
             cbRobuIzdaoSearch.DisplayMember = "Name";
             cbRobuIzdaoSearch.ValueMember = "Id";
 
-            cbVozacSearch.DataSource = loadData.VozacDtos;
+            cbVozacSearch.DataSource = loadDataSeckond.VozacDtos;
             cbVozacSearch.DisplayMember = "Name";
             cbVozacSearch.ValueMember = "Id";
 
-            cbVrstaRobeSearch.DataSource = loadData.VrstaRobeDtos;
+            cbVrstaRobeSearch.DataSource = loadDataSeckond.VrstaRobeDtos;
             cbVrstaRobeSearch.DisplayMember = "Name";
             cbVrstaRobeSearch.ValueMember = "Id";
 
-            cbVrstaUslugeSearch.DataSource = loadData.VrstaUslugeDtos;
+            cbVrstaUslugeSearch.DataSource = loadDataSeckond.VrstaUslugeDtos;
             cbVrstaUslugeSearch.DisplayMember = "Name";
             cbVrstaUslugeSearch.ValueMember = "Id";
-
-            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
+        {            
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            GetLoadData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -155,6 +169,43 @@ namespace DML.RadniNalog
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+
+            if (status == CodeBook.Narucitelj) rnServices.SaveNarucitelj(txtSettingsName.Text);
+            if (status == CodeBook.Primatelj) rnServices.SavePrimatelj(txtSettingsName.Text);
+            if (status == CodeBook.Radiliste) rnServices.SaveRadiliste(txtSettingsName.Text);
+            if (status == CodeBook.RegOznaka) rnServices.SaveRegOznaka(txtSettingsName.Text);
+            if (status == CodeBook.RobuIzdao) rnServices.SaveRobuIzdao(txtSettingsName.Text);
+            if (status == CodeBook.Vozac) rnServices.SaveVozac(txtSettingsName.Text);
+            if (status == CodeBook.VrstaRobe) rnServices.SaveVrstaRobe(txtSettingsName.Text);
+            if (status == CodeBook.VrstaUsluge) rnServices.SaveVrstaUsluge(txtSettingsName.Text);
+
+            if (status == CodeBook.Narucitelj) dtgSettings.DataSource = rnServices.GetNarucitelj();
+            if (status == CodeBook.Primatelj) dtgSettings.DataSource = rnServices.GetPrimatelj();
+            if (status == CodeBook.Radiliste) dtgSettings.DataSource = rnServices.GetRadiliste();
+            if (status == CodeBook.RegOznaka) dtgSettings.DataSource = rnServices.GetRegOznaka();
+            if (status == CodeBook.RobuIzdao) dtgSettings.DataSource = rnServices.GetRobuIzdao();
+            if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
+            if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
+            if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
+        }
+
+        private void cbVrstaPostavke_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+
+            if (status == CodeBook.Narucitelj) dtgSettings.DataSource = rnServices.GetNarucitelj();
+            if (status == CodeBook.Primatelj) dtgSettings.DataSource = rnServices.GetPrimatelj();
+            if (status == CodeBook.Radiliste) dtgSettings.DataSource = rnServices.GetRadiliste();
+            if (status == CodeBook.RegOznaka) dtgSettings.DataSource = rnServices.GetRegOznaka();
+            if (status == CodeBook.RobuIzdao) dtgSettings.DataSource = rnServices.GetRobuIzdao();
+            if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
+            if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
+            if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
         }
     }
 }

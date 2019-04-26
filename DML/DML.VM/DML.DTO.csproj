@@ -49,6 +49,7 @@
     <Compile Include="RegOznakaDto.cs" />
     <Compile Include="RnDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RnDtoForGrid.cs" />
     <Compile Include="RobuIzdaoDto.cs" />
     <Compile Include="VozacDto.cs" />
     <Compile Include="VrstaRobeDto.cs" />

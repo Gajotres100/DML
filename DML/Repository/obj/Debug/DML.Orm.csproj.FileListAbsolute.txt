@@ -17,6 +17,7 @@ C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFrame
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.xml
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csprojAssemblyReference.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\DML.Orm.csproj.CopyComplete
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\Repository\obj\Debug\Repository.dll
