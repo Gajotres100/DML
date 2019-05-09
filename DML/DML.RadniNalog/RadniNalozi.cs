@@ -61,8 +61,7 @@ namespace DML.RadniNalog
 
             cbNarucitelj.DataSource = loadData.NarutiteljDtos;
             cbNarucitelj.DisplayMember = "Name";
-            cbNarucitelj.ValueMember = "Id";
-            cbNarucitelj.SelectedIndex = 0;
+            cbNarucitelj.ValueMember = "Id";            
 
             cbPrimatelj.DataSource = loadData.PrimateljDtos;
             cbPrimatelj.DisplayMember = "Name";
