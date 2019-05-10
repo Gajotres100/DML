@@ -4,24 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="14c16c79e9fe4befbc6743bfaf3183fb" Name="Diagram1">
-        <EntityTypeShape EntityType="DMLModel.Narucitelj" Width="1.5" PointX="3.75" PointY="10.75" />
-        <EntityTypeShape EntityType="DMLModel.Primatelj" Width="1.5" PointX="3.75" PointY="15.5" />
-        <EntityTypeShape EntityType="DMLModel.Radiliste" Width="1.5" PointX="3.75" PointY="8.375" />
-        <EntityTypeShape EntityType="DMLModel.RadniNalog" Width="1.5" PointX="6" PointY="1.25" />
-        <EntityTypeShape EntityType="DMLModel.RegOznaka" Width="1.5" PointX="3.75" PointY="13.125" />
-        <EntityTypeShape EntityType="DMLModel.RobuIzdao" Width="1.5" PointX="3.75" PointY="6.125" />
-        <EntityTypeShape EntityType="DMLModel.Vozac" Width="1.5" PointX="3.75" PointY="20.125" />
-        <EntityTypeShape EntityType="DMLModel.VrstaRobe" Width="1.5" PointX="3.75" PointY="17.75" />
-        <EntityTypeShape EntityType="DMLModel.VrstaUsluge" Width="1.5" PointX="3.75" PointY="2.875" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_Narucitelj" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_Primatelj" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_Radiliste" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_RegOznaka" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_RobuIzdao" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_Vozac" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_VrstaRobe" />
-        <AssociationConnector Association="DMLModel.FK_RadniNalog_VrstaUsluge" />
+      <Diagram DiagramId="9155d9885887400bb4c4e6c135b6f5f3" Name="Diagram1">
+        <EntityTypeShape EntityType="DMLModel.Mjera" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.Narucitelj" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.Primatelj" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.Radiliste" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.RadniNalog" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.RegOznaka" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.RobuIzdao" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.Vozac" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.VrstaRobe" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMLModel.VrstaUsluge" Width="1.5" PointX="0.75" PointY="22.625" IsExpanded="true" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Mjera" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Narucitelj" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Primatelj" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Radiliste" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_RegOznaka" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_RobuIzdao" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Vozac" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_VrstaRobe" ManuallyRouted="false" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_VrstaUsluge" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

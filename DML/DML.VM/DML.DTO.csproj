@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseDto.cs" />
     <Compile Include="FormLoadDto.cs" />
+    <Compile Include="MjeraDto.cs" />
     <Compile Include="NarutiteljDto.cs" />
     <Compile Include="PrimateljDto.cs" />
     <Compile Include="RadilisteDto.cs" />

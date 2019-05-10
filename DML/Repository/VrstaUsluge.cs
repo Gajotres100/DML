@@ -17,13 +17,13 @@ namespace Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public VrstaUsluge()
         {
-            this.RadniNalog = new HashSet<RadniNalog>();
+            this.RadniNalogs = new HashSet<RadniNalog>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RadniNalog> RadniNalog { get; set; }
+        public virtual ICollection<RadniNalog> RadniNalogs { get; set; }
     }
 }

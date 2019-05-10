@@ -87,6 +87,7 @@
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbMjera = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbMjera);
             this.tabPage1.Controls.Add(this.cbPrimatelj);
             this.tabPage1.Controls.Add(this.cbNarucitelj);
             this.tabPage1.Controls.Add(this.cbVozac);
@@ -148,7 +150,7 @@
             // 
             this.cbPrimatelj.FormattingEnabled = true;
             this.cbPrimatelj.Location = new System.Drawing.Point(173, 352);
-            this.cbPrimatelj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPrimatelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbPrimatelj.Name = "cbPrimatelj";
             this.cbPrimatelj.Size = new System.Drawing.Size(200, 24);
             this.cbPrimatelj.TabIndex = 34;
@@ -157,7 +159,7 @@
             // 
             this.cbNarucitelj.FormattingEnabled = true;
             this.cbNarucitelj.Location = new System.Drawing.Point(173, 319);
-            this.cbNarucitelj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNarucitelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbNarucitelj.Name = "cbNarucitelj";
             this.cbNarucitelj.Size = new System.Drawing.Size(200, 24);
             this.cbNarucitelj.TabIndex = 33;
@@ -166,7 +168,7 @@
             // 
             this.cbVozac.FormattingEnabled = true;
             this.cbVozac.Location = new System.Drawing.Point(173, 254);
-            this.cbVozac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVozac.Margin = new System.Windows.Forms.Padding(4);
             this.cbVozac.Name = "cbVozac";
             this.cbVozac.Size = new System.Drawing.Size(200, 24);
             this.cbVozac.TabIndex = 32;
@@ -175,7 +177,7 @@
             // 
             this.cbRadiliste.FormattingEnabled = true;
             this.cbRadiliste.Location = new System.Drawing.Point(173, 220);
-            this.cbRadiliste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRadiliste.Margin = new System.Windows.Forms.Padding(4);
             this.cbRadiliste.Name = "cbRadiliste";
             this.cbRadiliste.Size = new System.Drawing.Size(200, 24);
             this.cbRadiliste.TabIndex = 31;
@@ -184,7 +186,7 @@
             // 
             this.cbVrstaUsluge.FormattingEnabled = true;
             this.cbVrstaUsluge.Location = new System.Drawing.Point(173, 183);
-            this.cbVrstaUsluge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVrstaUsluge.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaUsluge.Name = "cbVrstaUsluge";
             this.cbVrstaUsluge.Size = new System.Drawing.Size(200, 24);
             this.cbVrstaUsluge.TabIndex = 30;
@@ -193,7 +195,7 @@
             // 
             this.cbRegOznakaKamiona.FormattingEnabled = true;
             this.cbRegOznakaKamiona.Location = new System.Drawing.Point(173, 150);
-            this.cbRegOznakaKamiona.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRegOznakaKamiona.Margin = new System.Windows.Forms.Padding(4);
             this.cbRegOznakaKamiona.Name = "cbRegOznakaKamiona";
             this.cbRegOznakaKamiona.Size = new System.Drawing.Size(200, 24);
             this.cbRegOznakaKamiona.TabIndex = 29;
@@ -202,7 +204,7 @@
             // 
             this.cbRobuIzdao.FormattingEnabled = true;
             this.cbRobuIzdao.Location = new System.Drawing.Point(173, 114);
-            this.cbRobuIzdao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRobuIzdao.Margin = new System.Windows.Forms.Padding(4);
             this.cbRobuIzdao.Name = "cbRobuIzdao";
             this.cbRobuIzdao.Size = new System.Drawing.Size(200, 24);
             this.cbRobuIzdao.TabIndex = 28;
@@ -211,7 +213,7 @@
             // 
             this.cbVrstaRobe.FormattingEnabled = true;
             this.cbVrstaRobe.Location = new System.Drawing.Point(173, 50);
-            this.cbVrstaRobe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVrstaRobe.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaRobe.Name = "cbVrstaRobe";
             this.cbVrstaRobe.Size = new System.Drawing.Size(200, 24);
             this.cbVrstaRobe.TabIndex = 27;
@@ -425,7 +427,7 @@
             // 
             this.cbPrimateljSearch.FormattingEnabled = true;
             this.cbPrimateljSearch.Location = new System.Drawing.Point(492, 137);
-            this.cbPrimateljSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPrimateljSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbPrimateljSearch.Name = "cbPrimateljSearch";
             this.cbPrimateljSearch.Size = new System.Drawing.Size(265, 24);
             this.cbPrimateljSearch.TabIndex = 39;
@@ -434,7 +436,7 @@
             // 
             this.cbNaruciteljSearch.FormattingEnabled = true;
             this.cbNaruciteljSearch.Location = new System.Drawing.Point(132, 133);
-            this.cbNaruciteljSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNaruciteljSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbNaruciteljSearch.Name = "cbNaruciteljSearch";
             this.cbNaruciteljSearch.Size = new System.Drawing.Size(265, 24);
             this.cbNaruciteljSearch.TabIndex = 38;
@@ -494,7 +496,7 @@
             // 
             this.cbVrstaRobeSearch.FormattingEnabled = true;
             this.cbVrstaRobeSearch.Location = new System.Drawing.Point(132, 100);
-            this.cbVrstaRobeSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVrstaRobeSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaRobeSearch.Name = "cbVrstaRobeSearch";
             this.cbVrstaRobeSearch.Size = new System.Drawing.Size(265, 24);
             this.cbVrstaRobeSearch.TabIndex = 32;
@@ -503,7 +505,7 @@
             // 
             this.cbVozacSearch.FormattingEnabled = true;
             this.cbVozacSearch.Location = new System.Drawing.Point(492, 103);
-            this.cbVozacSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVozacSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbVozacSearch.Name = "cbVozacSearch";
             this.cbVozacSearch.Size = new System.Drawing.Size(265, 24);
             this.cbVozacSearch.TabIndex = 31;
@@ -512,7 +514,7 @@
             // 
             this.cbGradisliteSearch.FormattingEnabled = true;
             this.cbGradisliteSearch.Location = new System.Drawing.Point(492, 71);
-            this.cbGradisliteSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGradisliteSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbGradisliteSearch.Name = "cbGradisliteSearch";
             this.cbGradisliteSearch.Size = new System.Drawing.Size(265, 24);
             this.cbGradisliteSearch.TabIndex = 30;
@@ -521,7 +523,7 @@
             // 
             this.cbVrstaUslugeSearch.FormattingEnabled = true;
             this.cbVrstaUslugeSearch.Location = new System.Drawing.Point(492, 38);
-            this.cbVrstaUslugeSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVrstaUslugeSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaUslugeSearch.Name = "cbVrstaUslugeSearch";
             this.cbVrstaUslugeSearch.Size = new System.Drawing.Size(265, 24);
             this.cbVrstaUslugeSearch.TabIndex = 29;
@@ -530,7 +532,7 @@
             // 
             this.cbRobuIzdaoSearch.FormattingEnabled = true;
             this.cbRobuIzdaoSearch.Location = new System.Drawing.Point(492, 6);
-            this.cbRobuIzdaoSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRobuIzdaoSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbRobuIzdaoSearch.Name = "cbRobuIzdaoSearch";
             this.cbRobuIzdaoSearch.Size = new System.Drawing.Size(265, 24);
             this.cbRobuIzdaoSearch.TabIndex = 28;
@@ -539,7 +541,7 @@
             // 
             this.cbRegKamionaSearch.FormattingEnabled = true;
             this.cbRegKamionaSearch.Location = new System.Drawing.Point(132, 66);
-            this.cbRegKamionaSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRegKamionaSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbRegKamionaSearch.Name = "cbRegKamionaSearch";
             this.cbRegKamionaSearch.Size = new System.Drawing.Size(265, 24);
             this.cbRegKamionaSearch.TabIndex = 27;
@@ -547,7 +549,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(132, 164);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 26;
@@ -588,7 +590,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Location = new System.Drawing.Point(132, 34);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(265, 22);
@@ -597,7 +599,7 @@
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(132, 6);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStart.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStart.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(265, 22);
@@ -625,9 +627,9 @@
             this.tabPage3.Controls.Add(this.txtSettingsName);
             this.tabPage3.Controls.Add(this.cbVrstaPostavke);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1331, 638);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Postavke";
@@ -639,7 +641,7 @@
             this.dtgSettings.AllowUserToDeleteRows = false;
             this.dtgSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgSettings.Location = new System.Drawing.Point(4, 80);
-            this.dtgSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgSettings.Margin = new System.Windows.Forms.Padding(4);
             this.dtgSettings.Name = "dtgSettings";
             this.dtgSettings.ReadOnly = true;
             this.dtgSettings.Size = new System.Drawing.Size(1319, 550);
@@ -648,7 +650,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(627, 18);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 4;
@@ -679,7 +681,7 @@
             // txtSettingsName
             // 
             this.txtSettingsName.Location = new System.Drawing.Point(388, 20);
-            this.txtSettingsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSettingsName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSettingsName.Name = "txtSettingsName";
             this.txtSettingsName.Size = new System.Drawing.Size(204, 22);
             this.txtSettingsName.TabIndex = 1;
@@ -688,7 +690,7 @@
             // 
             this.cbVrstaPostavke.FormattingEnabled = true;
             this.cbVrstaPostavke.Location = new System.Drawing.Point(121, 20);
-            this.cbVrstaPostavke.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVrstaPostavke.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaPostavke.Name = "cbVrstaPostavke";
             this.cbVrstaPostavke.Size = new System.Drawing.Size(204, 24);
             this.cbVrstaPostavke.TabIndex = 0;
@@ -698,6 +700,15 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // cbMjera
+            // 
+            this.cbMjera.FormattingEnabled = true;
+            this.cbMjera.Location = new System.Drawing.Point(388, 80);
+            this.cbMjera.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMjera.Name = "cbMjera";
+            this.cbMjera.Size = new System.Drawing.Size(53, 24);
+            this.cbMjera.TabIndex = 35;
             // 
             // RadniNalozi
             // 
@@ -782,6 +793,7 @@
         private System.Windows.Forms.TextBox txtSettingsName;
         private System.Windows.Forms.ComboBox cbVrstaPostavke;
         private System.Windows.Forms.DataGridView dtgSettings;
+        private System.Windows.Forms.ComboBox cbMjera;
     }
 }
 

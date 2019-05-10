@@ -24,10 +24,12 @@ namespace DML.Repository.RadniNalozi
                     VozacId = data.VozacId,
                     VrstaRobeId = data.VrstaRobeId,
                     VrstaStroja = data.VrstaStroja,
-                    VrstaUslugeId = data.VrstaUslugeId
+                    VrstaUslugeId = data.VrstaUslugeId,
+                    Kolicina = data.kolicinaRobe,
+                    MjeraId = data.MjeraId
                 };
 
-                context.RadniNalog.Add(rn);
+                context.RadniNalogs.Add(rn);
                 context.SaveChanges();
             }
         }
@@ -44,7 +46,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                var rn = context.RadniNalog.Where(x => x.Datum > start && x.Datum < end).ToList();
+                var rn = context.RadniNalogs.Where(x => x.Datum > start && x.Datum < end).ToList();
 
                 if (regId > 0) rn = rn.Where(x => x.RegOznakaId == regId).ToList();
                 if (vrstaRobeId > 0) rn = rn.Where(x => x.VrstaRobeId == vrstaRobeId).ToList();
@@ -77,7 +79,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.RadniNalog.Select(x => new RnDtoForGrid
+                return context.RadniNalogs.Select(x => new RnDtoForGrid
                 {
                     Id = x.Id,
                     Datum = x.Datum,
@@ -99,7 +101,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.Narucitelj.Select(x => new BaseDto
+                return context.Naruciteljs.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -116,7 +118,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.Narucitelj.Add(narucitelj);
+                context.Naruciteljs.Add(narucitelj);
                 context.SaveChanges();
             }
         }
@@ -125,7 +127,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.Primatelj.Select(x => new BaseDto
+                return context.Primateljs.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -142,7 +144,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.Primatelj.Add(primatelj);
+                context.Primateljs.Add(primatelj);
                 context.SaveChanges();
             }
         }
@@ -151,7 +153,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.Radiliste.Select(x => new BaseDto
+                return context.Radilistes.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -168,7 +170,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.Radiliste.Add(radiliste);
+                context.Radilistes.Add(radiliste);
                 context.SaveChanges();
             }
         }
@@ -177,7 +179,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.RegOznaka.Select(x => new BaseDto
+                return context.RegOznakas.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -194,7 +196,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.RegOznaka.Add(regOznaka);
+                context.RegOznakas.Add(regOznaka);
                 context.SaveChanges();
             }
         }
@@ -203,7 +205,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.RobuIzdao.Select(x => new BaseDto
+                return context.RobuIzdaos.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -220,7 +222,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.RobuIzdao.Add(robuIzdao);
+                context.RobuIzdaos.Add(robuIzdao);
                 context.SaveChanges();
             }
         }
@@ -229,7 +231,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.Vozac.Select(x => new BaseDto
+                return context.Vozacs.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -246,7 +248,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.Vozac.Add(vozac);
+                context.Vozacs.Add(vozac);
                 context.SaveChanges();
             }
         }
@@ -255,7 +257,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.VrstaRobe.Select(x => new BaseDto
+                return context.VrstaRobes.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -272,7 +274,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.VrstaRobe.Add(vrstaRobe);
+                context.VrstaRobes.Add(vrstaRobe);
                 context.SaveChanges();
             }
         }
@@ -281,7 +283,7 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                return context.VrstaUsluge.Select(x => new BaseDto
+                return context.VrstaUsluges.Select(x => new BaseDto
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -298,7 +300,7 @@ namespace DML.Repository.RadniNalozi
                     Name = name
                 };
 
-                context.VrstaUsluge.Add(vrstaUsluge);
+                context.VrstaUsluges.Add(vrstaUsluge);
                 context.SaveChanges();
             }
         }
@@ -309,50 +311,55 @@ namespace DML.Repository.RadniNalozi
             {
                 return  new FormLoadDto
                 {
-
-                    NarutiteljDtos = context.Narucitelj.Select(x => new NarutiteljDto
+                    NarutiteljDtos = context.Naruciteljs.Select(x => new NarutiteljDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    PrimateljDtos = context.Primatelj.Select(x => new PrimateljDto
+                    PrimateljDtos = context.Primateljs.Select(x => new PrimateljDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    RadilisteDtos = context.Radiliste.Select(x => new RadilisteDto
+                    RadilisteDtos = context.Radilistes.Select(x => new RadilisteDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    RegOznakaDtos = context.RegOznaka.Select(x => new RegOznakaDto
+                    RegOznakaDtos = context.RegOznakas.Select(x => new RegOznakaDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    RobuIzdaoDtos = context.RobuIzdao.Select(x => new RobuIzdaoDto
+                    RobuIzdaoDtos = context.RobuIzdaos.Select(x => new RobuIzdaoDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    VozacDtos = context.Vozac.Select(x => new VozacDto
+                    VozacDtos = context.Vozacs.Select(x => new VozacDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    VrstaRobeDtos = context.VrstaRobe.Select(x => new VrstaRobeDto
+                    VrstaRobeDtos = context.VrstaRobes.Select(x => new VrstaRobeDto
                     {
                         Id = x.Id,
                         Name = x.Name
                     }).ToList(),
 
-                    VrstaUslugeDtos = context.VrstaUsluge.Select(x => new VrstaUslugeDto
+                    VrstaUslugeDtos = context.VrstaUsluges.Select(x => new VrstaUslugeDto
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    }).ToList(),
+
+                    MjeraDtos = context.Mjeras.Select(x => new MjeraDto
                     {
                         Id = x.Id,
                         Name = x.Name

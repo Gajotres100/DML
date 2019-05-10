@@ -4,6 +4,8 @@ C:\Users\ngaic\Source\Repos\DML\DML.Repository\obj\Debug\DML.Repository.csprojAs
 C:\Users\ngaic\Source\Repos\DML\DML.Repository\obj\Debug\DML.Repository.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\DML\DML.Repository\obj\Debug\DML.Repository.dll
 C:\Users\ngaic\Source\Repos\DML\DML.Repository\obj\Debug\DML.Repository.pdb
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.csprojAssemblyReference.cache
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\DML.Repository.dll.config
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\DML.Repository.dll
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\DML.Repository.pdb
@@ -16,8 +18,6 @@ C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\Reposit
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\Repository.dll.config
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\EntityFramework.xml
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.csprojAssemblyReference.cache
-C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.csproj.CopyComplete
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.dll
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.Repository\obj\Debug\DML.Repository.pdb

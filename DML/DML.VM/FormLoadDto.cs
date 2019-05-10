@@ -16,5 +16,6 @@ namespace DML.VM
         public List<VozacDto> VozacDtos { get; set; }
         public List<VrstaRobeDto> VrstaRobeDtos { get; set; }
         public List<VrstaUslugeDto> VrstaUslugeDtos { get; set; }
+        public List<MjeraDto> MjeraDtos { get; set; }
     }
 }

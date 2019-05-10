@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\DML",
-    "\\DML\\DML.RadniNalog"
+    "\\DML\\DML.RadniNalog",
+    "\\DML\\DML.Repository",
+    "\\DML\\DML.Repository\\RadniNalozi",
+    "\\DML\\Repository"
   ],
   "SelectedNode": "\\DML\\DML.RadniNalog\\RadniNalozi.cs",
   "PreviewInSolutionExplorer": false

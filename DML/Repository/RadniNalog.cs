@@ -17,7 +17,7 @@ namespace Repository
         public int Id { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
         public int VrstaRobeId { get; set; }
-        public string Kolicina { get; set; }
+        public Nullable<int> Kolicina { get; set; }
         public int RobuIzdaoId { get; set; }
         public int RegOznakaId { get; set; }
         public int VrstaUslugeId { get; set; }
@@ -27,7 +27,9 @@ namespace Repository
         public int NaruciteljId { get; set; }
         public int PrimateljId { get; set; }
         public string RN { get; set; }
+        public int MjeraId { get; set; }
     
+        public virtual Mjera Mjera { get; set; }
         public virtual Narucitelj Narucitelj { get; set; }
         public virtual Primatelj Primatelj { get; set; }
         public virtual Radiliste Radiliste { get; set; }

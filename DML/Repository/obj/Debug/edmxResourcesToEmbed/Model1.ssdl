@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Mjera">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="Narucitelj">
     <Key>
       <PropertyRef Name="Id" />
@@ -28,7 +35,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Datum" Type="datetime" />
     <Property Name="VrstaRobeId" Type="int" Nullable="false" />
-    <Property Name="Kolicina" Type="nvarchar(max)" />
+    <Property Name="Kolicina" Type="int" />
     <Property Name="RobuIzdaoId" Type="int" Nullable="false" />
     <Property Name="RegOznakaId" Type="int" Nullable="false" />
     <Property Name="VrstaUslugeId" Type="int" Nullable="false" />
@@ -38,6 +45,7 @@
     <Property Name="NaruciteljId" Type="int" Nullable="false" />
     <Property Name="PrimateljId" Type="int" Nullable="false" />
     <Property Name="RN" Type="nvarchar(max)" />
+    <Property Name="MjeraId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RegOznaka">
     <Key>
@@ -74,6 +82,18 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
+  <Association Name="FK_RadniNalog_Mjera">
+    <End Role="Mjera" Type="Self.Mjera" Multiplicity="1" />
+    <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjera">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="MjeraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RadniNalog_Narucitelj">
     <End Role="Narucitelj" Type="Self.Narucitelj" Multiplicity="1" />
     <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
@@ -171,6 +191,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DMLModelStoreContainer">
+    <EntitySet Name="Mjera" EntityType="Self.Mjera" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Narucitelj" EntityType="Self.Narucitelj" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Primatelj" EntityType="Self.Primatelj" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Radiliste" EntityType="Self.Radiliste" Schema="dbo" store:Type="Tables" />
@@ -180,6 +201,10 @@
     <EntitySet Name="Vozac" EntityType="Self.Vozac" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VrstaRobe" EntityType="Self.VrstaRobe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VrstaUsluge" EntityType="Self.VrstaUsluge" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_RadniNalog_Mjera" Association="Self.FK_RadniNalog_Mjera">
+      <End Role="Mjera" EntitySet="Mjera" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
     <AssociationSet Name="FK_RadniNalog_Narucitelj" Association="Self.FK_RadniNalog_Narucitelj">
       <End Role="Narucitelj" EntitySet="Narucitelj" />
       <End Role="RadniNalog" EntitySet="RadniNalog" />

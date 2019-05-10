@@ -41,6 +41,8 @@ namespace DML.RadniNalog
                 VrstaRobeId = int.Parse(cbVrstaRobe.SelectedValue.ToString()),
                 VrstaStroja = txtVrstaStroja.Text,
                 VrstaUslugeId = int.Parse(cbVrstaUsluge.SelectedValue.ToString()),
+                kolicinaRobe = kolicinaRobe,
+                MjeraId = int.Parse(cbMjera.SelectedValue.ToString()),
             };
 
             rnServices.Save(data);
@@ -48,7 +50,7 @@ namespace DML.RadniNalog
         }
 
         private void RadniNalozi_Load(object sender, EventArgs e)
-        {   
+        {
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
             //ovo prebaciti na otvaranje trećeg taba
             cbVrstaPostavke.DataSource = Enum.GetValues(typeof(CodeBook));
@@ -91,8 +93,9 @@ namespace DML.RadniNalog
             cbVrstaUsluge.DisplayMember = "Name";
             cbVrstaUsluge.ValueMember = "Id";
 
-
-
+            cbMjera.DataSource = loadData.MjeraDtos;
+            cbMjera.DisplayMember = "Name";
+            cbMjera.ValueMember = "Id";
 
             var loadDataSeckond = rnServices.GetLoadData();
             loadDataSeckond.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "----Odaberi----" });
@@ -138,7 +141,7 @@ namespace DML.RadniNalog
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {            
+        {
             ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
             GetLoadData();
         }
