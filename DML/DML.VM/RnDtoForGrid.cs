@@ -20,5 +20,7 @@ namespace DML.VM
         public string VrstaRobe { get; set; }
         public string VrstaStroja { get; set; }
         public string VrstaUsluge { get; set; }
+        public string Mjera { get; set; }
+        public int? Kolicina { get; set; }
     }
 }

@@ -63,7 +63,7 @@ namespace DML.RadniNalog
 
             cbNarucitelj.DataSource = loadData.NarutiteljDtos;
             cbNarucitelj.DisplayMember = "Name";
-            cbNarucitelj.ValueMember = "Id";            
+            cbNarucitelj.ValueMember = "Id";
 
             cbPrimatelj.DataSource = loadData.PrimateljDtos;
             cbPrimatelj.DisplayMember = "Name";
@@ -159,8 +159,24 @@ namespace DML.RadniNalog
             int.TryParse(cbNaruciteljSearch.SelectedValue.ToString(), out int naruciteljId);
             int.TryParse(cbPrimateljSearch.SelectedValue.ToString(), out int primateljId);
 
-            ddgRadniNalozi.DataSource = rnServices.GetRnForTimePeriodAndReg(startDate, endDate, 
+            var rnList = rnServices.GetRnForTimePeriodAndReg(startDate, endDate,
                 regId, vrstaRobeId, robuIzdaoId, vrstaUslugeId, radilisteId, vozacId, naruciteljId, primateljId);
+
+            ddgRadniNalozi.DataSource = rnList;
+
+            var suma = rnList.GroupBy(g => g.Mjera).Select(cl => new SummPoFilterPodatcimaDto
+            {
+                Suma = cl.Sum(c => c.Kolicina.GetValueOrDefault()),
+                Mjera = cl.Key
+            }).ToList();
+            var builder = new StringBuilder();            
+            builder.Append("Ukupno:\n");
+            foreach (var s in suma)
+            {
+                builder.Append(s.Suma + " " + s.Mjera + "\n");
+            }
+            lblSuma.Text = builder.ToString();
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -194,6 +210,9 @@ namespace DML.RadniNalog
             if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
             if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
             if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
+
+            DataGridViewColumn column = dtgSettings.Columns[1];
+            column.Width = 600;
         }
 
         private void cbVrstaPostavke_SelectedIndexChanged(object sender, EventArgs e)
@@ -208,6 +227,9 @@ namespace DML.RadniNalog
             if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
             if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
             if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
+
+            DataGridViewColumn column = dtgSettings.Columns[1];
+            column.Width = 600;
         }
     }
 }

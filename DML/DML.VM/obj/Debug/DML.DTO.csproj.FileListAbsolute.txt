@@ -3,3 +3,4 @@ C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\bin\Debug\DML.VM.pdb
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.DTO.csproj.CoreCompileInputs.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.VM.dll
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.VM.pdb
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.DTO.csprojAssemblyReference.cache

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbMjera = new System.Windows.Forms.ComboBox();
             this.cbPrimatelj = new System.Windows.Forms.ComboBox();
             this.cbNarucitelj = new System.Windows.Forms.ComboBox();
             this.cbVozac = new System.Windows.Forms.ComboBox();
@@ -87,7 +88,7 @@
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbMjera = new System.Windows.Forms.ComboBox();
+            this.lblSuma = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -145,6 +146,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Unos radnog naloga";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbMjera
+            // 
+            this.cbMjera.FormattingEnabled = true;
+            this.cbMjera.Location = new System.Drawing.Point(388, 80);
+            this.cbMjera.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMjera.Name = "cbMjera";
+            this.cbMjera.Size = new System.Drawing.Size(53, 24);
+            this.cbMjera.TabIndex = 35;
             // 
             // cbPrimatelj
             // 
@@ -371,6 +381,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblSuma);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.cbPrimateljSearch);
@@ -701,14 +712,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cbMjera
+            // lblSuma
             // 
-            this.cbMjera.FormattingEnabled = true;
-            this.cbMjera.Location = new System.Drawing.Point(388, 80);
-            this.cbMjera.Margin = new System.Windows.Forms.Padding(4);
-            this.cbMjera.Name = "cbMjera";
-            this.cbMjera.Size = new System.Drawing.Size(53, 24);
-            this.cbMjera.TabIndex = 35;
+            this.lblSuma.AutoSize = true;
+            this.lblSuma.Location = new System.Drawing.Point(813, 6);
+            this.lblSuma.Name = "lblSuma";
+            this.lblSuma.Size = new System.Drawing.Size(0, 16);
+            this.lblSuma.TabIndex = 42;
             // 
             // RadniNalozi
             // 
@@ -794,6 +804,7 @@
         private System.Windows.Forms.ComboBox cbVrstaPostavke;
         private System.Windows.Forms.DataGridView dtgSettings;
         private System.Windows.Forms.ComboBox cbMjera;
+        private System.Windows.Forms.Label lblSuma;
     }
 }
 

@@ -34,11 +34,11 @@ namespace DML.Repository.RadniNalozi
             }
         }
 
-        public List<RnDtoForGrid> GetRnForTimePeriodAndReg(DateTime start, DateTime end, 
-            int regId, 
-            int vrstaRobeId, 
-            int robuIzdaoId, 
-            int vrstaUslugeId, 
+        public List<RnDtoForGrid> GetRnForTimePeriodAndReg(DateTime start, DateTime end,
+            int regId,
+            int vrstaRobeId,
+            int robuIzdaoId,
+            int vrstaUslugeId,
             int radilisteId,
             int vozacId,
             int naruciteljId,
@@ -70,8 +70,10 @@ namespace DML.Repository.RadniNalozi
                     Vozac = x.Vozac?.Name,
                     VrstaRobe = x.VrstaRobe?.Name,
                     VrstaStroja = x.VrstaStroja,
-                    VrstaUsluge = x.VrstaUsluge?.Name
-                }).ToList(); ;
+                    VrstaUsluge = x.VrstaUsluge?.Name,
+                    Mjera =  x.Mjera?.Name,
+                    Kolicina = x.Kolicina
+                }).ToList();
             }
         }
 

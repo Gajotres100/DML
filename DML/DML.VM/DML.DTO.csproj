@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDto.cs" />
+    <Compile Include="SummPoFilterPodatcimaDto.cs" />
     <Compile Include="FormLoadDto.cs" />
     <Compile Include="MjeraDto.cs" />
     <Compile Include="NarutiteljDto.cs" />
