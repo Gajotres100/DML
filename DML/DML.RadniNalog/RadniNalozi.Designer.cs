@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblSuma = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbPrimateljSearch = new System.Windows.Forms.ComboBox();
@@ -88,7 +89,6 @@
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblSuma = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,6 +99,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -306,7 +309,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 16);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Vozać:";
+            this.label8.Text = "Vozač:";
             // 
             // label7
             // 
@@ -413,6 +416,14 @@
             this.tabPage2.Text = "Filter po registraciji";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // lblSuma
+            // 
+            this.lblSuma.AutoSize = true;
+            this.lblSuma.Location = new System.Drawing.Point(813, 6);
+            this.lblSuma.Name = "lblSuma";
+            this.lblSuma.Size = new System.Drawing.Size(0, 16);
+            this.lblSuma.TabIndex = 42;
             // 
             // label22
             // 
@@ -620,6 +631,9 @@
             // 
             this.ddgRadniNalozi.AllowUserToAddRows = false;
             this.ddgRadniNalozi.AllowUserToDeleteRows = false;
+            this.ddgRadniNalozi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddgRadniNalozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ddgRadniNalozi.Location = new System.Drawing.Point(4, 198);
             this.ddgRadniNalozi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -650,6 +664,9 @@
             // 
             this.dtgSettings.AllowUserToAddRows = false;
             this.dtgSettings.AllowUserToDeleteRows = false;
+            this.dtgSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgSettings.Location = new System.Drawing.Point(4, 80);
             this.dtgSettings.Margin = new System.Windows.Forms.Padding(4);
@@ -711,14 +728,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // lblSuma
-            // 
-            this.lblSuma.AutoSize = true;
-            this.lblSuma.Location = new System.Drawing.Point(813, 6);
-            this.lblSuma.Name = "lblSuma";
-            this.lblSuma.Size = new System.Drawing.Size(0, 16);
-            this.lblSuma.TabIndex = 42;
             // 
             // RadniNalozi
             // 
