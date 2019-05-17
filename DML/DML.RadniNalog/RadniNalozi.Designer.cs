@@ -157,7 +157,7 @@
             this.cbMjera.Margin = new System.Windows.Forms.Padding(4);
             this.cbMjera.Name = "cbMjera";
             this.cbMjera.Size = new System.Drawing.Size(53, 24);
-            this.cbMjera.TabIndex = 35;
+            this.cbMjera.TabIndex = 43;
             // 
             // cbPrimatelj
             // 
@@ -166,7 +166,7 @@
             this.cbPrimatelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbPrimatelj.Name = "cbPrimatelj";
             this.cbPrimatelj.Size = new System.Drawing.Size(200, 24);
-            this.cbPrimatelj.TabIndex = 34;
+            this.cbPrimatelj.TabIndex = 51;
             // 
             // cbNarucitelj
             // 
@@ -175,7 +175,7 @@
             this.cbNarucitelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbNarucitelj.Name = "cbNarucitelj";
             this.cbNarucitelj.Size = new System.Drawing.Size(200, 24);
-            this.cbNarucitelj.TabIndex = 33;
+            this.cbNarucitelj.TabIndex = 50;
             // 
             // cbVozac
             // 
@@ -184,7 +184,7 @@
             this.cbVozac.Margin = new System.Windows.Forms.Padding(4);
             this.cbVozac.Name = "cbVozac";
             this.cbVozac.Size = new System.Drawing.Size(200, 24);
-            this.cbVozac.TabIndex = 32;
+            this.cbVozac.TabIndex = 48;
             // 
             // cbRadiliste
             // 
@@ -193,7 +193,7 @@
             this.cbRadiliste.Margin = new System.Windows.Forms.Padding(4);
             this.cbRadiliste.Name = "cbRadiliste";
             this.cbRadiliste.Size = new System.Drawing.Size(200, 24);
-            this.cbRadiliste.TabIndex = 31;
+            this.cbRadiliste.TabIndex = 47;
             // 
             // cbVrstaUsluge
             // 
@@ -202,7 +202,7 @@
             this.cbVrstaUsluge.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaUsluge.Name = "cbVrstaUsluge";
             this.cbVrstaUsluge.Size = new System.Drawing.Size(200, 24);
-            this.cbVrstaUsluge.TabIndex = 30;
+            this.cbVrstaUsluge.TabIndex = 46;
             // 
             // cbRegOznakaKamiona
             // 
@@ -211,7 +211,7 @@
             this.cbRegOznakaKamiona.Margin = new System.Windows.Forms.Padding(4);
             this.cbRegOznakaKamiona.Name = "cbRegOznakaKamiona";
             this.cbRegOznakaKamiona.Size = new System.Drawing.Size(200, 24);
-            this.cbRegOznakaKamiona.TabIndex = 29;
+            this.cbRegOznakaKamiona.TabIndex = 45;
             // 
             // cbRobuIzdao
             // 
@@ -220,7 +220,7 @@
             this.cbRobuIzdao.Margin = new System.Windows.Forms.Padding(4);
             this.cbRobuIzdao.Name = "cbRobuIzdao";
             this.cbRobuIzdao.Size = new System.Drawing.Size(200, 24);
-            this.cbRobuIzdao.TabIndex = 28;
+            this.cbRobuIzdao.TabIndex = 44;
             // 
             // cbVrstaRobe
             // 
@@ -229,7 +229,7 @@
             this.cbVrstaRobe.Margin = new System.Windows.Forms.Padding(4);
             this.cbVrstaRobe.Name = "cbVrstaRobe";
             this.cbVrstaRobe.Size = new System.Drawing.Size(200, 24);
-            this.cbVrstaRobe.TabIndex = 27;
+            this.cbVrstaRobe.TabIndex = 41;
             // 
             // txtRadniNalog
             // 
@@ -237,7 +237,7 @@
             this.txtRadniNalog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRadniNalog.Name = "txtRadniNalog";
             this.txtRadniNalog.Size = new System.Drawing.Size(200, 22);
-            this.txtRadniNalog.TabIndex = 26;
+            this.txtRadniNalog.TabIndex = 52;
             // 
             // label12
             // 
@@ -254,18 +254,18 @@
             this.btnSaveRn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveRn.Name = "btnSaveRn";
             this.btnSaveRn.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveRn.TabIndex = 24;
+            this.btnSaveRn.TabIndex = 53;
             this.btnSaveRn.Text = "Spremi radni nalog";
             this.btnSaveRn.UseVisualStyleBackColor = true;
             this.btnSaveRn.Click += new System.EventHandler(this.btnSaveRn_Click);
             // 
             // TxtKolicinaRobe
             // 
-            this.TxtKolicinaRobe.Location = new System.Drawing.Point(173, 82);
+            this.TxtKolicinaRobe.Location = new System.Drawing.Point(173, 84);
             this.TxtKolicinaRobe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtKolicinaRobe.Name = "TxtKolicinaRobe";
             this.TxtKolicinaRobe.Size = new System.Drawing.Size(200, 22);
-            this.TxtKolicinaRobe.TabIndex = 23;
+            this.TxtKolicinaRobe.TabIndex = 42;
             // 
             // txtVrstaStroja
             // 
@@ -273,7 +273,7 @@
             this.txtVrstaStroja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVrstaStroja.Name = "txtVrstaStroja";
             this.txtVrstaStroja.Size = new System.Drawing.Size(200, 22);
-            this.txtVrstaStroja.TabIndex = 17;
+            this.txtVrstaStroja.TabIndex = 49;
             // 
             // label11
             // 
@@ -380,7 +380,7 @@
             this.dtpDatum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(200, 22);
-            this.dtpDatum.TabIndex = 0;
+            this.dtpDatum.TabIndex = 40;
             // 
             // tabPage2
             // 
