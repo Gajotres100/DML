@@ -8,13 +8,14 @@ namespace Common.Enums
 {
     public enum CodeBook
     {
-        VrstaRobe = 1,
-        RobuIzdao = 2,
-        RegOznaka = 3,
-        VrstaUsluge = 4,
-        Radiliste = 5,
-        Vozac = 6,
-        Narucitelj = 7,
-        Primatelj = 8
+        Mjera = 1,
+        Narucitelj = 2,
+        Primatelj = 3,
+        Radiliste = 4,
+        RegOznaka = 5,
+        RobuIzdao = 6,
+        Vozac = 7,
+        VrstaRobe = 8,
+        VrstaUsluge = 9
     }
 }

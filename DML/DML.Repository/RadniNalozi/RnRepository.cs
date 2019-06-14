@@ -77,6 +77,16 @@ namespace DML.Repository.RadniNalozi
             }
         }
 
+        public void DeletePostavka(int id)
+        {
+            using (var context = new DMLEntities())
+            {
+                var postavka = context.Postavkes.FirstOrDefault(x => x.Id == id);
+                context.Postavkes.Remove(postavka);
+                context.SaveChanges();
+            }
+        }
+
         public List<RnDtoForGrid> GetAllRn()
         {
             using (var context = new DMLEntities())
@@ -99,213 +109,30 @@ namespace DML.Repository.RadniNalozi
             }
         }
 
-        public List<BaseDto> GetNarucitelj()
+        public void SaveOrUpdate(BaseDto postavke)
         {
             using (var context = new DMLEntities())
             {
-                return context.Naruciteljs.Select(x => new BaseDto
+                var postavka = context.Postavkes.FirstOrDefault(x => x.Id == postavke.Id);
+                if (postavka == null)
                 {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
+                    var narucitelj = new Postavke
+                    {
+                        Id = postavke.Id,
+                        Name = postavke.Name,
+                        PostavkeId = postavke.PostavkaId
+                    };
 
-        public void SaveNarucitelj(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var narucitelj = new Narucitelj
+                    context.Postavkes.Add(narucitelj);
+                    context.SaveChanges();
+                }
+                else
                 {
-                    Name = name
-                };
-
-                context.Naruciteljs.Add(narucitelj);
-                context.SaveChanges();
+                    postavka.Name = postavke.Name;
+                    context.SaveChanges();
+                }
             }
-        }
-
-        public List<BaseDto> GetPrimatelj()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.Primateljs.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SavePrimatelj(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var primatelj = new Primatelj
-                {
-                    Name = name
-                };
-
-                context.Primateljs.Add(primatelj);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetRadiliste()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.Radilistes.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveRadiliste(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var radiliste = new Radiliste
-                {
-                    Name = name
-                };
-
-                context.Radilistes.Add(radiliste);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetRegOznaka()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.RegOznakas.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveRegOznaka(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var regOznaka = new RegOznaka
-                {
-                    Name = name
-                };
-
-                context.RegOznakas.Add(regOznaka);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetRobuIzdao()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.RobuIzdaos.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveRobuIzdao(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var robuIzdao = new RobuIzdao
-                {
-                    Name = name
-                };
-
-                context.RobuIzdaos.Add(robuIzdao);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetVozac()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.Vozacs.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveVozac(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var vozac = new Vozac
-                {
-                    Name = name
-                };
-
-                context.Vozacs.Add(vozac);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetVrstaRobe()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.VrstaRobes.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveVrstaRobe(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var vrstaRobe = new VrstaRobe
-                {
-                    Name = name
-                };
-
-                context.VrstaRobes.Add(vrstaRobe);
-                context.SaveChanges();
-            }
-        }
-
-        public List<BaseDto> GetVrstaUsluge()
-        {
-            using (var context = new DMLEntities())
-            {
-                return context.VrstaUsluges.Select(x => new BaseDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                }).ToList();
-            }
-        }
-
-        public void SaveVrstaUsluge(string name)
-        {
-            using (var context = new DMLEntities())
-            {
-                var vrstaUsluge = new VrstaUsluge
-                {
-                    Name = name
-                };
-
-                context.VrstaUsluges.Add(vrstaUsluge);
-                context.SaveChanges();
-            }
-        }
+        } 
 
         public FormLoadDto GetLoadData()
         {
@@ -313,59 +140,12 @@ namespace DML.Repository.RadniNalozi
             {
                 return  new FormLoadDto
                 {
-                    NarutiteljDtos = context.Naruciteljs.Select(x => new NarutiteljDto
+                    BaseDtos = context.Postavkes.Select(x => new BaseDto
                     {
                         Id = x.Id,
-                        Name = x.Name
+                        Name = x.Name,
+                        PostavkaId = x.PostavkeId
                     }).ToList(),
-
-                    PrimateljDtos = context.Primateljs.Select(x => new PrimateljDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    RadilisteDtos = context.Radilistes.Select(x => new RadilisteDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    RegOznakaDtos = context.RegOznakas.Select(x => new RegOznakaDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    RobuIzdaoDtos = context.RobuIzdaos.Select(x => new RobuIzdaoDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    VozacDtos = context.Vozacs.Select(x => new VozacDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    VrstaRobeDtos = context.VrstaRobes.Select(x => new VrstaRobeDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    VrstaUslugeDtos = context.VrstaUsluges.Select(x => new VrstaUslugeDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList(),
-
-                    MjeraDtos = context.Mjeras.Select(x => new MjeraDto
-                    {
-                        Id = x.Id,
-                        Name = x.Name
-                    }).ToList()
                 };
             }
         }

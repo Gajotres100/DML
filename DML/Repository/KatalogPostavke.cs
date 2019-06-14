@@ -12,18 +12,18 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class RegOznaka
+    public partial class KatalogPostavke
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RegOznaka()
+        public KatalogPostavke()
         {
-            this.RadniNalogs = new HashSet<RadniNalog>();
+            this.Postavkes = new HashSet<Postavke>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RadniNalog> RadniNalogs { get; set; }
+        public virtual ICollection<Postavke> Postavkes { get; set; }
     }
 }

@@ -1,95 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DMLModelStoreContainer" CdmEntityContainer="DMLEntities">
-    <EntitySetMapping Name="Mjeras">
-      <EntityTypeMapping TypeName="DMLModel.Mjera">
-        <MappingFragment StoreEntitySet="Mjera">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="KatalogPostavkes">
+      <EntityTypeMapping TypeName="DMLModel.KatalogPostavke">
+        <MappingFragment StoreEntitySet="KatalogPostavke">
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Naruciteljs">
-      <EntityTypeMapping TypeName="DMLModel.Narucitelj">
-        <MappingFragment StoreEntitySet="Narucitelj">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Postavkes">
+      <EntityTypeMapping TypeName="DMLModel.Postavke">
+        <MappingFragment StoreEntitySet="Postavke">
+          <ScalarProperty Name="PostavkeId" ColumnName="PostavkeId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Primateljs">
-      <EntityTypeMapping TypeName="DMLModel.Primatelj">
-        <MappingFragment StoreEntitySet="Primatelj">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Radilistes">
-      <EntityTypeMapping TypeName="DMLModel.Radiliste">
-        <MappingFragment StoreEntitySet="Radiliste">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RadniNalogs">
       <EntityTypeMapping TypeName="DMLModel.RadniNalog">
         <MappingFragment StoreEntitySet="RadniNalog">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Datum" ColumnName="Datum" />
-          <ScalarProperty Name="VrstaRobeId" ColumnName="VrstaRobeId" />
-          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-          <ScalarProperty Name="RobuIzdaoId" ColumnName="RobuIzdaoId" />
-          <ScalarProperty Name="RegOznakaId" ColumnName="RegOznakaId" />
-          <ScalarProperty Name="VrstaUslugeId" ColumnName="VrstaUslugeId" />
-          <ScalarProperty Name="RadilisteId" ColumnName="RadilisteId" />
-          <ScalarProperty Name="VozacId" ColumnName="VozacId" />
-          <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
-          <ScalarProperty Name="NaruciteljId" ColumnName="NaruciteljId" />
-          <ScalarProperty Name="PrimateljId" ColumnName="PrimateljId" />
-          <ScalarProperty Name="RN" ColumnName="RN" />
           <ScalarProperty Name="MjeraId" ColumnName="MjeraId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RegOznakas">
-      <EntityTypeMapping TypeName="DMLModel.RegOznaka">
-        <MappingFragment StoreEntitySet="RegOznaka">
+          <ScalarProperty Name="RN" ColumnName="RN" />
+          <ScalarProperty Name="PrimateljId" ColumnName="PrimateljId" />
+          <ScalarProperty Name="NaruciteljId" ColumnName="NaruciteljId" />
+          <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
+          <ScalarProperty Name="VozacId" ColumnName="VozacId" />
+          <ScalarProperty Name="RadilisteId" ColumnName="RadilisteId" />
+          <ScalarProperty Name="VrstaUslugeId" ColumnName="VrstaUslugeId" />
+          <ScalarProperty Name="RegOznakaId" ColumnName="RegOznakaId" />
+          <ScalarProperty Name="RobuIzdaoId" ColumnName="RobuIzdaoId" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="VrstaRobeId" ColumnName="VrstaRobeId" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RobuIzdaos">
-      <EntityTypeMapping TypeName="DMLModel.RobuIzdao">
-        <MappingFragment StoreEntitySet="RobuIzdao">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Vozacs">
-      <EntityTypeMapping TypeName="DMLModel.Vozac">
-        <MappingFragment StoreEntitySet="Vozac">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VrstaRobes">
-      <EntityTypeMapping TypeName="DMLModel.VrstaRobe">
-        <MappingFragment StoreEntitySet="VrstaRobe">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VrstaUsluges">
-      <EntityTypeMapping TypeName="DMLModel.VrstaUsluge">
-        <MappingFragment StoreEntitySet="VrstaUsluge">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

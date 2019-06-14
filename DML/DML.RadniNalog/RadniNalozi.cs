@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace DML.RadniNalog
 {
@@ -61,81 +62,74 @@ namespace DML.RadniNalog
         {
             var loadData = rnServices.GetLoadData();
 
-            cbNarucitelj.DataSource = loadData.NarutiteljDtos;
+            cbNarucitelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj).ToList();
             cbNarucitelj.DisplayMember = "Name";
             cbNarucitelj.ValueMember = "Id";
 
-            cbPrimatelj.DataSource = loadData.PrimateljDtos;
+            cbPrimatelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj).ToList();
             cbPrimatelj.DisplayMember = "Name";
             cbPrimatelj.ValueMember = "Id";
 
-            cbRadiliste.DataSource = loadData.RadilisteDtos;
+            cbRadiliste.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Radiliste).ToList();
             cbRadiliste.DisplayMember = "Name";
             cbRadiliste.ValueMember = "Id";
 
-            cbRegOznakaKamiona.DataSource = loadData.RegOznakaDtos;
+            cbRegOznakaKamiona.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RegOznaka).ToList();
             cbRegOznakaKamiona.DisplayMember = "Name";
             cbRegOznakaKamiona.ValueMember = "Id";
 
-            cbRobuIzdao.DataSource = loadData.RobuIzdaoDtos;
+            cbRobuIzdao.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RobuIzdao).ToList();
             cbRobuIzdao.DisplayMember = "Name";
             cbRobuIzdao.ValueMember = "Id";
 
-            cbVozac.DataSource = loadData.VozacDtos;
+            cbVozac.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Vozac).ToList();
             cbVozac.DisplayMember = "Name";
             cbVozac.ValueMember = "Id";
 
-            cbVrstaRobe.DataSource = loadData.VrstaRobeDtos;
+            cbVrstaRobe.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaRobe).ToList();
             cbVrstaRobe.DisplayMember = "Name";
             cbVrstaRobe.ValueMember = "Id";
 
-            cbVrstaUsluge.DataSource = loadData.VrstaUslugeDtos;
+            cbVrstaUsluge.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaUsluge).ToList();
             cbVrstaUsluge.DisplayMember = "Name";
             cbVrstaUsluge.ValueMember = "Id";
 
-            cbMjera.DataSource = loadData.MjeraDtos;
+            cbMjera.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Mjera).ToList();
             cbMjera.DisplayMember = "Name";
             cbMjera.ValueMember = "Id";
 
             var loadDataSeckond = rnServices.GetLoadData();
-            loadDataSeckond.NarutiteljDtos.Insert(0, new NarutiteljDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.PrimateljDtos.Insert(0, new PrimateljDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.RadilisteDtos.Insert(0, new RadilisteDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.RegOznakaDtos.Insert(0, new RegOznakaDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.RobuIzdaoDtos.Insert(0, new RobuIzdaoDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.VozacDtos.Insert(0, new VozacDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.VrstaRobeDtos.Insert(0, new VrstaRobeDto() { Id = 0, Name = "----Odaberi----" });
-            loadDataSeckond.VrstaUslugeDtos.Insert(0, new VrstaUslugeDto() { Id = 0, Name = "----Odaberi----" });
+            loadDataSeckond.BaseDtos.Insert(0, new BaseDto() { Id = 0, Name = "----Odaberi----" });
 
-            cbNaruciteljSearch.DataSource = loadDataSeckond.NarutiteljDtos;
+            cbNaruciteljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj && x.Id == 0).ToList();
             cbNaruciteljSearch.DisplayMember = "Name";
             cbNaruciteljSearch.ValueMember = "Id";
 
-            cbPrimateljSearch.DataSource = loadDataSeckond.PrimateljDtos;
+            cbPrimateljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj && x.Id == 0).ToList();
             cbPrimateljSearch.DisplayMember = "Name";
             cbPrimateljSearch.ValueMember = "Id";
 
-            cbGradisliteSearch.DataSource = loadDataSeckond.RadilisteDtos;
+            cbGradisliteSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Radiliste && x.Id == 0).ToList();
             cbGradisliteSearch.DisplayMember = "Name";
             cbGradisliteSearch.ValueMember = "Id";
 
-            cbRegKamionaSearch.DataSource = loadDataSeckond.RegOznakaDtos;
+            cbRegKamionaSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RegOznaka && x.Id == 0).ToList();
             cbRegKamionaSearch.DisplayMember = "Name";
             cbRegKamionaSearch.ValueMember = "Id";
 
-            cbRobuIzdaoSearch.DataSource = loadDataSeckond.RobuIzdaoDtos;
+            cbRobuIzdaoSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RobuIzdao && x.Id == 0).ToList();
             cbRobuIzdaoSearch.DisplayMember = "Name";
             cbRobuIzdaoSearch.ValueMember = "Id";
 
-            cbVozacSearch.DataSource = loadDataSeckond.VozacDtos;
+            cbVozacSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Vozac && x.Id == 0).ToList();
             cbVozacSearch.DisplayMember = "Name";
             cbVozacSearch.ValueMember = "Id";
 
-            cbVrstaRobeSearch.DataSource = loadDataSeckond.VrstaRobeDtos;
+            cbVrstaRobeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaRobe && x.Id == 0).ToList();
             cbVrstaRobeSearch.DisplayMember = "Name";
             cbVrstaRobeSearch.ValueMember = "Id";
 
-            cbVrstaUslugeSearch.DataSource = loadDataSeckond.VrstaUslugeDtos;
+            cbVrstaUslugeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaUsluge && x.Id == 0).ToList();
             cbVrstaUslugeSearch.DisplayMember = "Name";
             cbVrstaUslugeSearch.ValueMember = "Id";
         }
@@ -192,44 +186,37 @@ namespace DML.RadniNalog
         private void button2_Click(object sender, EventArgs e)
         {
             Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+            BaseDto data = new BaseDto
+            {
+                Name = txtSettingsName.Text,
+                PostavkaId = (int)status
+            };
 
-            if (status == CodeBook.Narucitelj) rnServices.SaveNarucitelj(txtSettingsName.Text);
-            if (status == CodeBook.Primatelj) rnServices.SavePrimatelj(txtSettingsName.Text);
-            if (status == CodeBook.Radiliste) rnServices.SaveRadiliste(txtSettingsName.Text);
-            if (status == CodeBook.RegOznaka) rnServices.SaveRegOznaka(txtSettingsName.Text);
-            if (status == CodeBook.RobuIzdao) rnServices.SaveRobuIzdao(txtSettingsName.Text);
-            if (status == CodeBook.Vozac) rnServices.SaveVozac(txtSettingsName.Text);
-            if (status == CodeBook.VrstaRobe) rnServices.SaveVrstaRobe(txtSettingsName.Text);
-            if (status == CodeBook.VrstaUsluge) rnServices.SaveVrstaUsluge(txtSettingsName.Text);
+            rnServices.SaveOrUpdate(data);
 
-            if (status == CodeBook.Narucitelj) dtgSettings.DataSource = rnServices.GetNarucitelj();
-            if (status == CodeBook.Primatelj) dtgSettings.DataSource = rnServices.GetPrimatelj();
-            if (status == CodeBook.Radiliste) dtgSettings.DataSource = rnServices.GetRadiliste();
-            if (status == CodeBook.RegOznaka) dtgSettings.DataSource = rnServices.GetRegOznaka();
-            if (status == CodeBook.RobuIzdao) dtgSettings.DataSource = rnServices.GetRobuIzdao();
-            if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
-            if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
-            if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
+            rnServices.GetLoadData();
+            var dataGet = rnServices.GetLoadData().BaseDtos.Where(x => x.PostavkaId == (int)status).ToList();
 
-            DataGridViewColumn column = dtgSettings.Columns[1];
-            column.Width = 600;
+            dtgSettings.DataSource = dataGet;
+
+            if (dataGet.Count() > 0)
+            {
+                DataGridViewColumn column = dtgSettings.Columns[1];
+                column.Width = 600;
+            }
         }
 
         private void cbVrstaPostavke_SelectedIndexChanged(object sender, EventArgs e)
         {
             Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+            var data = rnServices.GetLoadData().BaseDtos.Where(x => x.PostavkaId == (int)status).ToList();
+            dtgSettings.DataSource = data;
 
-            if (status == CodeBook.Narucitelj) dtgSettings.DataSource = rnServices.GetNarucitelj();
-            if (status == CodeBook.Primatelj) dtgSettings.DataSource = rnServices.GetPrimatelj();
-            if (status == CodeBook.Radiliste) dtgSettings.DataSource = rnServices.GetRadiliste();
-            if (status == CodeBook.RegOznaka) dtgSettings.DataSource = rnServices.GetRegOznaka();
-            if (status == CodeBook.RobuIzdao) dtgSettings.DataSource = rnServices.GetRobuIzdao();
-            if (status == CodeBook.Vozac) dtgSettings.DataSource = rnServices.GetVozac();
-            if (status == CodeBook.VrstaRobe) dtgSettings.DataSource = rnServices.GetVrstaRobe();
-            if (status == CodeBook.VrstaUsluge) dtgSettings.DataSource = rnServices.GetVrstaUsluge();
-
-            DataGridViewColumn column = dtgSettings.Columns[1];
-            column.Width = 600;
+            if (data.Count() > 0)
+            {
+                DataGridViewColumn column = dtgSettings.Columns[1];
+                column.Width = 600;
+            }
         }
 
         private void dtgSettings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -238,9 +225,48 @@ namespace DML.RadniNalog
             int.TryParse(this.dtgSettings.CurrentRow.Cells[0].Value.ToString(), out int id);
             if (id > 0)
             {
-                Form rn = new EdditSetting(id, status);
-                rn.Show();
+                Form es = new EdditSetting(id, status, this.dtgSettings.CurrentRow.Cells[1].Value.ToString());
+                es.FormClosed += new FormClosedEventHandler(es_FormClosed);
+                es.Show();
             }            
+        }
+
+        private void es_FormClosed(object sender, EventArgs e)
+        {
+            Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+             var data = rnServices.GetLoadData().BaseDtos.Where(x => x.PostavkaId == (int)status).ToList();
+
+            dtgSettings.DataSource = data;
+
+            if (data.Count() > 0)
+            {
+                DataGridViewColumn column = dtgSettings.Columns[1];
+                column.Width = 600;
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+        }
+
+        private void copyAlltoClipboard()
+        {
+            ddgRadniNalozi.SelectAll();
+            DataObject dataObj = ddgRadniNalozi.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
     }
 }

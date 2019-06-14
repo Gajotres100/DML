@@ -4,34 +4,21 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Mjera">
+    <Schema Namespace="DMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KatalogPostavke">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="Narucitelj">
+        <EntityType Name="Postavke">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Primatelj">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Radiliste">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="PostavkeId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RadniNalog">
           <Key>
@@ -52,46 +39,23 @@
           <Property Name="RN" Type="nvarchar(max)" />
           <Property Name="MjeraId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="RegOznaka">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="RobuIzdao">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Vozac">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="VrstaRobe">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="VrstaUsluge">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
-        <Association Name="FK_RadniNalog_Mjera">
-          <End Role="Mjera" Type="Self.Mjera" Multiplicity="1" />
+        <Association Name="FK_Postavke_KatalogPostavke">
+          <End Role="KatalogPostavke" Type="Self.KatalogPostavke" Multiplicity="1" />
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KatalogPostavke">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Postavke">
+              <PropertyRef Name="PostavkeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RadniNalog_Postavke">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Mjera">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -99,11 +63,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Narucitelj">
-          <End Role="Narucitelj" Type="Self.Narucitelj" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke1">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Narucitelj">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -111,11 +75,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Primatelj">
-          <End Role="Primatelj" Type="Self.Primatelj" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke2">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Primatelj">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -123,11 +87,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Radiliste">
-          <End Role="Radiliste" Type="Self.Radiliste" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke3">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Radiliste">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -135,11 +99,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_RegOznaka">
-          <End Role="RegOznaka" Type="Self.RegOznaka" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke4">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="RegOznaka">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -147,11 +111,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_RobuIzdao">
-          <End Role="RobuIzdao" Type="Self.RobuIzdao" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke5">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="RobuIzdao">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -159,11 +123,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Vozac">
-          <End Role="Vozac" Type="Self.Vozac" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke6">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Vozac">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -171,11 +135,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_VrstaRobe">
-          <End Role="VrstaRobe" Type="Self.VrstaRobe" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke7">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VrstaRobe">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -183,11 +147,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_VrstaUsluge">
-          <End Role="VrstaUsluge" Type="Self.VrstaUsluge" Multiplicity="1" />
+        <Association Name="FK_RadniNalog_Postavke8">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
           <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VrstaUsluge">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -196,89 +160,124 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DMLModelStoreContainer">
-          <EntitySet Name="Mjera" EntityType="Self.Mjera" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Narucitelj" EntityType="Self.Narucitelj" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Primatelj" EntityType="Self.Primatelj" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Radiliste" EntityType="Self.Radiliste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KatalogPostavke" EntityType="Self.KatalogPostavke" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Postavke" EntityType="Self.Postavke" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RadniNalog" EntityType="Self.RadniNalog" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RegOznaka" EntityType="Self.RegOznaka" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RobuIzdao" EntityType="Self.RobuIzdao" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vozac" EntityType="Self.Vozac" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VrstaRobe" EntityType="Self.VrstaRobe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VrstaUsluge" EntityType="Self.VrstaUsluge" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_RadniNalog_Mjera" Association="Self.FK_RadniNalog_Mjera">
-            <End Role="Mjera" EntitySet="Mjera" />
+          <AssociationSet Name="FK_Postavke_KatalogPostavke" Association="Self.FK_Postavke_KatalogPostavke">
+            <End Role="KatalogPostavke" EntitySet="KatalogPostavke" />
+            <End Role="Postavke" EntitySet="Postavke" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke" Association="Self.FK_RadniNalog_Postavke">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Narucitelj" Association="Self.FK_RadniNalog_Narucitelj">
-            <End Role="Narucitelj" EntitySet="Narucitelj" />
+          <AssociationSet Name="FK_RadniNalog_Postavke1" Association="Self.FK_RadniNalog_Postavke1">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Primatelj" Association="Self.FK_RadniNalog_Primatelj">
-            <End Role="Primatelj" EntitySet="Primatelj" />
+          <AssociationSet Name="FK_RadniNalog_Postavke2" Association="Self.FK_RadniNalog_Postavke2">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Radiliste" Association="Self.FK_RadniNalog_Radiliste">
-            <End Role="Radiliste" EntitySet="Radiliste" />
+          <AssociationSet Name="FK_RadniNalog_Postavke3" Association="Self.FK_RadniNalog_Postavke3">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_RegOznaka" Association="Self.FK_RadniNalog_RegOznaka">
-            <End Role="RegOznaka" EntitySet="RegOznaka" />
+          <AssociationSet Name="FK_RadniNalog_Postavke4" Association="Self.FK_RadniNalog_Postavke4">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_RobuIzdao" Association="Self.FK_RadniNalog_RobuIzdao">
-            <End Role="RobuIzdao" EntitySet="RobuIzdao" />
+          <AssociationSet Name="FK_RadniNalog_Postavke5" Association="Self.FK_RadniNalog_Postavke5">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Vozac" Association="Self.FK_RadniNalog_Vozac">
-            <End Role="Vozac" EntitySet="Vozac" />
+          <AssociationSet Name="FK_RadniNalog_Postavke6" Association="Self.FK_RadniNalog_Postavke6">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_VrstaRobe" Association="Self.FK_RadniNalog_VrstaRobe">
-            <End Role="VrstaRobe" EntitySet="VrstaRobe" />
+          <AssociationSet Name="FK_RadniNalog_Postavke7" Association="Self.FK_RadniNalog_Postavke7">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_VrstaUsluge" Association="Self.FK_RadniNalog_VrstaUsluge">
-            <End Role="VrstaUsluge" EntitySet="VrstaUsluge" />
+          <AssociationSet Name="FK_RadniNalog_Postavke8" Association="Self.FK_RadniNalog_Postavke8">
+            <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Mjera">
+        <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KatalogPostavkes" EntityType="DMLModel.KatalogPostavke" />
+          <EntitySet Name="Postavkes" EntityType="DMLModel.Postavke" />
+          <EntitySet Name="RadniNalogs" EntityType="DMLModel.RadniNalog" />
+          <AssociationSet Name="FK_Postavke_KatalogPostavke" Association="DMLModel.FK_Postavke_KatalogPostavke">
+            <End Role="KatalogPostavke" EntitySet="KatalogPostavkes" />
+            <End Role="Postavke" EntitySet="Postavkes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke" Association="DMLModel.FK_RadniNalog_Postavke">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke1" Association="DMLModel.FK_RadniNalog_Postavke1">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke2" Association="DMLModel.FK_RadniNalog_Postavke2">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke3" Association="DMLModel.FK_RadniNalog_Postavke3">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke4" Association="DMLModel.FK_RadniNalog_Postavke4">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke5" Association="DMLModel.FK_RadniNalog_Postavke5">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke6" Association="DMLModel.FK_RadniNalog_Postavke6">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke7" Association="DMLModel.FK_RadniNalog_Postavke7">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke8" Association="DMLModel.FK_RadniNalog_Postavke8">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="KatalogPostavke">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_Mjera" FromRole="Mjera" ToRole="RadniNalog" />
+          <NavigationProperty Name="Postavkes" Relationship="DMLModel.FK_Postavke_KatalogPostavke" FromRole="KatalogPostavke" ToRole="Postavke" />
         </EntityType>
-        <EntityType Name="Narucitelj">
+        <EntityType Name="Postavke">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_Narucitelj" FromRole="Narucitelj" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="Primatelj">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_Primatelj" FromRole="Primatelj" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="Radiliste">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_Radiliste" FromRole="Radiliste" ToRole="RadniNalog" />
+          <Property Name="PostavkeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KatalogPostavke" Relationship="DMLModel.FK_Postavke_KatalogPostavke" FromRole="Postavke" ToRole="KatalogPostavke" />
+          <NavigationProperty Name="Mjera" Relationship="DMLModel.FK_RadniNalog_Postavke" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="Narucitelj" Relationship="DMLModel.FK_RadniNalog_Postavke1" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="Primatelj" Relationship="DMLModel.FK_RadniNalog_Postavke2" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="Radiliste" Relationship="DMLModel.FK_RadniNalog_Postavke3" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="RegOznaka" Relationship="DMLModel.FK_RadniNalog_Postavke4" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="RobuIzdao" Relationship="DMLModel.FK_RadniNalog_Postavke5" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="Vozac" Relationship="DMLModel.FK_RadniNalog_Postavke6" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="VrstaRobe" Relationship="DMLModel.FK_RadniNalog_Postavke7" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="VrstaUsluge" Relationship="DMLModel.FK_RadniNalog_Postavke8" FromRole="Postavke" ToRole="RadniNalog" />
         </EntityType>
         <EntityType Name="RadniNalog">
           <Key>
@@ -298,61 +297,33 @@
           <Property Name="PrimateljId" Type="Int32" Nullable="false" />
           <Property Name="RN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MjeraId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Mjera" Relationship="Self.FK_RadniNalog_Mjera" FromRole="RadniNalog" ToRole="Mjera" />
-          <NavigationProperty Name="Narucitelj" Relationship="Self.FK_RadniNalog_Narucitelj" FromRole="RadniNalog" ToRole="Narucitelj" />
-          <NavigationProperty Name="Primatelj" Relationship="Self.FK_RadniNalog_Primatelj" FromRole="RadniNalog" ToRole="Primatelj" />
-          <NavigationProperty Name="Radiliste" Relationship="Self.FK_RadniNalog_Radiliste" FromRole="RadniNalog" ToRole="Radiliste" />
-          <NavigationProperty Name="RegOznaka" Relationship="Self.FK_RadniNalog_RegOznaka" FromRole="RadniNalog" ToRole="RegOznaka" />
-          <NavigationProperty Name="RobuIzdao" Relationship="Self.FK_RadniNalog_RobuIzdao" FromRole="RadniNalog" ToRole="RobuIzdao" />
-          <NavigationProperty Name="Vozac" Relationship="Self.FK_RadniNalog_Vozac" FromRole="RadniNalog" ToRole="Vozac" />
-          <NavigationProperty Name="VrstaRobe" Relationship="Self.FK_RadniNalog_VrstaRobe" FromRole="RadniNalog" ToRole="VrstaRobe" />
-          <NavigationProperty Name="VrstaUsluge" Relationship="Self.FK_RadniNalog_VrstaUsluge" FromRole="RadniNalog" ToRole="VrstaUsluge" />
+          <NavigationProperty Name="Mjera" Relationship="DMLModel.FK_RadniNalog_Postavke" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="Narucitelj" Relationship="DMLModel.FK_RadniNalog_Postavke1" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="Primatelj" Relationship="DMLModel.FK_RadniNalog_Postavke2" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="Radiliste" Relationship="DMLModel.FK_RadniNalog_Postavke3" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="RegOznaka" Relationship="DMLModel.FK_RadniNalog_Postavke4" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="RobuIzdao" Relationship="DMLModel.FK_RadniNalog_Postavke5" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="Vozac" Relationship="DMLModel.FK_RadniNalog_Postavke6" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="VrstaRobe" Relationship="DMLModel.FK_RadniNalog_Postavke7" FromRole="RadniNalog" ToRole="Postavke" />
+          <NavigationProperty Name="VrstaUsluge" Relationship="DMLModel.FK_RadniNalog_Postavke8" FromRole="RadniNalog" ToRole="Postavke" />
         </EntityType>
-        <EntityType Name="RegOznaka">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_RegOznaka" FromRole="RegOznaka" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="RobuIzdao">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_RobuIzdao" FromRole="RobuIzdao" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="Vozac">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_Vozac" FromRole="Vozac" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="VrstaRobe">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_VrstaRobe" FromRole="VrstaRobe" ToRole="RadniNalog" />
-        </EntityType>
-        <EntityType Name="VrstaUsluge">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RadniNalogs" Relationship="Self.FK_RadniNalog_VrstaUsluge" FromRole="VrstaUsluge" ToRole="RadniNalog" />
-        </EntityType>
-        <Association Name="FK_RadniNalog_Mjera">
-          <End Role="Mjera" Type="Self.Mjera" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_Postavke_KatalogPostavke">
+          <End Type="DMLModel.KatalogPostavke" Role="KatalogPostavke" Multiplicity="1" />
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Mjera">
+            <Principal Role="KatalogPostavke">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Postavke">
+              <PropertyRef Name="PostavkeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RadniNalog_Postavke">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -360,11 +331,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Narucitelj">
-          <End Role="Narucitelj" Type="Self.Narucitelj" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke1">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Narucitelj">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -372,11 +343,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Primatelj">
-          <End Role="Primatelj" Type="Self.Primatelj" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke2">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Primatelj">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -384,11 +355,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Radiliste">
-          <End Role="Radiliste" Type="Self.Radiliste" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke3">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Radiliste">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -396,11 +367,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_RegOznaka">
-          <End Role="RegOznaka" Type="Self.RegOznaka" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke4">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="RegOznaka">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -408,11 +379,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_RobuIzdao">
-          <End Role="RobuIzdao" Type="Self.RobuIzdao" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke5">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="RobuIzdao">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -420,11 +391,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_Vozac">
-          <End Role="Vozac" Type="Self.Vozac" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke6">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Vozac">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -432,11 +403,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_VrstaRobe">
-          <End Role="VrstaRobe" Type="Self.VrstaRobe" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke7">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VrstaRobe">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -444,11 +415,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RadniNalog_VrstaUsluge">
-          <End Role="VrstaUsluge" Type="Self.VrstaUsluge" Multiplicity="1" />
-          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+        <Association Name="FK_RadniNalog_Postavke8">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VrstaUsluge">
+            <Principal Role="Postavke">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="RadniNalog">
@@ -456,149 +427,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DMLEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Mjeras" EntityType="Self.Mjera" />
-          <EntitySet Name="Naruciteljs" EntityType="Self.Narucitelj" />
-          <EntitySet Name="Primateljs" EntityType="Self.Primatelj" />
-          <EntitySet Name="Radilistes" EntityType="Self.Radiliste" />
-          <EntitySet Name="RadniNalogs" EntityType="Self.RadniNalog" />
-          <EntitySet Name="RegOznakas" EntityType="Self.RegOznaka" />
-          <EntitySet Name="RobuIzdaos" EntityType="Self.RobuIzdao" />
-          <EntitySet Name="Vozacs" EntityType="Self.Vozac" />
-          <EntitySet Name="VrstaRobes" EntityType="Self.VrstaRobe" />
-          <EntitySet Name="VrstaUsluges" EntityType="Self.VrstaUsluge" />
-          <AssociationSet Name="FK_RadniNalog_Mjera" Association="Self.FK_RadniNalog_Mjera">
-            <End Role="Mjera" EntitySet="Mjeras" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Narucitelj" Association="Self.FK_RadniNalog_Narucitelj">
-            <End Role="Narucitelj" EntitySet="Naruciteljs" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Primatelj" Association="Self.FK_RadniNalog_Primatelj">
-            <End Role="Primatelj" EntitySet="Primateljs" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Radiliste" Association="Self.FK_RadniNalog_Radiliste">
-            <End Role="Radiliste" EntitySet="Radilistes" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_RegOznaka" Association="Self.FK_RadniNalog_RegOznaka">
-            <End Role="RegOznaka" EntitySet="RegOznakas" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_RobuIzdao" Association="Self.FK_RadniNalog_RobuIzdao">
-            <End Role="RobuIzdao" EntitySet="RobuIzdaos" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_Vozac" Association="Self.FK_RadniNalog_Vozac">
-            <End Role="Vozac" EntitySet="Vozacs" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_VrstaRobe" Association="Self.FK_RadniNalog_VrstaRobe">
-            <End Role="VrstaRobe" EntitySet="VrstaRobes" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RadniNalog_VrstaUsluge" Association="Self.FK_RadniNalog_VrstaUsluge">
-            <End Role="VrstaUsluge" EntitySet="VrstaUsluges" />
-            <End Role="RadniNalog" EntitySet="RadniNalogs" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DMLModelStoreContainer" CdmEntityContainer="DMLEntities">
-          <EntitySetMapping Name="Mjeras">
-            <EntityTypeMapping TypeName="DMLModel.Mjera">
-              <MappingFragment StoreEntitySet="Mjera">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="KatalogPostavkes">
+            <EntityTypeMapping TypeName="DMLModel.KatalogPostavke">
+              <MappingFragment StoreEntitySet="KatalogPostavke">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Naruciteljs">
-            <EntityTypeMapping TypeName="DMLModel.Narucitelj">
-              <MappingFragment StoreEntitySet="Narucitelj">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Postavkes">
+            <EntityTypeMapping TypeName="DMLModel.Postavke">
+              <MappingFragment StoreEntitySet="Postavke">
+                <ScalarProperty Name="PostavkeId" ColumnName="PostavkeId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Primateljs">
-            <EntityTypeMapping TypeName="DMLModel.Primatelj">
-              <MappingFragment StoreEntitySet="Primatelj">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Radilistes">
-            <EntityTypeMapping TypeName="DMLModel.Radiliste">
-              <MappingFragment StoreEntitySet="Radiliste">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RadniNalogs">
             <EntityTypeMapping TypeName="DMLModel.RadniNalog">
               <MappingFragment StoreEntitySet="RadniNalog">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Datum" ColumnName="Datum" />
-                <ScalarProperty Name="VrstaRobeId" ColumnName="VrstaRobeId" />
-                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-                <ScalarProperty Name="RobuIzdaoId" ColumnName="RobuIzdaoId" />
-                <ScalarProperty Name="RegOznakaId" ColumnName="RegOznakaId" />
-                <ScalarProperty Name="VrstaUslugeId" ColumnName="VrstaUslugeId" />
-                <ScalarProperty Name="RadilisteId" ColumnName="RadilisteId" />
-                <ScalarProperty Name="VozacId" ColumnName="VozacId" />
-                <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
-                <ScalarProperty Name="NaruciteljId" ColumnName="NaruciteljId" />
-                <ScalarProperty Name="PrimateljId" ColumnName="PrimateljId" />
-                <ScalarProperty Name="RN" ColumnName="RN" />
                 <ScalarProperty Name="MjeraId" ColumnName="MjeraId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RegOznakas">
-            <EntityTypeMapping TypeName="DMLModel.RegOznaka">
-              <MappingFragment StoreEntitySet="RegOznaka">
+                <ScalarProperty Name="RN" ColumnName="RN" />
+                <ScalarProperty Name="PrimateljId" ColumnName="PrimateljId" />
+                <ScalarProperty Name="NaruciteljId" ColumnName="NaruciteljId" />
+                <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
+                <ScalarProperty Name="VozacId" ColumnName="VozacId" />
+                <ScalarProperty Name="RadilisteId" ColumnName="RadilisteId" />
+                <ScalarProperty Name="VrstaUslugeId" ColumnName="VrstaUslugeId" />
+                <ScalarProperty Name="RegOznakaId" ColumnName="RegOznakaId" />
+                <ScalarProperty Name="RobuIzdaoId" ColumnName="RobuIzdaoId" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="VrstaRobeId" ColumnName="VrstaRobeId" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RobuIzdaos">
-            <EntityTypeMapping TypeName="DMLModel.RobuIzdao">
-              <MappingFragment StoreEntitySet="RobuIzdao">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vozacs">
-            <EntityTypeMapping TypeName="DMLModel.Vozac">
-              <MappingFragment StoreEntitySet="Vozac">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VrstaRobes">
-            <EntityTypeMapping TypeName="DMLModel.VrstaRobe">
-              <MappingFragment StoreEntitySet="VrstaRobe">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VrstaUsluges">
-            <EntityTypeMapping TypeName="DMLModel.VrstaUsluge">
-              <MappingFragment StoreEntitySet="VrstaUsluge">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

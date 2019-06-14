@@ -46,18 +46,9 @@
     <Compile Include="BaseDto.cs" />
     <Compile Include="SummPoFilterPodatcimaDto.cs" />
     <Compile Include="FormLoadDto.cs" />
-    <Compile Include="MjeraDto.cs" />
-    <Compile Include="NarutiteljDto.cs" />
-    <Compile Include="PrimateljDto.cs" />
-    <Compile Include="RadilisteDto.cs" />
-    <Compile Include="RegOznakaDto.cs" />
     <Compile Include="RnDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RnDtoForGrid.cs" />
-    <Compile Include="RobuIzdaoDto.cs" />
-    <Compile Include="VozacDto.cs" />
-    <Compile Include="VrstaRobeDto.cs" />
-    <Compile Include="VrstaUslugeDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

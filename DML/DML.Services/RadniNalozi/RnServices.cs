@@ -32,29 +32,14 @@ namespace DML.Services.RadniNalozi
             int primateljId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId,vrstaRobeId,robuIzdaoId,vrstaUslugeId,radilisteId, vozacId,naruciteljId,primateljId);
         public FormLoadDto GetLoadData() => rnRepository.GetLoadData();
 
-        public List<BaseDto> GetNarucitelj() => rnRepository.GetNarucitelj();
-        public List<BaseDto> GetPrimatelj() => rnRepository.GetPrimatelj();
-        public List<BaseDto> GetRadiliste() => rnRepository.GetRadiliste();
-        public List<BaseDto> GetRegOznaka() => rnRepository.GetRegOznaka();
-        public List<BaseDto> GetRobuIzdao() => rnRepository.GetRobuIzdao();
-        public List<BaseDto> GetVozac() => rnRepository.GetVozac();
-        public List<BaseDto> GetVrstaRobe() => rnRepository.GetVrstaRobe();
-        public List<BaseDto> GetVrstaUsluge() => rnRepository.GetVrstaUsluge();
+        public void SaveOrUpdate(BaseDto data)
+        {
+            rnRepository.SaveOrUpdate(data);
+        }
 
-        public void SaveNarucitelj(string text) => rnRepository.SaveNarucitelj(text);
-
-        public void SavePrimatelj(string text) => rnRepository.SavePrimatelj(text);
-
-        public void SaveVrstaUsluge(string text) => rnRepository.SaveVrstaUsluge(text);
-
-        public void SaveRadiliste(string text) => rnRepository.SaveRadiliste(text);
-
-        public void SaveVrstaRobe(string text) => rnRepository.SaveVrstaRobe(text);
-
-        public void SaveRegOznaka(string text) => rnRepository.SaveRegOznaka(text);
-
-        public void SaveVozac(string text) => rnRepository.SaveVozac(text);
-
-        public void SaveRobuIzdao(string text) => rnRepository.SaveRobuIzdao(text);
+        public void DeletePostavka(int id)
+        {
+            rnRepository.DeletePostavka(id);
+        }
     }
 }

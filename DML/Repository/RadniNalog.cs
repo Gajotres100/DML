@@ -29,14 +29,14 @@ namespace Repository
         public string RN { get; set; }
         public int MjeraId { get; set; }
     
-        public virtual Mjera Mjera { get; set; }
-        public virtual Narucitelj Narucitelj { get; set; }
-        public virtual Primatelj Primatelj { get; set; }
-        public virtual Radiliste Radiliste { get; set; }
-        public virtual RegOznaka RegOznaka { get; set; }
-        public virtual RobuIzdao RobuIzdao { get; set; }
-        public virtual Vozac Vozac { get; set; }
-        public virtual VrstaRobe VrstaRobe { get; set; }
-        public virtual VrstaUsluge VrstaUsluge { get; set; }
+        public virtual Postavke Mjera { get; set; }
+        public virtual Postavke Narucitelj { get; set; }
+        public virtual Postavke Primatelj { get; set; }
+        public virtual Postavke Radiliste { get; set; }
+        public virtual Postavke RegOznaka { get; set; }
+        public virtual Postavke RobuIzdao { get; set; }
+        public virtual Postavke Vozac { get; set; }
+        public virtual Postavke VrstaRobe { get; set; }
+        public virtual Postavke VrstaUsluge { get; set; }
     }
 }

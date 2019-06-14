@@ -25,15 +25,8 @@ namespace Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Mjera> Mjeras { get; set; }
-        public virtual DbSet<Narucitelj> Naruciteljs { get; set; }
-        public virtual DbSet<Primatelj> Primateljs { get; set; }
-        public virtual DbSet<Radiliste> Radilistes { get; set; }
+        public virtual DbSet<KatalogPostavke> KatalogPostavkes { get; set; }
+        public virtual DbSet<Postavke> Postavkes { get; set; }
         public virtual DbSet<RadniNalog> RadniNalogs { get; set; }
-        public virtual DbSet<RegOznaka> RegOznakas { get; set; }
-        public virtual DbSet<RobuIzdao> RobuIzdaos { get; set; }
-        public virtual DbSet<Vozac> Vozacs { get; set; }
-        public virtual DbSet<VrstaRobe> VrstaRobes { get; set; }
-        public virtual DbSet<VrstaUsluge> VrstaUsluges { get; set; }
     }
 }

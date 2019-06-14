@@ -89,6 +89,7 @@
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnExport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -384,6 +385,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnExport);
             this.tabPage2.Controls.Add(this.lblSuma);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label21);
@@ -731,6 +733,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(267, 164);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(103, 28);
+            this.btnExport.TabIndex = 43;
+            this.btnExport.Text = "Export XLS";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // RadniNalozi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -816,6 +828,7 @@
         private System.Windows.Forms.DataGridView dtgSettings;
         private System.Windows.Forms.ComboBox cbMjera;
         private System.Windows.Forms.Label lblSuma;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 
