@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EdditSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdditSetting.Designer.cs">
+      <DependentUpon>EdditSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="RadniNalozi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EdditSetting.resx">
+      <DependentUpon>EdditSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RadniNalozi.resx">
       <DependentUpon>RadniNalozi.cs</DependentUpon>
     </EmbeddedResource>

@@ -231,5 +231,16 @@ namespace DML.RadniNalog
             DataGridViewColumn column = dtgSettings.Columns[1];
             column.Width = 600;
         }
+
+        private void dtgSettings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Enum.TryParse(cbVrstaPostavke.SelectedValue.ToString(), out CodeBook status);
+            int.TryParse(this.dtgSettings.CurrentRow.Cells[0].Value.ToString(), out int id);
+            if (id > 0)
+            {
+                Form rn = new EdditSetting(id, status);
+                rn.Show();
+            }            
+        }
     }
 }
