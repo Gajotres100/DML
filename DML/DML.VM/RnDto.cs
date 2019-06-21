@@ -21,6 +21,6 @@ namespace DML.VM
         public string VrstaStroja { get; set; }
         public int VrstaUslugeId { get; set; }
         public int MjeraId { get; set; }
-        public int kolicinaRobe { get; set; }
+        public int? kolicinaRobe { get; set; }
     }
 }

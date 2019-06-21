@@ -1,4 +1,6 @@
-﻿namespace DML.RadniNalog
+﻿using System;
+
+namespace DML.RadniNalog
 {
     partial class RadniNalozi
     {
@@ -58,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnExport = new System.Windows.Forms.Button();
             this.lblSuma = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -89,7 +92,6 @@
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnExport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -163,7 +165,7 @@
             // cbPrimatelj
             // 
             this.cbPrimatelj.FormattingEnabled = true;
-            this.cbPrimatelj.Location = new System.Drawing.Point(173, 352);
+            this.cbPrimatelj.Location = new System.Drawing.Point(174, 323);
             this.cbPrimatelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbPrimatelj.Name = "cbPrimatelj";
             this.cbPrimatelj.Size = new System.Drawing.Size(200, 24);
@@ -172,7 +174,7 @@
             // cbNarucitelj
             // 
             this.cbNarucitelj.FormattingEnabled = true;
-            this.cbNarucitelj.Location = new System.Drawing.Point(173, 319);
+            this.cbNarucitelj.Location = new System.Drawing.Point(174, 290);
             this.cbNarucitelj.Margin = new System.Windows.Forms.Padding(4);
             this.cbNarucitelj.Name = "cbNarucitelj";
             this.cbNarucitelj.Size = new System.Drawing.Size(200, 24);
@@ -270,7 +272,7 @@
             // 
             // txtVrstaStroja
             // 
-            this.txtVrstaStroja.Location = new System.Drawing.Point(173, 287);
+            this.txtVrstaStroja.Location = new System.Drawing.Point(174, 355);
             this.txtVrstaStroja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVrstaStroja.Name = "txtVrstaStroja";
             this.txtVrstaStroja.Size = new System.Drawing.Size(200, 22);
@@ -279,7 +281,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 352);
+            this.label11.Location = new System.Drawing.Point(6, 323);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(145, 17);
             this.label11.TabIndex = 11;
@@ -288,7 +290,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 321);
+            this.label10.Location = new System.Drawing.Point(6, 292);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 10;
@@ -297,11 +299,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 287);
+            this.label9.Location = new System.Drawing.Point(6, 355);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 17);
+            this.label9.Size = new System.Drawing.Size(81, 17);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Vrsta stroja:";
+            this.label9.Text = "Napomena:";
             // 
             // label8
             // 
@@ -415,9 +417,19 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Size = new System.Drawing.Size(1331, 638);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Filter po registraciji";
+            this.tabPage2.Text = "Pretraživanje";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(267, 164);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(103, 28);
+            this.btnExport.TabIndex = 43;
+            this.btnExport.Text = "Export XLS";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // lblSuma
             // 
@@ -644,6 +656,7 @@
             this.ddgRadniNalozi.RowTemplate.Height = 24;
             this.ddgRadniNalozi.Size = new System.Drawing.Size(1321, 436);
             this.ddgRadniNalozi.TabIndex = 0;
+            this.ddgRadniNalozi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ddgRadniNalozi_CellDoubleClick);
             // 
             // tabPage3
             // 
@@ -732,16 +745,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(267, 164);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(103, 28);
-            this.btnExport.TabIndex = 43;
-            this.btnExport.Text = "Export XLS";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // RadniNalozi
             // 

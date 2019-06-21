@@ -12,25 +12,47 @@ namespace DML.Repository.RadniNalozi
         {
             using (var context = new DMLEntities())
             {
-                var rn = new RadniNalog
+                var rn = context.RadniNalogs.FirstOrDefault(x => x.Id == data.Id);
+                if (rn == null)
                 {
-                    Datum = data.Datum,
-                    NaruciteljId = data.NaruciteljId,
-                    PrimateljId = data.PrimateljId,
-                    RegOznakaId = data.RegOznakaId,
-                    RN = data.RN,
-                    RadilisteId = data.RadilisteId,
-                    RobuIzdaoId = data.RobuIzdaoId,
-                    VozacId = data.VozacId,
-                    VrstaRobeId = data.VrstaRobeId,
-                    VrstaStroja = data.VrstaStroja,
-                    VrstaUslugeId = data.VrstaUslugeId,
-                    Kolicina = data.kolicinaRobe,
-                    MjeraId = data.MjeraId
-                };
+                    var radninalog = new RadniNalog
+                    {
+                        Datum = data.Datum,
+                        NaruciteljId = data.NaruciteljId,
+                        PrimateljId = data.PrimateljId,
+                        RegOznakaId = data.RegOznakaId,
+                        RN = data.RN,
+                        RadilisteId = data.RadilisteId,
+                        RobuIzdaoId = data.RobuIzdaoId,
+                        VozacId = data.VozacId,
+                        VrstaRobeId = data.VrstaRobeId,
+                        VrstaStroja = data.VrstaStroja,
+                        VrstaUslugeId = data.VrstaUslugeId,
+                        Kolicina = data.kolicinaRobe,
+                        MjeraId = data.MjeraId
+                    };
 
-                context.RadniNalogs.Add(rn);
-                context.SaveChanges();
+                    context.RadniNalogs.Add(radninalog);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    rn.Datum = data.Datum;
+                    rn.NaruciteljId = data.NaruciteljId;
+                    rn.PrimateljId = data.PrimateljId;
+                    rn.RegOznakaId = data.RegOznakaId;
+                    rn.RN = data.RN;
+                    rn.RadilisteId = data.RadilisteId;
+                    rn.RobuIzdaoId = data.RobuIzdaoId;
+                    rn.VozacId = data.VozacId;
+                    rn.VrstaRobeId = data.VrstaRobeId;
+                    rn.VrstaStroja = data.VrstaStroja;
+                    rn.VrstaUslugeId = data.VrstaUslugeId;
+                    rn.Kolicina = data.kolicinaRobe;
+                    rn.MjeraId = data.MjeraId;                                      
+                    context.SaveChanges();
+
+                }
             }
         }
 
@@ -69,11 +91,37 @@ namespace DML.Repository.RadniNalozi
                     RobuIzdao = x.RobuIzdao?.Name,
                     Vozac = x.Vozac?.Name,
                     VrstaRobe = x.VrstaRobe?.Name,
-                    VrstaStroja = x.VrstaStroja,
+                    Napomena = x.VrstaStroja,
                     VrstaUsluge = x.VrstaUsluge?.Name,
                     Mjera =  x.Mjera?.Name,
                     Kolicina = x.Kolicina
                 }).ToList();
+            }
+        }
+
+        public RnDto GetRn(int id)
+        {
+            using (var context = new DMLEntities())
+            {
+                var rn = context.RadniNalogs.FirstOrDefault(x => x.Id == id);
+
+                return new RnDto
+                {
+                    Datum = rn.Datum,
+                    Id = rn.Id,
+                    kolicinaRobe = rn.Kolicina,
+                    MjeraId = rn.MjeraId,
+                    NaruciteljId = rn.NaruciteljId,
+                    PrimateljId = rn.PrimateljId, 
+                    RadilisteId = rn.RadilisteId,
+                    RegOznakaId = rn.RegOznakaId,
+                    RN = rn.RN,
+                    RobuIzdaoId = rn.RobuIzdaoId,
+                    VozacId = rn.VozacId,
+                    VrstaRobeId = rn.VrstaRobeId,
+                    VrstaStroja = rn.VrstaStroja,
+                    VrstaUslugeId = rn.VrstaUslugeId
+                };
             }
         }
 
@@ -103,8 +151,10 @@ namespace DML.Repository.RadniNalozi
                     RobuIzdao = x.RobuIzdao.Name,
                     Vozac = x.Vozac.Name,
                     VrstaRobe = x.VrstaRobe.Name,
-                    VrstaStroja = x.VrstaStroja,
-                    VrstaUsluge = x.VrstaUsluge.Name
+                    Napomena = x.VrstaStroja,
+                    VrstaUsluge = x.VrstaUsluge.Name,
+                    Mjera = x.Mjera.Name,
+                    Kolicina = x.Kolicina
                 }).ToList();
             }
         }

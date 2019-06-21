@@ -36,3 +36,4 @@ C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.RadniNalog\obj\Debug\DML.Rad
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.exe
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.pdb
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.EdditSetting.resources
+C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.RadniNalog\obj\Debug\DML.RadniNalog.EditRn.resources

@@ -37,9 +37,19 @@ namespace DML.Services.RadniNalozi
             rnRepository.SaveOrUpdate(data);
         }
 
-        public void DeletePostavka(int id)
+        public bool DeletePostavka(int id)
         {
-            rnRepository.DeletePostavka(id);
+            try
+            {
+                rnRepository.DeletePostavka(id);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
+
+        public RnDto GetRnDto(int id) => rnRepository.GetRn(id);
     }
 }

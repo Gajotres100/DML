@@ -48,7 +48,9 @@ namespace DML.RadniNalog
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            rnServices.DeletePostavka(Id);
+            bool isDeletedOk = rnServices.DeletePostavka(Id);
+            if(isDeletedOk) this.Close();
+            else MessageBox.Show("Postiji vezani Radni Nalog");
         }
     }
 }

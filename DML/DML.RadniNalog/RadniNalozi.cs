@@ -98,38 +98,38 @@ namespace DML.RadniNalog
             cbMjera.DisplayMember = "Name";
             cbMjera.ValueMember = "Id";
 
-            var loadDataSeckond = rnServices.GetLoadData();
-            loadDataSeckond.BaseDtos.Insert(0, new BaseDto() { Id = 0, Name = "----Odaberi----" });
+            //var loadDataSeckond = rnServices.GetLoadData();
+            loadData.BaseDtos.Insert(0, new BaseDto() { Id = 0, Name = "----Odaberi----" });
 
-            cbNaruciteljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj && x.Id == 0).ToList();
+            cbNaruciteljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj || x.Id == 0).ToList();
             cbNaruciteljSearch.DisplayMember = "Name";
             cbNaruciteljSearch.ValueMember = "Id";
 
-            cbPrimateljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj && x.Id == 0).ToList();
+            cbPrimateljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj || x.Id == 0).ToList();
             cbPrimateljSearch.DisplayMember = "Name";
             cbPrimateljSearch.ValueMember = "Id";
 
-            cbGradisliteSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Radiliste && x.Id == 0).ToList();
+            cbGradisliteSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Radiliste || x.Id == 0).ToList();
             cbGradisliteSearch.DisplayMember = "Name";
             cbGradisliteSearch.ValueMember = "Id";
 
-            cbRegKamionaSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RegOznaka && x.Id == 0).ToList();
+            cbRegKamionaSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RegOznaka || x.Id == 0).ToList();
             cbRegKamionaSearch.DisplayMember = "Name";
             cbRegKamionaSearch.ValueMember = "Id";
 
-            cbRobuIzdaoSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RobuIzdao && x.Id == 0).ToList();
+            cbRobuIzdaoSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.RobuIzdao || x.Id == 0).ToList();
             cbRobuIzdaoSearch.DisplayMember = "Name";
             cbRobuIzdaoSearch.ValueMember = "Id";
 
-            cbVozacSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Vozac && x.Id == 0).ToList();
+            cbVozacSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Vozac || x.Id == 0).ToList();
             cbVozacSearch.DisplayMember = "Name";
             cbVozacSearch.ValueMember = "Id";
 
-            cbVrstaRobeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaRobe && x.Id == 0).ToList();
+            cbVrstaRobeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaRobe || x.Id == 0).ToList();
             cbVrstaRobeSearch.DisplayMember = "Name";
             cbVrstaRobeSearch.ValueMember = "Id";
 
-            cbVrstaUslugeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaUsluge && x.Id == 0).ToList();
+            cbVrstaUslugeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaUsluge || x.Id == 0).ToList();
             cbVrstaUslugeSearch.DisplayMember = "Name";
             cbVrstaUslugeSearch.ValueMember = "Id";
         }
@@ -267,6 +267,23 @@ namespace DML.RadniNalog
             DataObject dataObj = ddgRadniNalozi.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void ddgRadniNalozi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int.TryParse(this.ddgRadniNalozi.CurrentRow.Cells[0].Value.ToString(), out int id);
+            if (id > 0)
+            {
+                Form es = new EditRn(id);
+                es.FormClosed += new FormClosedEventHandler(es_FormClosedEdit);
+                es.Show();
+            }
+        }
+
+        private void es_FormClosedEdit(object sender, EventArgs e)
+        {
+            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            GetLoadData();
         }
     }
 }
