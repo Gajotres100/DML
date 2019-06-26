@@ -13,7 +13,7 @@ namespace DML.RadniNalog
 {
     public partial class RadniNalozi : Form
     {
-        RnServices rnServices;
+        IRnServices rnServices;
         private bool sortAscending = false;
         List<RnDtoForGrid> list;
         public RadniNalozi()

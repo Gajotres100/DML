@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace DML.Services.RadniNalozi
 {
-    public class RnServices
+    public class RnServices : IRnServices
     {
-        RnRepository rnRepository;
+        IRnRepository rnRepository;
         public RnServices()
         {
             rnRepository = new RnRepository();
@@ -26,7 +26,7 @@ namespace DML.Services.RadniNalozi
             int radilisteId,
             int vozacId,
             int naruciteljId,
-            int primateljId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId,vrstaRobeId,robuIzdaoId,vrstaUslugeId,radilisteId, vozacId,naruciteljId,primateljId);
+            int primateljId) => rnRepository.GetRnForTimePeriodAndReg(start, end, regId, vrstaRobeId, robuIzdaoId, vrstaUslugeId, radilisteId, vozacId, naruciteljId, primateljId);
         public FormLoadDto GetLoadData() => rnRepository.GetLoadData();
 
         public void SaveOrUpdate(BaseDto data)
@@ -41,7 +41,7 @@ namespace DML.Services.RadniNalozi
                 rnRepository.DeletePostavka(id);
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }

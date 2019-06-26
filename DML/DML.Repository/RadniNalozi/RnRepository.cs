@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DML.Repository.RadniNalozi
 {
-    public class RnRepository
+    public class RnRepository : IRnRepository
     {
         public void SaveRn(RnDto data)
         {
@@ -49,7 +49,7 @@ namespace DML.Repository.RadniNalozi
                     rn.VrstaStroja = data.VrstaStroja;
                     rn.VrstaUslugeId = data.VrstaUslugeId;
                     rn.Kolicina = data.kolicinaRobe;
-                    rn.MjeraId = data.MjeraId;                                      
+                    rn.MjeraId = data.MjeraId;
                     context.SaveChanges();
 
                 }
@@ -93,7 +93,7 @@ namespace DML.Repository.RadniNalozi
                     VrstaRobe = x.VrstaRobe?.Name,
                     Napomena = x.VrstaStroja,
                     VrstaUsluge = x.VrstaUsluge?.Name,
-                    Mjera =  x.Mjera?.Name,
+                    Mjera = x.Mjera?.Name,
                     Kolicina = x.Kolicina
                 }).ToList();
             }
@@ -112,7 +112,7 @@ namespace DML.Repository.RadniNalozi
                     kolicinaRobe = rn.Kolicina,
                     MjeraId = rn.MjeraId,
                     NaruciteljId = rn.NaruciteljId,
-                    PrimateljId = rn.PrimateljId, 
+                    PrimateljId = rn.PrimateljId,
                     RadilisteId = rn.RadilisteId,
                     RegOznakaId = rn.RegOznakaId,
                     RN = rn.RN,
@@ -182,13 +182,13 @@ namespace DML.Repository.RadniNalozi
                     context.SaveChanges();
                 }
             }
-        } 
+        }
 
         public FormLoadDto GetLoadData()
         {
             using (var context = new DMLEntities())
             {
-                return  new FormLoadDto
+                return new FormLoadDto
                 {
                     BaseDtos = context.Postavkes.Select(x => new BaseDto
                     {
