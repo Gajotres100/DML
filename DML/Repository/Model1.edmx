@@ -33,11 +33,12 @@
           <Property Name="VrstaUslugeId" Type="int" Nullable="false" />
           <Property Name="RadilisteId" Type="int" Nullable="false" />
           <Property Name="VozacId" Type="int" Nullable="false" />
-          <Property Name="VrstaStroja" Type="nvarchar(max)" />
+          <Property Name="Napomena" Type="nvarchar(max)" />
           <Property Name="NaruciteljId" Type="int" Nullable="false" />
           <Property Name="PrimateljId" Type="int" Nullable="false" />
           <Property Name="RN" Type="nvarchar(max)" />
           <Property Name="MjeraId" Type="int" Nullable="false" />
+          <Property Name="VrstaStrojaId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Postavke_KatalogPostavke">
           <End Role="KatalogPostavke" Type="Self.KatalogPostavke" Multiplicity="1" />
@@ -159,6 +160,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RadniNalog_Postavke9">
+          <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
+          <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postavke">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RadniNalog">
+              <PropertyRef Name="VrstaStrojaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DMLModelStoreContainer">
           <EntitySet Name="KatalogPostavke" EntityType="Self.KatalogPostavke" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Postavke" EntityType="Self.Postavke" Schema="dbo" store:Type="Tables" />
@@ -200,6 +213,10 @@
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
           <AssociationSet Name="FK_RadniNalog_Postavke8" Association="Self.FK_RadniNalog_Postavke8">
+            <End Role="Postavke" EntitySet="Postavke" />
+            <End Role="RadniNalog" EntitySet="RadniNalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke9" Association="Self.FK_RadniNalog_Postavke9">
             <End Role="Postavke" EntitySet="Postavke" />
             <End Role="RadniNalog" EntitySet="RadniNalog" />
           </AssociationSet>
@@ -252,6 +269,10 @@
             <End Role="Postavke" EntitySet="Postavkes" />
             <End Role="RadniNalog" EntitySet="RadniNalogs" />
           </AssociationSet>
+          <AssociationSet Name="FK_RadniNalog_Postavke9" Association="DMLModel.FK_RadniNalog_Postavke9">
+            <End Role="Postavke" EntitySet="Postavkes" />
+            <End Role="RadniNalog" EntitySet="RadniNalogs" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="KatalogPostavke">
           <Key>
@@ -278,6 +299,7 @@
           <NavigationProperty Name="Vozac" Relationship="DMLModel.FK_RadniNalog_Postavke6" FromRole="Postavke" ToRole="RadniNalog" />
           <NavigationProperty Name="VrstaRobe" Relationship="DMLModel.FK_RadniNalog_Postavke7" FromRole="Postavke" ToRole="RadniNalog" />
           <NavigationProperty Name="VrstaUsluge" Relationship="DMLModel.FK_RadniNalog_Postavke8" FromRole="Postavke" ToRole="RadniNalog" />
+          <NavigationProperty Name="RadniNalogs9" Relationship="DMLModel.FK_RadniNalog_Postavke9" FromRole="Postavke" ToRole="RadniNalog" />
         </EntityType>
         <EntityType Name="RadniNalog">
           <Key>
@@ -286,13 +308,12 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Datum" Type="DateTime" Precision="3" />
           <Property Name="VrstaRobeId" Type="Int32" Nullable="false" />
-          <Property Name="Kolicina" Type="Decimal" />
+          <Property Name="Kolicina" Type="Decimal" Precision="18" Scale="3" />
           <Property Name="RobuIzdaoId" Type="Int32" Nullable="false" />
           <Property Name="RegOznakaId" Type="Int32" Nullable="false" />
           <Property Name="VrstaUslugeId" Type="Int32" Nullable="false" />
           <Property Name="RadilisteId" Type="Int32" Nullable="false" />
           <Property Name="VozacId" Type="Int32" Nullable="false" />
-          <Property Name="VrstaStroja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NaruciteljId" Type="Int32" Nullable="false" />
           <Property Name="PrimateljId" Type="Int32" Nullable="false" />
           <Property Name="RN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -306,6 +327,9 @@
           <NavigationProperty Name="Vozac" Relationship="DMLModel.FK_RadniNalog_Postavke6" FromRole="RadniNalog" ToRole="Postavke" />
           <NavigationProperty Name="VrstaRobe" Relationship="DMLModel.FK_RadniNalog_Postavke7" FromRole="RadniNalog" ToRole="Postavke" />
           <NavigationProperty Name="VrstaUsluge" Relationship="DMLModel.FK_RadniNalog_Postavke8" FromRole="RadniNalog" ToRole="Postavke" />
+          <Property Name="Napomena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VrstaStrojaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VrstaStroja" Relationship="DMLModel.FK_RadniNalog_Postavke9" FromRole="RadniNalog" ToRole="Postavke" />
         </EntityType>
         <Association Name="FK_Postavke_KatalogPostavke">
           <End Type="DMLModel.KatalogPostavke" Role="KatalogPostavke" Multiplicity="1" />
@@ -427,6 +451,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RadniNalog_Postavke9">
+          <End Type="DMLModel.Postavke" Role="Postavke" Multiplicity="1" />
+          <End Type="DMLModel.RadniNalog" Role="RadniNalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postavke">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RadniNalog">
+              <PropertyRef Name="VrstaStrojaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -453,11 +489,12 @@
           <EntitySetMapping Name="RadniNalogs">
             <EntityTypeMapping TypeName="DMLModel.RadniNalog">
               <MappingFragment StoreEntitySet="RadniNalog">
+                <ScalarProperty Name="VrstaStrojaId" ColumnName="VrstaStrojaId" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
                 <ScalarProperty Name="MjeraId" ColumnName="MjeraId" />
                 <ScalarProperty Name="RN" ColumnName="RN" />
                 <ScalarProperty Name="PrimateljId" ColumnName="PrimateljId" />
                 <ScalarProperty Name="NaruciteljId" ColumnName="NaruciteljId" />
-                <ScalarProperty Name="VrstaStroja" ColumnName="VrstaStroja" />
                 <ScalarProperty Name="VozacId" ColumnName="VozacId" />
                 <ScalarProperty Name="RadilisteId" ColumnName="RadilisteId" />
                 <ScalarProperty Name="VrstaUslugeId" ColumnName="VrstaUslugeId" />

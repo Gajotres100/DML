@@ -14,9 +14,10 @@ namespace DML.VM
         public int RobuIzdaoId { get; set; }
         public int VozacId { get; set; }
         public int VrstaRobeId { get; set; }
-        public string VrstaStroja { get; set; }
+        public string Napomena { get; set; }
         public int VrstaUslugeId { get; set; }
         public int MjeraId { get; set; }
         public decimal? kolicinaRobe { get; set; }
+        public int VrstaStrojaId { get; set; }
     }
 }

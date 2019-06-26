@@ -54,6 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.cbVrstaStroja = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbMjera
@@ -156,7 +158,7 @@
             // 
             // btnSaveRn
             // 
-            this.btnSaveRn.Location = new System.Drawing.Point(191, 397);
+            this.btnSaveRn.Location = new System.Drawing.Point(191, 434);
             this.btnSaveRn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveRn.Name = "btnSaveRn";
             this.btnSaveRn.Size = new System.Drawing.Size(75, 23);
@@ -175,7 +177,7 @@
             // 
             // txtVrstaStroja
             // 
-            this.txtVrstaStroja.Location = new System.Drawing.Point(192, 368);
+            this.txtVrstaStroja.Location = new System.Drawing.Point(191, 401);
             this.txtVrstaStroja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVrstaStroja.Name = "txtVrstaStroja";
             this.txtVrstaStroja.Size = new System.Drawing.Size(200, 22);
@@ -186,23 +188,23 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(24, 336);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 17);
+            this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 64;
-            this.label11.Text = "Primatelj robe/usluge:";
+            this.label11.Text = "Skladište:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(24, 305);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 17);
+            this.label10.Size = new System.Drawing.Size(52, 17);
             this.label10.TabIndex = 63;
-            this.label10.Text = "Naručitelj:";
+            this.label10.Text = "Kupac:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 368);
+            this.label9.Location = new System.Drawing.Point(24, 401);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 17);
             this.label9.TabIndex = 62;
@@ -288,11 +290,31 @@
             this.dtpDatum.Size = new System.Drawing.Size(200, 22);
             this.dtpDatum.TabIndex = 66;
             // 
+            // cbVrstaStroja
+            // 
+            this.cbVrstaStroja.FormattingEnabled = true;
+            this.cbVrstaStroja.Location = new System.Drawing.Point(192, 368);
+            this.cbVrstaStroja.Margin = new System.Windows.Forms.Padding(4);
+            this.cbVrstaStroja.Name = "cbVrstaStroja";
+            this.cbVrstaStroja.Size = new System.Drawing.Size(200, 24);
+            this.cbVrstaStroja.TabIndex = 81;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(24, 368);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 17);
+            this.label25.TabIndex = 80;
+            this.label25.Text = "Vrsta stroja:";
+            // 
             // EditRn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 490);
+            this.Controls.Add(this.cbVrstaStroja);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.cbMjera);
             this.Controls.Add(this.cbPrimatelj);
             this.Controls.Add(this.cbNarucitelj);
@@ -355,5 +377,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.ComboBox cbVrstaStroja;
+        private System.Windows.Forms.Label label25;
     }
 }

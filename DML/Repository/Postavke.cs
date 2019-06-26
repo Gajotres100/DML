@@ -26,6 +26,7 @@ namespace Repository
             this.Vozac = new HashSet<RadniNalog>();
             this.VrstaRobe = new HashSet<RadniNalog>();
             this.VrstaUsluge = new HashSet<RadniNalog>();
+            this.RadniNalogs9 = new HashSet<RadniNalog>();
         }
     
         public int Id { get; set; }
@@ -51,5 +52,7 @@ namespace Repository
         public virtual ICollection<RadniNalog> VrstaRobe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RadniNalog> VrstaUsluge { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RadniNalog> RadniNalogs9 { get; set; }
     }
 }

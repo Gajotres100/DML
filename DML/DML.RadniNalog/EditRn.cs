@@ -75,8 +75,13 @@ namespace DML.RadniNalog
             cbMjera.ValueMember = "Id";
             cbMjera.SelectedValue = rn.MjeraId;
 
+            cbVrstaStroja.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaStroja).ToList();
+            cbVrstaStroja.DisplayMember = "Name";
+            cbVrstaStroja.ValueMember = "Id";
+            cbVrstaStroja.SelectedValue = rn.VrstaStrojaId; 
+
             txtRadniNalog.Text = rn.RN;
-            txtVrstaStroja.Text = rn.VrstaStroja;
+            txtVrstaStroja.Text = rn.Napomena;
             TxtKolicinaRobe.Text = rn.kolicinaRobe.ToString();
         }
 
@@ -97,10 +102,11 @@ namespace DML.RadniNalog
                 RobuIzdaoId = int.Parse(cbRobuIzdao.SelectedValue.ToString()),
                 VozacId = int.Parse(cbVozac.SelectedValue.ToString()),
                 VrstaRobeId = int.Parse(cbVrstaRobe.SelectedValue.ToString()),
-                VrstaStroja = txtVrstaStroja.Text,
+                Napomena = txtVrstaStroja.Text,
                 VrstaUslugeId = int.Parse(cbVrstaUsluge.SelectedValue.ToString()),
                 kolicinaRobe = kolicinaRobe,
                 MjeraId = int.Parse(cbMjera.SelectedValue.ToString()),
+                VrstaStrojaId = int.Parse(cbVrstaStroja.SelectedValue.ToString()),
             };
 
             rnServices.Save(data);

@@ -18,6 +18,7 @@
         <AssociationConnector Association="DMLModel.FK_RadniNalog_Postavke6" />
         <AssociationConnector Association="DMLModel.FK_RadniNalog_Postavke7" />
         <AssociationConnector Association="DMLModel.FK_RadniNalog_Postavke8" />
+        <AssociationConnector Association="DMLModel.FK_RadniNalog_Postavke9" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

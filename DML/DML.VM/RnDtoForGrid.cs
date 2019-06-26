@@ -18,5 +18,6 @@ namespace DML.VM
         public string VrstaUsluge { get; set; }
         public string Mjera { get; set; }
         public decimal? Kolicina { get; set; }
+        public string VrstaStroja { get; set; }
     }
 }

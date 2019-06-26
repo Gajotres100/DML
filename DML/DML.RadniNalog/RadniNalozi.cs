@@ -39,10 +39,11 @@ namespace DML.RadniNalog
                 RobuIzdaoId = int.Parse(cbRobuIzdao.SelectedValue.ToString()),
                 VozacId = int.Parse(cbVozac.SelectedValue.ToString()),
                 VrstaRobeId = int.Parse(cbVrstaRobe.SelectedValue.ToString()),
-                VrstaStroja = txtVrstaStroja.Text,
+                Napomena = txtVrstaStroja.Text,
                 VrstaUslugeId = int.Parse(cbVrstaUsluge.SelectedValue.ToString()),
                 kolicinaRobe = kolicinaRobe,
                 MjeraId = int.Parse(cbMjera.SelectedValue.ToString()),
+                VrstaStrojaId = int.Parse(cbVrstaStroja.SelectedValue.ToString()),
             };
 
             rnServices.Save(data);

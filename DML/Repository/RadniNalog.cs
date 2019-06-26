@@ -23,11 +23,12 @@ namespace Repository
         public int VrstaUslugeId { get; set; }
         public int RadilisteId { get; set; }
         public int VozacId { get; set; }
-        public string VrstaStroja { get; set; }
         public int NaruciteljId { get; set; }
         public int PrimateljId { get; set; }
         public string RN { get; set; }
         public int MjeraId { get; set; }
+        public string Napomena { get; set; }
+        public int VrstaStrojaId { get; set; }
     
         public virtual Postavke Mjera { get; set; }
         public virtual Postavke Narucitelj { get; set; }
@@ -38,5 +39,6 @@ namespace Repository
         public virtual Postavke Vozac { get; set; }
         public virtual Postavke VrstaRobe { get; set; }
         public virtual Postavke VrstaUsluge { get; set; }
+        public virtual Postavke VrstaStroja { get; set; }
     }
 }

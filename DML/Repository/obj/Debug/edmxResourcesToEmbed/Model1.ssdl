@@ -28,11 +28,12 @@
     <Property Name="VrstaUslugeId" Type="int" Nullable="false" />
     <Property Name="RadilisteId" Type="int" Nullable="false" />
     <Property Name="VozacId" Type="int" Nullable="false" />
-    <Property Name="VrstaStroja" Type="nvarchar(max)" />
+    <Property Name="Napomena" Type="nvarchar(max)" />
     <Property Name="NaruciteljId" Type="int" Nullable="false" />
     <Property Name="PrimateljId" Type="int" Nullable="false" />
     <Property Name="RN" Type="nvarchar(max)" />
     <Property Name="MjeraId" Type="int" Nullable="false" />
+    <Property Name="VrstaStrojaId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Postavke_KatalogPostavke">
     <End Role="KatalogPostavke" Type="Self.KatalogPostavke" Multiplicity="1" />
@@ -154,6 +155,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RadniNalog_Postavke9">
+    <End Role="Postavke" Type="Self.Postavke" Multiplicity="1" />
+    <End Role="RadniNalog" Type="Self.RadniNalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postavke">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RadniNalog">
+        <PropertyRef Name="VrstaStrojaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DMLModelStoreContainer">
     <EntitySet Name="KatalogPostavke" EntityType="Self.KatalogPostavke" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Postavke" EntityType="Self.Postavke" Schema="dbo" store:Type="Tables" />
@@ -195,6 +208,10 @@
       <End Role="RadniNalog" EntitySet="RadniNalog" />
     </AssociationSet>
     <AssociationSet Name="FK_RadniNalog_Postavke8" Association="Self.FK_RadniNalog_Postavke8">
+      <End Role="Postavke" EntitySet="Postavke" />
+      <End Role="RadniNalog" EntitySet="RadniNalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RadniNalog_Postavke9" Association="Self.FK_RadniNalog_Postavke9">
       <End Role="Postavke" EntitySet="Postavke" />
       <End Role="RadniNalog" EntitySet="RadniNalog" />
     </AssociationSet>
