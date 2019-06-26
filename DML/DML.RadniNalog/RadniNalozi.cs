@@ -2,25 +2,24 @@
 using DML.Services.RadniNalozi;
 using DML.VM;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
+using System.Linq.Dynamic;
+using System.Collections.Generic;
 
 namespace DML.RadniNalog
 {
     public partial class RadniNalozi : Form
     {
         RnServices rnServices;
+        private bool sortAscending = false;
+        List<RnDtoForGrid> list;
         public RadniNalozi()
         {
             InitializeComponent();
-
+            list = new List<RnDtoForGrid>();
             rnServices = new RnServices();
         }
 
@@ -52,7 +51,8 @@ namespace DML.RadniNalog
 
         private void RadniNalozi_Load(object sender, EventArgs e)
         {
-            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            list = rnServices.GetRnDtos();
+            ddgRadniNalozi.DataSource = list;
             //ovo prebaciti na otvaranje trećeg taba
             cbVrstaPostavke.DataSource = Enum.GetValues(typeof(CodeBook));
             GetLoadData();
@@ -143,7 +143,8 @@ namespace DML.RadniNalog
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            list = rnServices.GetRnDtos();
+            ddgRadniNalozi.DataSource = list;
             GetLoadData();
         }
 
@@ -160,12 +161,12 @@ namespace DML.RadniNalog
             int.TryParse(cbNaruciteljSearch.SelectedValue.ToString(), out int naruciteljId);
             int.TryParse(cbPrimateljSearch.SelectedValue.ToString(), out int primateljId);
 
-            var rnList = rnServices.GetRnForTimePeriodAndReg(startDate, endDate,
+            list = rnServices.GetRnForTimePeriodAndReg(startDate, endDate,
                 regId, vrstaRobeId, robuIzdaoId, vrstaUslugeId, radilisteId, vozacId, naruciteljId, primateljId);
 
-            ddgRadniNalozi.DataSource = rnList;
+            ddgRadniNalozi.DataSource = list;
 
-            var suma = rnList.GroupBy(g => g.Mjera).Select(cl => new SummPoFilterPodatcimaDto
+            var suma = list.GroupBy(g => g.Mjera).Select(cl => new SummPoFilterPodatcimaDto
             {
                 Suma = cl.Sum(c => c.Kolicina.GetValueOrDefault()),
                 Mjera = cl.Key
@@ -289,8 +290,18 @@ namespace DML.RadniNalog
 
         private void es_FormClosedEdit(object sender, EventArgs e)
         {
-            ddgRadniNalozi.DataSource = rnServices.GetRnDtos();
+            list = rnServices.GetRnDtos();
+            ddgRadniNalozi.DataSource = list;
             GetLoadData();
+        }
+
+        private void DdgRadniNalozi_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (sortAscending)
+                ddgRadniNalozi.DataSource = list.OrderBy(ddgRadniNalozi.Columns[e.ColumnIndex].DataPropertyName).ToList();
+            else
+                ddgRadniNalozi.DataSource = list.OrderBy(ddgRadniNalozi.Columns[e.ColumnIndex].DataPropertyName).Reverse().ToList();
+            sortAscending = !sortAscending;
         }
     }
 }
