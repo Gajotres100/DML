@@ -25,7 +25,7 @@ namespace DML.RadniNalog
 
         private void btnSaveRn_Click(object sender, EventArgs e)
         {
-            decimal.TryParse(TxtKolicinaRobe.Text, out decimal kolicinaRobe);
+            decimal.TryParse(TxtKolicinaRobe.Text.Replace(",","."), out decimal kolicinaRobe);
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
 
             var data = new RnDto

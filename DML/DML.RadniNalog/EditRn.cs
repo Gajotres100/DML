@@ -77,11 +77,12 @@ namespace DML.RadniNalog
 
             txtRadniNalog.Text = rn.RN;
             txtVrstaStroja.Text = rn.VrstaStroja;
+            TxtKolicinaRobe.Text = rn.kolicinaRobe.ToString();
         }
 
         private void btnSaveRn_Click(object sender, EventArgs e)
         {
-            int.TryParse(TxtKolicinaRobe.Text, out int kolicinaRobe);
+            decimal.TryParse(TxtKolicinaRobe.Text, out decimal kolicinaRobe);
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
 
             var data = new RnDto
