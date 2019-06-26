@@ -92,6 +92,10 @@ namespace DML.RadniNalog
             this.txtSettingsName = new System.Windows.Forms.TextBox();
             this.cbVrstaPostavke = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbVrstaStroja = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cbVrstaStrojaSearch = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -118,6 +122,8 @@ namespace DML.RadniNalog
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbVrstaStroja);
+            this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.cbMjera);
             this.tabPage1.Controls.Add(this.cbPrimatelj);
             this.tabPage1.Controls.Add(this.cbNarucitelj);
@@ -253,7 +259,7 @@ namespace DML.RadniNalog
             // 
             // btnSaveRn
             // 
-            this.btnSaveRn.Location = new System.Drawing.Point(173, 384);
+            this.btnSaveRn.Location = new System.Drawing.Point(173, 422);
             this.btnSaveRn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveRn.Name = "btnSaveRn";
             this.btnSaveRn.Size = new System.Drawing.Size(75, 23);
@@ -272,7 +278,7 @@ namespace DML.RadniNalog
             // 
             // txtVrstaStroja
             // 
-            this.txtVrstaStroja.Location = new System.Drawing.Point(174, 355);
+            this.txtVrstaStroja.Location = new System.Drawing.Point(174, 391);
             this.txtVrstaStroja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVrstaStroja.Name = "txtVrstaStroja";
             this.txtVrstaStroja.Size = new System.Drawing.Size(200, 22);
@@ -283,23 +289,23 @@ namespace DML.RadniNalog
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 323);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 17);
+            this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Primatelj robe/usluge:";
+            this.label11.Text = "Skladište:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 292);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 17);
+            this.label10.Size = new System.Drawing.Size(52, 17);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Naručitelj:";
+            this.label10.Text = "Kupac:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 355);
+            this.label9.Location = new System.Drawing.Point(6, 391);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 17);
             this.label9.TabIndex = 9;
@@ -387,6 +393,8 @@ namespace DML.RadniNalog
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.cbVrstaStrojaSearch);
             this.tabPage2.Controls.Add(this.btnExport);
             this.tabPage2.Controls.Add(this.lblSuma);
             this.tabPage2.Controls.Add(this.label22);
@@ -423,7 +431,7 @@ namespace DML.RadniNalog
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(267, 164);
+            this.btnExport.Location = new System.Drawing.Point(267, 203);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(103, 28);
             this.btnExport.TabIndex = 43;
@@ -445,9 +453,9 @@ namespace DML.RadniNalog
             this.label22.Location = new System.Drawing.Point(407, 140);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 17);
+            this.label22.Size = new System.Drawing.Size(69, 17);
             this.label22.TabIndex = 41;
-            this.label22.Text = "Primatelj:";
+            this.label22.Text = "Skladište:";
             // 
             // label21
             // 
@@ -455,9 +463,9 @@ namespace DML.RadniNalog
             this.label21.Location = new System.Drawing.Point(8, 137);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 17);
+            this.label21.Size = new System.Drawing.Size(52, 17);
             this.label21.TabIndex = 40;
-            this.label21.Text = "Naručitelj:";
+            this.label21.Text = "Kupac:";
             // 
             // cbPrimateljSearch
             // 
@@ -584,7 +592,7 @@ namespace DML.RadniNalog
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 164);
+            this.button1.Location = new System.Drawing.Point(132, 202);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -649,12 +657,13 @@ namespace DML.RadniNalog
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ddgRadniNalozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ddgRadniNalozi.Location = new System.Drawing.Point(4, 198);
+            this.ddgRadniNalozi.Location = new System.Drawing.Point(4, 245);
             this.ddgRadniNalozi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ddgRadniNalozi.Name = "ddgRadniNalozi";
             this.ddgRadniNalozi.ReadOnly = true;
+            this.ddgRadniNalozi.RowHeadersWidth = 51;
             this.ddgRadniNalozi.RowTemplate.Height = 24;
-            this.ddgRadniNalozi.Size = new System.Drawing.Size(1321, 436);
+            this.ddgRadniNalozi.Size = new System.Drawing.Size(1321, 389);
             this.ddgRadniNalozi.TabIndex = 0;
             this.ddgRadniNalozi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ddgRadniNalozi_CellDoubleClick);
             // 
@@ -687,6 +696,7 @@ namespace DML.RadniNalog
             this.dtgSettings.Margin = new System.Windows.Forms.Padding(4);
             this.dtgSettings.Name = "dtgSettings";
             this.dtgSettings.ReadOnly = true;
+            this.dtgSettings.RowHeadersWidth = 51;
             this.dtgSettings.Size = new System.Drawing.Size(1319, 550);
             this.dtgSettings.TabIndex = 5;
             this.dtgSettings.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSettings_CellDoubleClick);
@@ -745,6 +755,43 @@ namespace DML.RadniNalog
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // cbVrstaStroja
+            // 
+            this.cbVrstaStroja.FormattingEnabled = true;
+            this.cbVrstaStroja.Location = new System.Drawing.Point(174, 356);
+            this.cbVrstaStroja.Margin = new System.Windows.Forms.Padding(4);
+            this.cbVrstaStroja.Name = "cbVrstaStroja";
+            this.cbVrstaStroja.Size = new System.Drawing.Size(200, 24);
+            this.cbVrstaStroja.TabIndex = 55;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 356);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 17);
+            this.label25.TabIndex = 54;
+            this.label25.Text = "Vrsta stroja:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(8, 170);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(84, 17);
+            this.label26.TabIndex = 45;
+            this.label26.Text = "Vrsta stroja:";
+            // 
+            // cbVrstaStrojaSearch
+            // 
+            this.cbVrstaStrojaSearch.FormattingEnabled = true;
+            this.cbVrstaStrojaSearch.Location = new System.Drawing.Point(132, 167);
+            this.cbVrstaStrojaSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cbVrstaStrojaSearch.Name = "cbVrstaStrojaSearch";
+            this.cbVrstaStrojaSearch.Size = new System.Drawing.Size(265, 24);
+            this.cbVrstaStrojaSearch.TabIndex = 44;
             // 
             // RadniNalozi
             // 
@@ -832,6 +879,10 @@ namespace DML.RadniNalog
         private System.Windows.Forms.ComboBox cbMjera;
         private System.Windows.Forms.Label lblSuma;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.ComboBox cbVrstaStroja;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox cbVrstaStrojaSearch;
     }
 }
 

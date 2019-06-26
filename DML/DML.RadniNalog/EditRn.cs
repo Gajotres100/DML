@@ -36,12 +36,12 @@ namespace DML.RadniNalog
 
             var loadData = rnServices.GetLoadData();
 
-            cbNarucitelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj).ToList();
+            cbNarucitelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Kupac).ToList();
             cbNarucitelj.DisplayMember = "Name";
             cbNarucitelj.ValueMember = "Id";
             cbNarucitelj.SelectedValue = rn.NaruciteljId;
 
-            cbPrimatelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj).ToList();
+            cbPrimatelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Skladiste).ToList();
             cbPrimatelj.DisplayMember = "Name";
             cbPrimatelj.ValueMember = "Id";
             cbPrimatelj.SelectedValue = rn.PrimateljId;

@@ -21,6 +21,6 @@ namespace DML.VM
         public string Napomena { get; set; }
         public string VrstaUsluge { get; set; }
         public string Mjera { get; set; }
-        public int? Kolicina { get; set; }
+        public decimal? Kolicina { get; set; }
     }
 }

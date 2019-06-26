@@ -27,7 +27,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Datum" Type="datetime" />
           <Property Name="VrstaRobeId" Type="int" Nullable="false" />
-          <Property Name="Kolicina" Type="int" />
+          <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" />
           <Property Name="RobuIzdaoId" Type="int" Nullable="false" />
           <Property Name="RegOznakaId" Type="int" Nullable="false" />
           <Property Name="VrstaUslugeId" Type="int" Nullable="false" />
@@ -286,7 +286,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Datum" Type="DateTime" Precision="3" />
           <Property Name="VrstaRobeId" Type="Int32" Nullable="false" />
-          <Property Name="Kolicina" Type="Int32" />
+          <Property Name="Kolicina" Type="Decimal" />
           <Property Name="RobuIzdaoId" Type="Int32" Nullable="false" />
           <Property Name="RegOznakaId" Type="Int32" Nullable="false" />
           <Property Name="VrstaUslugeId" Type="Int32" Nullable="false" />

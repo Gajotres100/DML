@@ -26,7 +26,7 @@ namespace DML.RadniNalog
 
         private void btnSaveRn_Click(object sender, EventArgs e)
         {
-            int.TryParse(TxtKolicinaRobe.Text, out int kolicinaRobe);
+            decimal.TryParse(TxtKolicinaRobe.Text, out decimal kolicinaRobe);
             DateTime.TryParse(dtpDatum.Text, out DateTime datum);
 
             var data = new RnDto
@@ -62,11 +62,11 @@ namespace DML.RadniNalog
         {
             var loadData = rnServices.GetLoadData();
 
-            cbNarucitelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj).ToList();
+            cbNarucitelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Kupac).ToList();
             cbNarucitelj.DisplayMember = "Name";
             cbNarucitelj.ValueMember = "Id";
 
-            cbPrimatelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj).ToList();
+            cbPrimatelj.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Skladiste).ToList();
             cbPrimatelj.DisplayMember = "Name";
             cbPrimatelj.ValueMember = "Id";
 
@@ -98,14 +98,17 @@ namespace DML.RadniNalog
             cbMjera.DisplayMember = "Name";
             cbMjera.ValueMember = "Id";
 
-            //var loadDataSeckond = rnServices.GetLoadData();
+            cbVrstaStroja.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaStroja).ToList();
+            cbVrstaStroja.DisplayMember = "Name";
+            cbVrstaStroja.ValueMember = "Id";
+                        
             loadData.BaseDtos.Insert(0, new BaseDto() { Id = 0, Name = "----Odaberi----" });
 
-            cbNaruciteljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Narucitelj || x.Id == 0).ToList();
+            cbNaruciteljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Kupac || x.Id == 0).ToList();
             cbNaruciteljSearch.DisplayMember = "Name";
             cbNaruciteljSearch.ValueMember = "Id";
 
-            cbPrimateljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Primatelj || x.Id == 0).ToList();
+            cbPrimateljSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.Skladiste || x.Id == 0).ToList();
             cbPrimateljSearch.DisplayMember = "Name";
             cbPrimateljSearch.ValueMember = "Id";
 
@@ -132,6 +135,10 @@ namespace DML.RadniNalog
             cbVrstaUslugeSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaUsluge || x.Id == 0).ToList();
             cbVrstaUslugeSearch.DisplayMember = "Name";
             cbVrstaUslugeSearch.ValueMember = "Id";
+
+            cbVrstaStrojaSearch.DataSource = loadData.BaseDtos.Where(x => x.PostavkaId == (int)CodeBook.VrstaStroja || x.Id == 0).ToList();
+            cbVrstaStrojaSearch.DisplayMember = "Name";
+            cbVrstaStrojaSearch.ValueMember = "Id";
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)

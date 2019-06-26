@@ -78,7 +78,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Datum" Type="DateTime" Precision="3" />
     <Property Name="VrstaRobeId" Type="Int32" Nullable="false" />
-    <Property Name="Kolicina" Type="Int32" />
+    <Property Name="Kolicina" Type="Decimal" />
     <Property Name="RobuIzdaoId" Type="Int32" Nullable="false" />
     <Property Name="RegOznakaId" Type="Int32" Nullable="false" />
     <Property Name="VrstaUslugeId" Type="Int32" Nullable="false" />

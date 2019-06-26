@@ -22,7 +22,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Datum" Type="datetime" />
     <Property Name="VrstaRobeId" Type="int" Nullable="false" />
-    <Property Name="Kolicina" Type="int" />
+    <Property Name="Kolicina" Type="decimal" Precision="18" Scale="3" />
     <Property Name="RobuIzdaoId" Type="int" Nullable="false" />
     <Property Name="RegOznakaId" Type="int" Nullable="false" />
     <Property Name="VrstaUslugeId" Type="int" Nullable="false" />

@@ -8,7 +8,7 @@ namespace DML.VM
 {
     public class SummPoFilterPodatcimaDto
     {
-        public int Suma { get; set; }
+        public decimal Suma { get; set; }
         public string Mjera { get; set; }
     }
 }

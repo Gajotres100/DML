@@ -17,7 +17,7 @@ namespace Repository
         public int Id { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
         public int VrstaRobeId { get; set; }
-        public Nullable<int> Kolicina { get; set; }
+        public Nullable<decimal> Kolicina { get; set; }
         public int RobuIzdaoId { get; set; }
         public int RegOznakaId { get; set; }
         public int VrstaUslugeId { get; set; }
