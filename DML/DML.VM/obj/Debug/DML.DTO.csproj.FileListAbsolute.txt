@@ -7,3 +7,11 @@ C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\bin\Debug\Common.dll
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\bin\Debug\Common.pdb
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.DTO.csprojAssemblyReference.cache
 C:\Users\ngaic\Source\Repos\Gajotres100\DML\DML\DML.VM\obj\Debug\DML.DTO.csproj.CopyComplete
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\bin\Debug\DML.VM.dll
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\bin\Debug\DML.VM.pdb
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\bin\Debug\Common.dll
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\bin\Debug\Common.pdb
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\obj\Debug\DML.DTO.csprojAssemblyReference.cache
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\obj\Debug\DML.DTO.csproj.CopyComplete
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\obj\Debug\DML.VM.dll
+C:\Users\apisit\Source\Repos\DML\DML\DML.VM\obj\Debug\DML.VM.pdb
